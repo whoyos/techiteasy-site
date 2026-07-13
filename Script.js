@@ -1,42 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>TECH IT EASY IT SERVICES LLC - Contact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="logo">
-    <div class="logo-icon" aria-hidden="true">
-      <span class="gear"></span>
-      <span class="wrench"></span>
-    </div>
-    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
-  </div>
+// Theme toggle and year script
+(function(){
+  const themeToggle = document.getElementById('themeToggle');
+  const yearEl = document.getElementById('year');
 
-  <nav class="nav-links" aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Portfolio</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html" class="active">Contact</a>
-  </nav>
+  // Set year
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">☾</button>
-</header>
+  // Load saved theme
+  const saved = localStorage.getItem('site-theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle && themeToggle.setAttribute('aria-pressed', 'true');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    themeToggle && themeToggle.setAttribute('aria-pressed', 'false');
+  }
 
-<main>
-  <section class="page-header">
-    <h1>Contact</h1>
-    <p>Get in touch to discuss support, consultation, or repair work.</p>
-  </section>
-
-  <section class="contact-layout">
-    <div class="contact-info">
-      <h2>Contact Details</h2>
-      <p><strong>Email:</strong> support@techiteasy.cc</p>
-      <p><strong>WhatsApp:</strong> +1 (XXX) XXX-XXXX</p>
-      <p><strong>Location:</strong> Charleston, SC — remote work available</p>
-      <p><strong>Hours:</strong> By appointment</p>
-    </div>
+  // Toggle handler
+  themeToggle && themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.removeItem('site-theme');
+      themeToggle.setAttribute('aria-pressed', 'false');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('site-theme', 'dark');
+      themeToggle.setAttribute('aria-pressed', 'true');
+    }
+  });
+})();
