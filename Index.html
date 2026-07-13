@@ -11,26 +11,25 @@
 
 <header class="site-header">
   <div class="logo">
-    <div class="logo-icon">
+    <div class="logo-icon" aria-hidden="true">
       <span class="gear"></span>
       <span class="wrench"></span>
     </div>
     <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
   </div>
 
-  <nav class="nav-links">
+  <nav class="nav-links" aria-label="Main navigation">
     <a href="index.html" class="active">Home</a>
     <a href="projects.html">Portfolio</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <button id="themeToggle" class="theme-toggle">☾</button>
+  <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">☾</button>
 </header>
 
 <main>
 
-  <!-- SKILLS SECTION -->
   <section class="skills-section">
     <h2>Skills & Services</h2>
     <div class="skills-grid">
@@ -42,7 +41,7 @@
 
       <div class="skill-card">
         <h3>Business & App Planning</h3>
-        <p>Helping you plan, structure, and document tech for apps, services, and business workflows.</p>
+        <p>Helping you plan, structure, and document technology for apps, services, and business workflows.</p>
       </div>
 
       <div class="service-card">
@@ -68,7 +67,6 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO SECTION -->
   <section class="portfolio-highlight">
     <h2>Portfolio Highlights</h2>
     <p>Explore selected projects and systems I’ve worked on.</p>
@@ -95,10 +93,12 @@
     </div>
   </section>
 
-  <!-- PRICING SECTION -->
   <section class="pricing-section">
     <h2>Pricing & Payments</h2>
-    <p>I offer flexible pricing based on the complexity and scope of your needs. Remote sessions, consultations, and hardware work can be billed hourly or as fixed packages.</p>
+    <p>
+      I offer flexible pricing based on the complexity and scope of your needs.
+      Remote sessions, consultations, and hardware work can be billed hourly or as fixed packages.
+    </p>
 
     <div class="payments-grid">
       <div class="payment-card">
@@ -115,18 +115,21 @@
     </div>
   </section>
 
-  <!-- BOOKING SECTION -->
   <section class="booking-section">
     <h2>Schedule a Consultation</h2>
     <p>Book a time that works for you using Calendly.</p>
 
     <div class="calendly-wrapper">
-      <iframe src="https://calendly.com/your-calendly-link"
-              width="100%" height="600" frameborder="0"></iframe>
+      <iframe
+        src="https://calendly.com/your-calendly-link"
+        width="100%"
+        height="600"
+        frameborder="0"
+        title="Calendly scheduling">
+      </iframe>
     </div>
   </section>
 
-  <!-- LEGAL SECTION -->
   <section class="legal-section">
     <h2>Terms & Policies</h2>
     <p>Services are provided on a best-effort basis, with clear communication about risks and limitations.</p>
@@ -141,48 +144,48 @@
 </footer>
 
 <script src="script.js"></script>
-
-</body>
-</html></footer>
-
-<script src="script.js"></script>
 </body>
 </html>
-`
+<div class="service-card">
+        <h3>Diagnostics & Repair</h3>
         <p>Diagnostics and repair for phones and tablets, including board-level work.</p>
       </div>
+
       <div class="service-card">
         <h3>Power-Injection Diagnostics</h3>
         <p>Identify faults using power-injection and targeted testing techniques.</p>
       </div>
+
       <div class="service-card">
         <h3>Laptop & Desktop Evaluation</h3>
         <p>Assess hardware health, performance, and repair options.</p>
       </div>
+
       <div class="service-card">
         <h3>Device Refurbishing</h3>
         <p>Evaluate and prepare devices for reuse or resale.</p>
       </div>
+
     </div>
   </section>
 
   <section class="pricing-section">
     <h2>Pricing & Payments</h2>
     <p>
-      I offer flexible pricing based on the complexity and scope of your needs. Remote sessions,
-      consultations, and hardware work can be billed hourly or as fixed packages.
+      I offer flexible pricing based on the complexity and scope of your needs.
+      Remote sessions, consultations, and hardware work can be billed hourly or as fixed packages.
     </p>
+
     <div class="payments-grid">
       <div class="payment-card">
         <h3>PayPal</h3>
         <p>Use your PayPal Business account for secure payments.</p>
-        <!-- Replace with your actual PayPal button code -->
         <button class="btn primary">Pay with PayPal</button>
       </div>
+
       <div class="payment-card">
         <h3>Stripe</h3>
         <p>Accept card payments via Stripe.</p>
-        <!-- Replace with your actual Stripe payment button/embed -->
         <button class="btn secondary">Pay with Card (Stripe)</button>
       </div>
     </div>
@@ -191,10 +194,15 @@
   <section class="booking-section">
     <h2>Schedule a Consultation</h2>
     <p>Book a time that works for you using Calendly.</p>
-    <!-- Replace this iframe src with your actual Calendly scheduling link -->
+
     <div class="calendly-wrapper">
-      <iframe src="https://calendly.com/your-calendly-link"
-              width="100%" height="600" frameborder="0"></iframe>
+      <iframe
+        src="https://calendly.com/your-calendly-link"
+        width="100%"
+        height="600"
+        frameborder="0"
+        title="Calendly scheduling">
+      </iframe>
     </div>
   </section>
 
@@ -209,6 +217,7 @@
       Your data and privacy are treated with care and respect.
     </p>
   </section>
+
 </main>
 
 <footer class="site-footer">
@@ -218,176 +227,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-`
-projects.html — Projects Page
-
-`html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>TECH IT EASY IT SERVICES LLC - Projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="logo">
-    <div class="logo-icon">
-      <span class="gear"></span>
-      <span class="wrench"></span>
-    </div>
-    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
-  </div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="projects.html" class="active">Portfolio</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <button id="themeToggle" class="theme-toggle">☾</button>
-</header>
-
-<main>
-  <section class="page-header">
-    <h1>Projects</h1>
-    <p>A selection of work across IT systems, repair, and publishing workflows.</p>
-  </section>
-
-  <section class="projects-grid">
-    <article class="project-card">
-      <h3>Resilient Family IT & Storage System</h3>
-      <p>
-        Designed and documented a self-owned storage and IT workflow for a family, reducing reliance
-        on paid cloud services while improving resilience and control.
-      </p>
-    </article>
-
-    <article class="project-card">
-      <h3>Secure Dual Banking App Setup</h3>
-      <p>
-        Configured and troubleshot secure dual banking app setups on Samsung devices for collaborative
-        family workflows and financial coordination.
-      </p>
-    </article>
-
-    <article class="project-card">
-      <h3>Children’s Book Production Workflow</h3>
-      <p>
-        Built and refined a full KDP children’s book production pipeline, including layout, cover wrap,
-        and illustration direction for Colombian folklore stories.
-      </p>
-    </article>
-
-    <article class="project-card">
-      <h3>Mobile Device Power-Injection Diagnostics</h3>
-      <p>
-        Performed board-level diagnostics and power-injection testing on mobile devices to identify
-        faults and guide repair decisions.
-      </p>
-    </article>
-
-    <!-- Add more project cards as needed -->
-  </section>
-
-  <section class="centered">
-    <p>If you’d like a detailed breakdown of any project, reach out directly.</p>
-    <a href="contact.html" class="btn primary">Contact Me</a>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
-`
-
----
-
-contact.html — Contact Page
-
-`html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>TECH IT EASY IT SERVICES LLC - Contact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="logo">
-    <div class="logo-icon">
-      <span class="gear"></span>
-      <span class="wrench"></span>
-    </div>
-    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
-  </div>
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Portfolio</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html" class="active">Contact</a>
-  </nav>
-  <button id="themeToggle" class="theme-toggle">☾</button>
-</header>
-
-<main>
-  <section class="page-header">
-    <h1>Contact</h1>
-    <p>Reach out to discuss support, consultation, or repair work.</p>
-  </section>
-
-  <section class="contact-layout">
-    <div class="contact-info">
-      <h2>Contact Details</h2>
-      <p><strong>Email:</strong> yourname@techiteasy.cc</p>
-      <p><strong>WhatsApp:</strong> +1 (XXX) XXX-XXXX</p>
-      <p><strong>Location:</strong> New York, NY (globally remote)</p>
-      <p><strong>Business Hours:</strong> By appointment</p>
-    </div>
-
-    <div class="contact-form-wrapper">
-      <h2>Send a Message</h2>
-      <!-- This is a static form; you can later hook it to a form service or backend -->
-      <form class="contact-form">
-        <label>
-          Name
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Subject
-          <input type="text" name="subject" required>
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-        <button type="submit" class="btn primary">Send Message</button>
-      </form>
-      <p class="form-note">
-        This form is currently static. You can connect it to a service like Formspree, Zoho Forms,
-        or a custom backend later.
-      </p>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
-`
