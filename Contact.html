@@ -9,9 +9,9 @@
 <body>
 <header class="site-header">
   <div class="logo">
-    <div class="logo-icon">
-      <span class="gear" aria-hidden="true"></span>
-      <span class="wrench" aria-hidden="true"></span>
+    <div class="logo-icon" aria-hidden="true">
+      <span class="gear"></span>
+      <span class="wrench"></span>
     </div>
     <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
   </div>
@@ -35,8 +35,8 @@
   <section class="contact-layout">
     <div class="contact-info">
       <h2>Contact Details</h2>
-      <p><strong>Email:</strong> support@techiteasy.cc</p>
-      <p><strong>WhatsApp:</strong> +1 (XXX) XXX-XXXX</p>
+      <p><strong>Email:</strong> <a href="mailto:support@techiteasy.cc">support@techiteasy.cc</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/1XXXXXXXXXX" target="_blank" rel="noopener">+1 (XXX) XXX-XXXX</a></p>
       <p><strong>Location:</strong> Charleston, SC — remote work available</p>
       <p><strong>Hours:</strong> By appointment</p>
     </div>
@@ -46,22 +46,22 @@
       <form class="contact-form" action="#" method="post" novalidate>
         <label>
           Name
-          <input type="text" name="name" required>
+          <input type="text" name="name" required aria-required="true">
         </label>
 
         <label>
           Email
-          <input type="email" name="email" required>
+          <input type="email" name="email" required aria-required="true">
         </label>
 
         <label>
           Subject
-          <input type="text" name="subject" required>
+          <input type="text" name="subject" required aria-required="true">
         </label>
 
         <label>
           Message
-          <textarea name="message" rows="5" required></textarea>
+          <textarea name="message" rows="5" required aria-required="true"></textarea>
         </label>
 
         <button type="submit" class="btn primary">Send Message</button>
