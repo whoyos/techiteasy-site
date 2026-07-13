@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TECH IT EASY IT SERVICES LLC - Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">
+    <div class="logo-icon">
+      <span class="gear" aria-hidden="true"></span>
+      <span class="wrench" aria-hidden="true"></span>
+    </div>
+    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
+  </div>
+
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+
+  <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">☾</button>
+</header>
+
+<main>
+  <section class="page-header">
+    <h1>Contact</h1>
+    <p>Get in touch to discuss support, consultation, or repair work.</p>
+  </section>
+
+  <section class="contact-layout">
+    <div class="contact-info">
+      <h2>Contact Details</h2>
+      <p><strong>Email:</strong> support@techiteasy.cc</p>
+      <p><strong>WhatsApp:</strong> +1 (XXX) XXX-XXXX</p>
+      <p><strong>Location:</strong> Charleston, SC — remote work available</p>
+      <p><strong>Hours:</strong> By appointment</p>
+    </div>
+
+    <div class="contact-form-wrapper">
+      <h2>Send a Message</h2>
+      <form class="contact-form" action="#" method="post" novalidate>
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+
+        <label>
+          Subject
+          <input type="text" name="subject" required>
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+
+      <p class="form-note">This form is static for now. You can connect it to Formspree, Zoho Forms, or a custom backend later.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
