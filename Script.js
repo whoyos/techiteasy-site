@@ -9,9 +9,9 @@
 <body>
 <header class="site-header">
   <div class="logo">
-    <div class="logo-icon">
-      <span class="gear" aria-hidden="true"></span>
-      <span class="wrench" aria-hidden="true"></span>
+    <div class="logo-icon" aria-hidden="true">
+      <span class="gear"></span>
+      <span class="wrench"></span>
     </div>
     <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
   </div>
@@ -40,42 +40,3 @@
       <p><strong>Location:</strong> Charleston, SC — remote work available</p>
       <p><strong>Hours:</strong> By appointment</p>
     </div>
-
-    <div class="contact-form-wrapper">
-      <h2>Send a Message</h2>
-      <form class="contact-form" action="#" method="post" novalidate>
-        <label>
-          Name
-          <input type="text" name="name" required>
-        </label>
-
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
-
-        <label>
-          Subject
-          <input type="text" name="subject" required>
-        </label>
-
-        <label>
-          Message
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-
-        <button type="submit" class="btn primary">Send Message</button>
-      </form>
-
-      <p class="form-note">This form is static for now. You can connect it to Formspree, Zoho Forms, or a custom backend later.</p>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
