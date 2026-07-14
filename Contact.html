@@ -44,31 +44,45 @@
 
     <div class="contact-form-wrapper">
       <h2>Send a Message</h2>
-      <form class="contact-form" action="#" method="post" novalidate>
+      
+      <!-- Success Message -->
+      <div data-fs-success style="display:none; padding: 1rem; margin-bottom: 1rem; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px;">
+        ✓ Thanks for reaching out! We'll get back to you soon.
+      </div>
+
+      <!-- Form-level Error Message -->
+      <div data-fs-error style="display:none; padding: 1rem; margin-bottom: 1rem; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px;"></div>
+
+      <form id="contact-form" class="contact-form">
         <label>
           Name
-          <input type="text" name="name" required aria-required="true">
+          <input type="text" name="name" data-fs-field required aria-required="true">
+          <span data-fs-error="name" style="display:none; color: #d32f2f; font-size: 0.875rem; margin-top: 0.25rem; display: block;"></span>
         </label>
 
         <label>
           Email
-          <input type="email" name="email" required aria-required="true">
+          <input type="email" name="email" data-fs-field required aria-required="true">
+          <span data-fs-error="email" style="display:none; color: #d32f2f; font-size: 0.875rem; margin-top: 0.25rem; display: block;"></span>
         </label>
 
         <label>
           Subject
-          <input type="text" name="subject" required aria-required="true">
+          <input type="text" name="subject" data-fs-field required aria-required="true">
+          <span data-fs-error="subject" style="display:none; color: #d32f2f; font-size: 0.875rem; margin-top: 0.25rem; display: block;"></span>
         </label>
 
         <label>
           Message
-          <textarea name="message" rows="5" required aria-required="true"></textarea>
+          <textarea name="message" rows="5" data-fs-field required aria-required="true"></textarea>
+          <span data-fs-error="message" style="display:none; color: #d32f2f; font-size: 0.875rem; margin-top: 0.25rem; display: block;"></span>
         </label>
 
-        <button type="submit" class="btn primary">Send Message</button>
-      </form>
+        <!-- Honeypot field (hidden from users, catches spam bots) -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-      <p class="form-note">This form is static for now. You can connect it to Formspree, Zoho Forms, or a custom backend later.</p>
+        <button type="submit" class="btn primary" data-fs-submit-btn>Send Message</button>
+      </form>
     </div>
   </section>
 </main>
@@ -78,5 +92,12 @@
 </footer>
 
 <script src="script.js"></script>
+
+<!-- Formspree AJAX Library -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xzdnzpka' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
