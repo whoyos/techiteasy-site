@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TECH IT EASY IT SERVICES LLC</title>
   <link rel="stylesheet" href="styles.css">
+
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
 </head>
 
 <body>
 
 <header class="site-header">
   <div class="logo">
-    <!-- Corporate Shield Logo -->
+    <!-- Logo image -->
     <img src="logo.png" alt="Tech It Easy Logo" style="width:48px; height:auto; border-radius:8px;">
     <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
   </div>
@@ -66,34 +71,7 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO PREVIEW -->
-  <section>
-    <h2>Portfolio Highlights</h2>
-    <p>Explore selected projects and systems I've worked on.</p>
-
-    <div class="portfolio-grid">
-      <div class="portfolio-card">
-        <h3>Resilient IT & Storage Systems</h3>
-        <p>Designing self-owned, resilient storage and IT workflows.</p>
-      </div>
-
-      <div class="portfolio-card">
-        <h3>Mobile Device Repair & Diagnostics</h3>
-        <p>Board-level diagnostics and repair of phones and electronics.</p>
-      </div>
-
-      <div class="portfolio-card">
-        <h3>Children's Book Production Systems</h3>
-        <p>End-to-end workflow for KDP publishing and illustration direction.</p>
-      </div>
-    </div>
-
-    <div class="centered">
-      <a href="projects.html" class="btn primary">View Full Projects</a>
-    </div>
-  </section>
-
-  <!-- PRICING TABLE -->
+  <!-- PRICING & PAYMENTS -->
   <section>
     <h2>Pricing & Payments</h2>
     <p>Transparent, competitive pricing for consultations, remote sessions, and hardware repair.</p>
@@ -156,12 +134,15 @@
     </div>
   </section>
 
-  <!-- LEGAL -->
+  <!-- CONTACT / CALENDLY -->
   <section>
-    <h2>Terms & Policies</h2>
-    <p>Services are provided on a best-effort basis with clear communication about risks and limitations.</p>
-    <p>Refunds and adjustments are handled case-by-case depending on service nature and outcome.</p>
-    <p>Your data and privacy are treated with care and respect.</p>
+    <h2>Book a Consultation</h2>
+    <p>Schedule a remote or in-person session at your convenience.</p>
+
+    <a href="https://calendly.com/techiteasy" 
+       class="btn primary" target="_blank" rel="noopener">
+       Book via Calendly
+    </a>
   </section>
 
 </main>
