@@ -192,3 +192,64 @@ section h2 {
 .btn.primary {
   background: var(--primary);
   color
+/* --- BUTTONS --- */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+/* Primary buttons (Stripe, Calendly, PayPal) */
+.btn.primary {
+  background: #1e40af; /* deep professional blue */
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(30, 64, 175, 0.25);
+}
+
+.btn.primary:hover {
+  background: #0b74ff; /* accent blue on hover */
+  box-shadow: 0 3px 8px rgba(11, 116, 255, 0.3);
+}
+
+/* Secondary buttons (optional future use) */
+.btn.secondary {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #111827;
+}
+
+.btn.secondary:hover {
+  background: #f3f4f6;
+}
+
+/* --- LINKS --- */
+a {
+  color: #1e3a8a; /* muted navy */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #0b74ff; /* accent blue */
+}
+
+/* --- PAYPAL CONTAINERS --- */
+#paypal-container-H5ND5GCJ5UHZC,
+#paypal-container-REMOTESESSION,
+#paypal-container-REPAIRBUTTON {
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* --- CALENDLY BUTTON --- */
+section a.btn.primary {
+  background: #2563eb; /* softer blue for Calendly */
+}
+
+section a.btn.primary:hover {
+  background: #1d4ed8;
+}
