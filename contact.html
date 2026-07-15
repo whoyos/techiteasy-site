@@ -1,103 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>TECH IT EASY IT SERVICES LLC - Contact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact TECH IT EASY for support, consultations, and device repair.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – TECH IT EASY IT SERVICES LLC</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
 <header class="site-header">
   <div class="logo">
-    <div class="logo-icon" aria-hidden="true">
+    <div class="logo-icon">
       <span class="gear"></span>
       <span class="wrench"></span>
     </div>
     <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
   </div>
 
-  <nav class="nav-links" aria-label="Main navigation">
+  <nav class="nav-links">
     <a href="index.html">Home</a>
     <a href="projects.html">Portfolio</a>
     <a href="services.html">Services</a>
     <a href="contact.html" class="active">Contact</a>
   </nav>
-
-  <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">☾</button>
 </header>
 
 <main>
-  <section class="page-header">
-    <h1>Contact</h1>
-    <p>Get in touch to discuss support, consultation, or repair work.</p>
-  </section>
 
-  <section class="contact-layout">
-    <div class="contact-info">
-      <h2>Contact Details</h2>
-      <p><strong>Email:</strong> <a href="mailto:support@techiteasy.cc">support@techiteasy.cc</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/1XXXXXXXXXX" target="_blank" rel="noopener">+1 (XXX) XXX-XXXX</a></p>
-      <p><strong>Location:</strong> Charleston, SC — remote work available</p>
-      <p><strong>Hours:</strong> By appointment</p>
-    </div>
+  <section>
+    <h2>Contact</h2>
+    <p>If you have questions, need support, or want to schedule a service, feel free to reach out using the form below.</p>
 
-    <div class="contact-form-wrapper">
-      <h2>Send a Message</h2>
-      
-      <!-- Success Message -->
-      <div data-fs-success style="display:none; padding: 1rem; margin-bottom: 1rem; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px;">
-        ✓ Thanks for reaching out! We'll get back to you soon.
+    <div class="pricing-table">
+
+      <!-- Contact Form -->
+      <div class="pricing-card">
+        <div class="pricing-icon">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+            <path d="M4 4h16v10H5.17L4 15.17V4z" stroke="#0b74ff" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8 8h8M8 11h5" stroke="#0b74ff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <h3>Send a Message</h3>
+        <p>Use this form for general inquiries, quotes, or support requests.</p>
+
+        <form action="https://formspree.io/f/xzdnzpka" method="POST" style="margin-top:16px; text-align:left;">
+          <label>Your Name</label>
+          <input type="text" name="name" required style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #d1d5db;">
+
+          <label>Your Email</label>
+          <input type="email" name="email" required style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #d1d5db;">
+
+          <label>Your Message</label>
+          <textarea name="message" required style="width:100%; padding:10px; height:120px; margin-bottom:12px; border-radius:8px; border:1px solid #d1d5db;"></textarea>
+
+          <button type="submit" class="btn primary" style="width:100%;">Send Message</button>
+        </form>
       </div>
 
-      <!-- Form-level Error Message -->
-      <div data-fs-error style="display:none; padding: 1rem; margin-bottom: 1rem; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px;"></div>
+      <!-- Business Info -->
+      <div class="pricing-card">
+        <div class="pricing-icon">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+            <path d="M3 5h18v11H3z" stroke="#0b74ff" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8 17h8l-2 3h-4l-2-3z" stroke="#0b74ff" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
 
-      <form id="contact-form" class="contact-form">
-        <label>
-          Name
-          <input type="text" name="name" data-fs-field required aria-required="true">
-          <span data-fs-error="name" style="display:none; color: #d32f2f; font-size: 0.875rem; margin-top: 0.25rem; display: block;"></span>
-        </label>
+        <h3>Business Contact</h3>
+        <p>Email: support@techiteasy.cc</p>
+        <p>Phone: +1 (917-719-1672)</p>
+        <p>Location: New York, NY</p>
 
-        <label>
-          Email
-          <input type="email" name="email" data-fs-field required aria-required="true">
-          <span data-fs-error="email" style="display:none; color: #d32f2f; font-size: 0.875rem; margin-top: 0.25rem; display: block;"></span>
-        </label>
+        <a href="https://calendly.com/techiteasy" class="btn primary" target="_blank" rel="noopener" style="margin-top:12px;">
+          Book a Consultation
+        </a>
+      </div>
 
-        <label>
-          Subject
-          <input type="text" name="subject" data-fs-field required aria-required="true">
-          <span data-fs-error="subject" style="display:none; color: #d32f2f; font-size: 0.875rem; margin-top: 0.25rem; display: block;"></span>
-        </label>
-
-        <label>
-          Message
-          <textarea name="message" rows="5" data-fs-field required aria-required="true"></textarea>
-          <span data-fs-error="message" style="display:none; color: #d32f2f; font-size: 0.875rem; margin-top: 0.25rem; display: block;"></span>
-        </label>
-
-        <!-- Honeypot field (hidden from users, catches spam bots) -->
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-
-        <button type="submit" class="btn primary" data-fs-submit-btn>Send Message</button>
-      </form>
     </div>
   </section>
+
 </main>
 
 <footer class="site-footer">
   <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC. All rights reserved.</p>
 </footer>
 
-<script src="script.js"></script>
-
-<!-- Formspree AJAX Library -->
 <script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#contact-form', formId: 'xzdnzpka' });
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
 </body>
 </html>
