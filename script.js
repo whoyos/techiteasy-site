@@ -30,15 +30,3 @@
     }
   });
 })();
-
-// PayPal Hosted Buttons - Create PayPal button
-function createPayPalButton() {
-  if (typeof paypal !== 'undefined' && paypal.HostedButtons) {
-    paypal.HostedButtons({
-      hostedButtonId: 'YOUR_HOSTED_BUTTON_ID'
-    }).render('#paypal-container');
-  }
-}
-
-// Call function when DOM is ready
-document.addEventListener('DOMContentLoaded', createPayPalButton);
