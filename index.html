@@ -11,80 +11,80 @@
 
 <header class="site-header">
   <div class="logo">
-    <div class="logo-icon" aria-hidden="true">
-      <span class="gear"></span>
-      <span class="wrench"></span>
-    </div>
+    <!-- Corporate Shield Logo -->
+    <img src="logo.png" alt="Tech It Easy Logo" style="width:48px; height:auto; border-radius:8px;">
     <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
   </div>
 
-  <nav class="nav-links" aria-label="Main navigation">
+  <nav class="nav-links">
     <a href="index.html" class="active">Home</a>
     <a href="projects.html">Portfolio</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
   </nav>
-
-  <button id="themeToggle" class="theme-toggle" aria-pressed="false" title="Toggle theme">☾</button>
 </header>
 
 <main>
 
-  <section class="skills-section">
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Reliable IT Services, Hardware Repair & Secure Workflows</h1>
+      <p class="subtitle">
+        Professional diagnostics, remote support, business tech planning, and resilient storage systems.
+      </p>
+
+      <a href="services.html" class="btn primary" style="margin-top:20px;">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- SKILLS & SERVICES PREVIEW -->
+  <section>
     <h2>Skills & Services</h2>
     <div class="skills-grid">
 
       <div class="skill-card">
-        <h3>Hardware Repair & Evaluation</h3>
-        <p>Board-level diagnostics, power-injection testing, and mobile device repair and evaluation.</p>
+        <h3>Hardware Repair & Diagnostics</h3>
+        <p>Board-level diagnostics, power-injection testing, micro-soldering, and device repair.</p>
       </div>
 
       <div class="skill-card">
         <h3>Business & App Planning</h3>
-        <p>Helping you plan, structure, and document technology for apps, services, and business workflows.</p>
+        <p>Technical planning, workflow design, and documentation for apps and business systems.</p>
       </div>
 
-      <div class="service-card">
-        <h3>Diagnostics & Repair</h3>
-        <p>Diagnostics and repair for phones and tablets, including board-level work.</p>
+      <div class="skill-card">
+        <h3>Remote IT Support</h3>
+        <p>Secure remote troubleshooting, setup, and optimization.</p>
       </div>
 
-      <div class="service-card">
-        <h3>Power-Injection Diagnostics</h3>
-        <p>Identify faults using power-injection and targeted testing techniques.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Laptop & Desktop Evaluation</h3>
-        <p>Assess hardware health, performance, and repair options.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Device Refurbishing</h3>
-        <p>Evaluate and prepare devices for reuse or resale.</p>
+      <div class="skill-card">
+        <h3>Storage & Backup Systems</h3>
+        <p>Resilient, self-owned storage solutions for families and small businesses.</p>
       </div>
 
     </div>
   </section>
 
-  <section class="portfolio-highlight">
+  <!-- PORTFOLIO PREVIEW -->
+  <section>
     <h2>Portfolio Highlights</h2>
     <p>Explore selected projects and systems I've worked on.</p>
 
     <div class="portfolio-grid">
       <div class="portfolio-card">
         <h3>Resilient IT & Storage Systems</h3>
-        <p>Designing self-owned, resilient storage and IT workflows for families and small businesses.</p>
+        <p>Designing self-owned, resilient storage and IT workflows.</p>
       </div>
 
       <div class="portfolio-card">
         <h3>Mobile Device Repair & Diagnostics</h3>
-        <p>Board-level diagnostics, power-injection testing, and repair of phones and electronics.</p>
+        <p>Board-level diagnostics and repair of phones and electronics.</p>
       </div>
 
       <div class="portfolio-card">
         <h3>Children's Book Production Systems</h3>
-        <p>End-to-end workflow for KDP publishing, layout, and illustration direction.</p>
+        <p>End-to-end workflow for KDP publishing and illustration direction.</p>
       </div>
     </div>
 
@@ -93,32 +93,74 @@
     </div>
   </section>
 
-  <section class="pricing-section">
+  <!-- PRICING TABLE -->
+  <section>
     <h2>Pricing & Payments</h2>
-    <p>
-      I offer flexible pricing based on the complexity and scope of your needs.
-      Remote sessions, consultations, and hardware work can be billed hourly or as fixed packages.
-    </p>
+    <p>Transparent, competitive pricing for consultations, remote sessions, and hardware repair.</p>
 
-    <div class="payments-grid">
-      <div class="payment-card">
-        <h3>PayPal</h3>
-        <p>Secure payment via PayPal.</p>
-        <div id="paypal-container"></div>
+    <div class="pricing-table">
+
+      <!-- Consultation -->
+      <div class="pricing-card">
+        <div class="pricing-icon">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+            <path d="M4 4h16v10H5.17L4 15.17V4z" stroke="#0b74ff" stroke-width="2"/>
+            <path d="M8 8h8M8 11h5" stroke="#0b74ff" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <h3>Consultation Session</h3>
+        <p>Planning, diagnostics, and business tech guidance.</p>
+        <p class="price">$30 / session</p>
+
+        <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" 
+           class="btn primary" target="_blank" rel="noopener">
+           Pay with Stripe
+        </a>
+
+        <div id="paypal-container-H5ND5GCJ5UHZC" style="margin-top:12px;"></div>
       </div>
 
-      <div class="payment-card">
-        <h3>Schedule a Consultation</h3>
-        <p>Book a time that works for you.</p>
-        <a href="https://calendly.com/techiteasy" class="btn primary" target="_blank" rel="noopener">Book with Calendly</a>
+      <!-- Remote Session -->
+      <div class="pricing-card">
+        <div class="pricing-icon">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+            <path d="M3 5h18v11H3z" stroke="#0b74ff" stroke-width="2"/>
+            <path d="M8 17h8l-2 3h-4l-2-3z" stroke="#0b74ff" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <h3>Remote IT Session</h3>
+        <p>Full remote troubleshooting and support.</p>
+        <p class="price">$45 / hour</p>
+
+        <div id="paypal-container-REMOTESESSION"></div>
       </div>
+
+      <!-- Hardware Repair -->
+      <div class="pricing-card">
+        <div class="pricing-icon">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
+            <path d="M14 3l7 7-4 4-7-7V3h4z" stroke="#0b74ff" stroke-width="2"/>
+            <path d="M3 21l6-6" stroke="#0b74ff" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <h3>Hardware Repair</h3>
+        <p>Diagnostics, board-level repair, and device servicing.</p>
+        <p class="price">$80 / repair</p>
+
+        <div id="paypal-container-REPAIRBUTTON"></div>
+      </div>
+
     </div>
   </section>
 
-  <section class="legal-section">
+  <!-- LEGAL -->
+  <section>
     <h2>Terms & Policies</h2>
-    <p>Services are provided on a best-effort basis, with clear communication about risks and limitations.</p>
-    <p>Refunds and adjustments are handled case-by-case, depending on the nature of the service and outcome.</p>
+    <p>Services are provided on a best-effort basis with clear communication about risks and limitations.</p>
+    <p>Refunds and adjustments are handled case-by-case depending on service nature and outcome.</p>
     <p>Your data and privacy are treated with care and respect.</p>
   </section>
 
@@ -128,11 +170,23 @@
   <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC. All rights reserved.</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-<!-- PayPal SDK -->
-<script 
-  src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+<!-- PayPal Render Scripts -->
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "H5ND5GCJ5UHZC"
+  }).render("#paypal-container-H5ND5GCJ5UHZC");
+
+  paypal.HostedButtons({
+    hostedButtonId: "REMOTESESSION"
+  }).render("#paypal-container-REMOTESESSION");
+
+  paypal.HostedButtons({
+    hostedButtonId: "REPAIRBUTTON"
+  }).render("#paypal-container-REPAIRBUTTON");
 </script>
 
 </body>
