@@ -8,7 +8,7 @@
 
   <!-- PayPal SDK -->
   <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=EUR">
   </script>
 </head>
 
@@ -16,8 +16,7 @@
 
 <header class="site-header">
   <div class="logo">
-    <!-- Logo image -->
-    <img src="logo.png" alt="Tech It Easy Logo" style="width:48px; height:auto; border-radius:8px;">
+    <img src="logo.png" alt="Tech It Easy Logo" class="logo-img">
     <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
   </div>
 
@@ -39,11 +38,13 @@
         Professional diagnostics, remote support, business tech planning, and resilient storage systems.
       </p>
 
-      <a href="services.html" class="btn primary" style="margin-top:20px;">Explore Services</a>
+      <a href="https://calendly.com/techiteasy" class="btn primary" target="_blank" rel="noopener">
+        Book a Consultation
+      </a>
     </div>
   </section>
 
-  <!-- SKILLS & SERVICES PREVIEW -->
+  <!-- SERVICES PREVIEW -->
   <section>
     <h2>Skills & Services</h2>
     <div class="skills-grid">
@@ -71,78 +72,51 @@
     </div>
   </section>
 
-  <!-- PRICING & PAYMENTS -->
+  <!-- PAYMENTS SECTION -->
   <section>
-    <h2>Pricing & Payments</h2>
-    <p>Transparent, competitive pricing for consultations, remote sessions, and hardware repair.</p>
+    <h2>Payments & Donations</h2>
+    <p>Support our work or book a consultation securely through Stripe or PayPal.</p>
 
     <div class="pricing-table">
 
-      <!-- Consultation -->
+      <!-- Consultation Payment -->
       <div class="pricing-card">
         <div class="pricing-icon">
           <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-            <path d="M4 4h16v10H5.17L4 15.17V4z" stroke="#0b74ff" stroke-width="2"/>
-            <path d="M8 8h8M8 11h5" stroke="#0b74ff" stroke-width="2"/>
+            <path d="M4 4h16v10H5.17L4 15.17V4z" stroke="#2563eb" stroke-width="2"/>
+            <path d="M8 8h8M8 11h5" stroke="#2563eb" stroke-width="2"/>
           </svg>
         </div>
 
         <h3>Consultation Session</h3>
-        <p>Planning, diagnostics, and business tech guidance.</p>
-        <p class="price">$30 / session</p>
+        <p>Professional consultation for business or technical guidance.</p>
+        <p class="price">€50 / session</p>
 
         <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" 
            class="btn primary" target="_blank" rel="noopener">
            Pay with Stripe
         </a>
 
-        <div id="paypal-container-H5ND5GCJ5UHZC" style="margin-top:12px;"></div>
+        <div id="paypal-container-CONSULTATION"></div>
       </div>
 
-      <!-- Remote Session -->
+      <!-- Donation -->
       <div class="pricing-card">
         <div class="pricing-icon">
           <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-            <path d="M3 5h18v11H3z" stroke="#0b74ff" stroke-width="2"/>
-            <path d="M8 17h8l-2 3h-4l-2-3z" stroke="#0b74ff" stroke-width="2"/>
+            <path d="M12 21c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z" stroke="#2563eb" stroke-width="2"/>
+            <path d="M12 8v5l3 3" stroke="#2563eb" stroke-width="2"/>
           </svg>
         </div>
 
-        <h3>Remote IT Session</h3>
-        <p>Full remote troubleshooting and support.</p>
-        <p class="price">$45 / hour</p>
+        <h3>Support & Donations</h3>
+        <p>Help us continue providing reliable IT services and community support.</p>
+        <p class="price">Any amount</p>
 
-        <div id="paypal-container-REMOTESESSION"></div>
-      </div>
-
-      <!-- Hardware Repair -->
-      <div class="pricing-card">
-        <div class="pricing-icon">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-            <path d="M14 3l7 7-4 4-7-7V3h4z" stroke="#0b74ff" stroke-width="2"/>
-            <path d="M3 21l6-6" stroke="#0b74ff" stroke-width="2"/>
-          </svg>
-        </div>
-
-        <h3>Hardware Repair</h3>
-        <p>Diagnostics, board-level repair, and device servicing.</p>
-        <p class="price">$80 and up confirm for pricing/ repair</p>
-
-        <div id="paypal-container-REPAIRBUTTON"></div>
+        <div id="paypal-container-DONATION"></div>
       </div>
 
     </div>
-  </section>
-
-  <!-- CONTACT / CALENDLY -->
-  <section>
-    <h2>Book a Consultation</h2>
-    <p>Schedule a remote or in-person session at your convenience.</p>
-
-    <a href="https://calendly.com/techiteasy" 
-       class="btn primary" target="_blank" rel="noopener">
-       Book via Calendly
-    </a>
   </section>
 
 </main>
@@ -153,21 +127,15 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 
-<!-- PayPal Render Scripts -->
-<script>
+  // PayPal Buttons
   paypal.HostedButtons({
-    hostedButtonId: "H5ND5GCJ5UHZC"
-  }).render("#paypal-container-H5ND5GCJ5UHZC");
+    hostedButtonId: "H5ND5GCJ5UHZC" // Consultation
+  }).render("#paypal-container-CONSULTATION");
 
   paypal.HostedButtons({
-    hostedButtonId: "REMOTESESSION"
-  }).render("#paypal-container-REMOTESESSION");
-
-  paypal.HostedButtons({
-    hostedButtonId: "REPAIRBUTTON"
-  }).render("#paypal-container-REPAIRBUTTON");
+    hostedButtonId: "YOUR_DONATION_BUTTON_ID" // Replace with your donation button ID
+  }).render("#paypal-container-DONATION");
 </script>
 
 </body>
