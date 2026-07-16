@@ -1,81 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TECH IT EASY IT SERVICES LLC</title>
-  <link rel="stylesheet" href="styles.css?v=5">
-</head>
+/* ============================
+   GLOBAL HYBRID THEME STYLES
+   ============================ */
 
-<body>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
 
-<header class="site-header">
-  <div class="logo">
-    <img src="logo.png" alt="Tech It Easy Logo" class="logo-img">
-    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
-  </div>
+/* Body */
+body {
+  background: #f5f7fa;
+  color: #222;
+  line-height: 1.6;
+}
 
-  <nav class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Portfolio</a>
-    <a href="devices.html">Device Sales</a>
-    <a href="diagnostics.html">Diagnostics</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+/* Hybrid Header */
+header {
+  background: linear-gradient(135deg, #0a0f2c, #1a2a6c, #2a4ea0);
+  color: #fff;
+  padding: 20px 40px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
-<main>
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+}
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>💼 Professional IT Services, Cybersecurity & Technical Consulting</h1>
-    <p class="subtitle">Over 10 years of experience delivering secure, reliable, and scalable technology solutions.</p>
-    <a href="https://calendly.com/techiteasy" class="btn primary" target="_blank">Book a Consultation</a>
-  </div>
-</section>
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
 
-<section>
-  <h2>⚙️ What We Offer</h2>
-  <div class="skills-grid">
+nav a:hover {
+  background: rgba(255,255,255,0.15);
+}
 
-    <div class="skill-card">
-      <h3>🧰 IT Consulting</h3>
-      <p>Personal and business consulting for networks, devices, workflows, and infrastructure.</p>
-    </div>
+/* Section */
+section {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    <div class="skill-card">
-      <h3>🔐 Cybersecurity</h3>
-      <p>Threat protection, secure configurations, vulnerability assessments, and cloud security.</p>
-    </div>
+/* Hybrid Dark Sections */
+.dark-section {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 50px;
+  margin: 40px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
 
-    <div class="skill-card">
-      <h3>💻 IT Support</h3>
-      <p>Remote troubleshooting, system optimization, OS changes, and device configuration.</p>
-    </div>
+/* Cards */
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+}
 
-    <div class="skill-card">
-      <h3>📱 Hardware & Devices</h3>
-      <p>Diagnostics, repair guidance, peripherals, mobile devices, and custom PC design.</p>
-    </div>
+.dark-section .card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
 
-  </div>
-</section>
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
 
-</main>
+.btn.primary {
+  background: #2563eb;
+  color: #fff;
+}
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC</p>
-  <div class="footer-legal">
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="agreement.html">Service Agreement</a>
-    <a href="refund.html">Refund Policy</a>
-    <a href="disclaimer.html">Legal Disclaimer</a>
-  </div>
-</footer>
+.btn.primary:hover {
+  background: #1d4ed8;
+}
 
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+/* Payment Row */
+.payment-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
 
-</body>
-</html>
+/* Footer */
+footer {
+  background: #0a0f2c;
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+  section {
+    padding: 20px;
+  }
+  .payment-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
