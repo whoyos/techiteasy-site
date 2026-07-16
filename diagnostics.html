@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Diagnostics – TECH IT EASY IT SERVICES LLC</title>
-<link rel="stylesheet" href="styles.css?v=5">
-<script src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+  <meta charset="UTF-8">
+  <title>Diagnostics – TECH IT EASY IT SERVICES LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css?v=5">
+
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
 </head>
 
 <body>
@@ -16,4 +21,73 @@
   </div>
   <nav class="nav-links">
     <a href="index.html">Home</a>
-    <
+    <a href="services.html">Services</a>
+    <a href="projects.html">Portfolio</a>
+    <a href="devices.html">Device Sales</a>
+    <a href="diagnostics.html" class="active">Diagnostics</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section>
+  <h2>🔍 Diagnostics</h2>
+  <p>
+    Hardware and software issues require proper evaluation before repair or service.  
+    Diagnostics allow us to determine the exact problem and provide accurate pricing and recommendations.
+  </p>
+
+  <div class="skills-grid">
+
+    <div class="pricing-card">
+      <h3>🧪 Remote Diagnostics Session</h3>
+      <p>Full evaluation of your device, including error analysis, hardware condition check, and repair recommendations.</p>
+      <p class="price">$30 / session</p>
+
+      <!-- Stripe Button -->
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" 
+         class="btn primary" target="_blank" rel="noopener">
+        Pay with Stripe
+      </a>
+
+      <!-- PayPal Button Container -->
+      <div id="paypal-container-DIAGNOSTICS" style="margin-top:12px;"></div>
+    </div>
+
+    <div class="pricing-card">
+      <h3>📋 After Payment</h3>
+      <p>
+        After completing payment, you will receive instructions to begin your remote diagnostics session.  
+        Please ensure you have a stable internet connection and access to your device.
+      </p>
+      <a href="contact.html" class="btn secondary">Confirm Payment & Contact</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC</p>
+  <div class="footer-legal">
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="agreement.html">Service Agreement</a>
+    <a href="refund.html">Refund Policy</a>
+    <a href="disclaimer.html">Legal Disclaimer</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // PayPal Diagnostics Button
+  paypal.HostedButtons({
+    hostedButtonId: "H5ND5GCJ5UHZC" // replace with your diagnostics PayPal button ID if different
+  }).render("#paypal-container-DIAGNOSTICS");
+</script>
+
+</body>
+</html>
