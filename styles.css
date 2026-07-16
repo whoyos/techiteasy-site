@@ -194,3 +194,35 @@ iframe[src*="checkout.paypal.com"] {
   isolation: isolate;
   overflow: visible;
 }
+/* ============================
+   UNIVERSAL INLINE STYLE OVERRIDE
+   ============================ */
+
+/* Force all text to render horizontally, even if PayPal injects inline styles */
+body * {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  transform: none !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  text-align: left !important;
+}
+
+/* Prevent PayPal from collapsing containers */
+[id^="paypal-container"],
+iframe[src*="paypal.com"],
+iframe[src*="checkout.paypal.com"] {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+/* Ensure buttons and notes stay inline */
+.payment-row,
+.paypal-wrapper {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
