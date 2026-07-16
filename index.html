@@ -1,140 +1,88 @@
-/* ============================
-   GLOBAL HYBRID THEME STYLES
-   ============================ */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECH IT EASY IT SERVICES LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, sans-serif;
-}
+  <!-- PayPal SDK (required once per page) -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
+</head>
 
-/* Body */
-body {
-  background: #f5f7fa;
-  color: #222;
-  line-height: 1.6;
-}
+<body>
 
-/* Hybrid Header */
-header {
-  background: linear-gradient(135deg, #0a0f2c, #1a2a6c, #2a4ea0);
-  color: #fff;
-  padding: 20px 40px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
+<header>
+  <h1>TECH IT EASY IT SERVICES LLC</h1>
+  <p>Professional IT Support, Cybersecurity, Consulting & Device Services</p>
 
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 15px;
-}
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="diagnostics.html">Diagnostics</a>
+    <a href="devices.html">Devices</a>
+    <a href="support.html">IT Support</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+</header>
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 6px;
-  transition: 0.3s;
-}
+<section>
+  <h2>Welcome to TECH IT EASY</h2>
+  <p>Your trusted partner for IT solutions, cybersecurity, consulting, and device support.  
+     We provide reliable, affordable, and professional services for individuals and businesses.</p>
 
-nav a:hover {
-  background: rgba(255,255,255,0.15);
-}
+  <div class="card">
+    <h3>Our Mission</h3>
+    <p>To make technology simple, secure, and accessible — whether you're a business owner, a student, or a family needing reliable IT support.</p>
+  </div>
 
-/* Section */
-section {
-  padding: 40px;
-  max-width: 1100px;
-  margin: auto;
-}
+  <div class="card">
+    <h3>Quick Access</h3>
+    <ul>
+      <li>Remote Diagnostics</li>
+      <li>Cybersecurity Assessment</li>
+      <li>PC Build Design</li>
+      <li>Network Design</li>
+      <li>Mobile Device Troubleshooting</li>
+    </ul>
+  </div>
+</section>
 
-/* Hybrid Dark Sections */
-.dark-section {
-  background: #0f172a;
-  color: #e2e8f0;
-  padding: 50px;
-  margin: 40px 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
+<div class="dark-section">
+  <h2>Featured Service: Remote Diagnostics</h2>
+  <p>Fast, affordable, and accurate remote troubleshooting for laptops, desktops, and mobile devices.</p>
 
-/* Cards */
-.card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-bottom: 25px;
-}
+  <div class="card">
+    <h3>Price: $30</h3>
 
-.dark-section .card {
-  background: #1e293b;
-  color: #e2e8f0;
-}
+    <div class="payment-row">
+      <!-- Stripe -->
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" 
+         class="btn primary" target="_blank" rel="noopener">
+        Pay with Stripe
+      </a>
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
+      <!-- PayPal -->
+      <div id="paypal-container-PMU4ELQW24DM8"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "PMU4ELQW24DM8",
+        }).render("#paypal-container-PMU4ELQW24DM8");
+      </script>
+    </div>
+  </div>
+</div>
 
-.btn.primary {
-  background: #2563eb;
-  color: #fff;
-}
+<footer>
+  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
+  <a href="index.html">Home</a> |
+  <a href="services.html">Services</a> |
+  <a href="support.html">IT Support</a> |
+  <a href="faq.html">FAQ</a>
+</footer>
 
-.btn.primary:hover {
-  background: #1d4ed8;
-}
-
-/* Payment Row */
-.payment-row {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 15px;
-}
-
-/* Footer */
-footer {
-  background: #0a0f2c;
-  color: #fff;
-  padding: 25px;
-  text-align: center;
-  margin-top: 40px;
-}
-
-footer a {
-  color: #93c5fd;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  nav {
-    flex-wrap: wrap;
-  }
-  section {
-    padding: 20px;
-  }
-  .payment-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
+</body>
+</html>
