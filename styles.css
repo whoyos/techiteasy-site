@@ -168,3 +168,58 @@ footer a:hover {
     font-size: 1rem;
   }
 }
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 768px) {
+  ... your mobile rules ...
+}
+
+/* ============================
+   GLOBAL PAYPAL STYLE OVERRIDE
+   ============================ */
+[id^="paypal-container"] {
+  all: unset;
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+}
+
+[id^="paypal-container"] * {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  transform: none !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  text-align: left !important;
+}
+
+.paypal-wrapper {
+  isolation: isolate;
+}
+/* ============================
+   GLOBAL PAYPAL STYLE OVERRIDE
+   ============================ */
+
+/* Prevent PayPal iframe styles from affecting surrounding text */
+[id^="paypal-container"] {
+  all: unset;
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+}
+
+/* Reset any inherited writing-mode or transforms */
+[id^="paypal-container"] * {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  transform: none !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  text-align: left !important;
+}
+
+/* Isolate PayPal iframe so its CSS cannot leak */
+.paypal-wrapper {
+  isolation: isolate;
+}
