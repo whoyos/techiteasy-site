@@ -1,81 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>FAQ – TECH IT EASY IT SERVICES LLC</title>
-<link rel="stylesheet" href="styles.css?v=4">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | TECH IT EASY IT SERVICES LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="logo">
-    <img src="logo.png" class="logo-img" alt="Tech It Easy Logo">
-    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
-  </div>
-  <nav class="nav-links">
+<header>
+  <h1>Frequently Asked Questions</h1>
+  <p>Answers to common questions about our services</p>
+
+  <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="projects.html">Portfolio</a>
-    <a href="devices.html">Device Sales</a>
     <a href="diagnostics.html">Diagnostics</a>
-    <a href="contact.html">Contact</a>
+    <a href="devices.html">Devices</a>
+    <a href="support.html">IT Support</a>
+    <a href="faq.html">FAQ</a>
   </nav>
 </header>
 
-<main>
 <section>
-<h2>❓ Frequently Asked Questions</h2>
+  <h2>General Questions</h2>
 
-<div class="skills-grid">
-
-  <div class="skill-card">
-    <h3>🛠 Do you offer remote support?</h3>
-    <p>Yes. Most issues can be diagnosed and resolved remotely using secure tools.</p>
+  <div class="card">
+    <h3>How do remote services work?</h3>
+    <p>
+      We connect to your device using secure, encrypted remote tools.  
+      You maintain full control and can disconnect at any time.
+    </p>
   </div>
 
-  <div class="skill-card">
-    <h3>💻 What devices do you work on?</h3>
-    <p>Windows, macOS, Linux, iOS, Android, printers, scanners, peripherals, and custom PCs.</p>
+  <div class="card">
+    <h3>Do you work with both Windows and macOS?</h3>
+    <p>
+      Yes — we support Windows, macOS, Android, and iOS devices.
+    </p>
   </div>
 
-  <div class="skill-card">
-    <h3>🔐 Do you provide cybersecurity services?</h3>
-    <p>Yes. We offer assessments, secure configurations, threat detection, and cloud security.</p>
+  <div class="card">
+    <h3>How do I pay?</h3>
+    <p>
+      You can pay using Stripe or PayPal.  
+      Each service page includes both payment options.
+    </p>
   </div>
-
-  <div class="skill-card">
-    <h3>📦 Do you sell devices?</h3>
-    <p>Yes. Refurbished devices and custom builds are available upon request.</p>
-  </div>
-
-  <div class="skill-card">
-    <h3>🧾 How do diagnostics work?</h3>
-    <p>You pay a diagnostics fee, we evaluate your device, and provide a full report.</p>
-  </div>
-
-  <div class="skill-card">
-    <h3>💳 Do you offer refunds?</h3>
-    <p>Refunds are only issued if a job cannot be completed or a payment was made in error.</p>
-  </div>
-
-</div>
-
 </section>
-</main>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC</p>
-  <div class="footer-legal">
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="agreement.html">Service Agreement</a>
-    <a href="refund.html">Refund Policy</a>
-    <a href="disclaimer.html">Legal Disclaimer</a>
+<section class="dark-section">
+  <h2>Diagnostics & Devices</h2>
+
+  <div class="card">
+    <h3>What is included in a diagnostic?</h3>
+    <p>
+      We check performance, errors, malware, storage health, and system stability.  
+      You receive a full report with recommended fixes.
+    </p>
   </div>
-</footer>
 
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <div class="card">
+    <h3>Can you fix my device remotely?</h3>
+    <p>
+      Many issues can be fixed remotely.  
+      If physical repair is needed, we will tell you exactly what is required.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Do you work with older devices?</h3>
+    <p>
+      Yes — we support older laptops, desktops, and mobile devices.
+    </p>
+  </div>
+</section>
+
+<section>
+  <h2>Cybersecurity</h2>
+
+  <div class="card">
+    <h3>What is a cybersecurity assessment?</h3>
+    <p>
+      A full review of your digital footprint, accounts, devices, and security posture.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Do you help secure cloud accounts?</h3>
+    <p>
+      Yes — we secure Google, Microsoft, Apple, and other cloud platforms.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Is my information safe?</h3>
+    <p>
+      Absolutely. We use encrypted tools and never store your data.
+    </p>
+  </div>
+</section>
+
+<section class="dark-section">
+  <h2>Payments & Refunds</h2>
+
+  <div class="card">
+    <h3>Do you offer refunds?</h3>
+    <p>
+      If a service cannot be completed, we offer partial or full refunds depending on the situation.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Can I pay after the service?</h3>
+    <p>
+      Payment is required before remote sessions begin.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Do you accept business payments?</h3>
+    <p>
+      Yes — we support business invoices and recurring service agreements.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
+  <a href="index.html">Home</a> |
+  <a href="services.html">Services</a> |
+  <a href="support.html">IT Support</a> |
+  <a href="faq.html">FAQ</a>
+</footer>
 
 </body>
 </html>
