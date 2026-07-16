@@ -1,32 +1,35 @@
-// Theme toggle and year script
-(function(){
-  const themeToggle = document.getElementById('themeToggle');
-  const yearEl = document.getElementById('year');
+/* ============================
+   GLOBAL SITE JAVASCRIPT
+   ============================ */
 
-  // Set year
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+/* Mobile Navigation Toggle (optional future use) */
+function toggleMenu() {
+  const nav = document.querySelector("nav");
+  nav.classList.toggle("open");
+}
 
-  // Load saved theme
-  const saved = localStorage.getItem('site-theme');
-  if (saved === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    themeToggle && themeToggle.setAttribute('aria-pressed', 'true');
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-    themeToggle && themeToggle.setAttribute('aria-pressed', 'false');
-  }
+/* Smooth Scroll for internal links */
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("a[href^='#']");
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+});
 
-  // Toggle handler
-  themeToggle && themeToggle.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.removeItem('site-theme');
-      themeToggle.setAttribute('aria-pressed', 'false');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('site-theme', 'dark');
-      themeToggle.setAttribute('aria-pressed', 'true');
+/* Highlight Active Navigation Link */
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll("nav a");
+
+  navLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
     }
   });
-})();
+});
