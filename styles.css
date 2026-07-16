@@ -127,169 +127,70 @@ footer {
   color: #fff;
   padding: 25px;
   text-align: center;
-  margin
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+  margin-top: 40px;
+}
 
-      <div class="paypal-wrapper">
-        <div id="paypal-container-EGH3ZK64TW396"></div>
-      </div>
-    </div>
+footer a {
+  color: #93c5fd;
+  text-decoration: none;
+  margin: 0 10px;
+}
 
-    <script>
-      paypal.HostedButtons({ hostedButtonId: "EGH3ZK64TW396" })
-        .render("#paypal-container-EGH3ZK64TW396");
-    </script>
-  </div>
+footer a:hover {
+  text-decoration: underline;
+}
 
-  <!-- Business Consulting -->
-  <div class="card">
-    <h3>Business Consulting — $45</h3>
-    <p>Professional guidance for small businesses, IT planning, workflows, and secure operations.</p>
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+  section {
+    padding: 20px;
+  }
 
-      <div class="paypal-wrapper">
-        <div id="paypal-container-6H6VLC6ENMJ42"></div>
-      </div>
-    </div>
+  .card {
+    max-width: 100%;
+  }
 
-    <script>
-      paypal.HostedButtons({ hostedButtonId: "6H6VLC6ENMJ42" })
-        .render("#paypal-container-6H6VLC6ENMJ42");
-    </script>
-  </div>
-</section>
+  .payment-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-<section class="dark-section">
-  <h2>IT Support</h2>
+  header h1 {
+    font-size: 1.6rem;
+  }
 
-  <!-- Remote Support -->
-  <div class="card">
-    <h3>Remote Support — $40</h3>
-    <p>Full remote troubleshooting for Windows, macOS, and mobile devices.</p>
+  header p {
+    font-size: 1rem;
+  }
+}
 
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+/* ============================
+   PAYPAL CART / CHECKOUT FIX
+   ============================ */
 
-      <div class="paypal-wrapper">
-        <div id="paypal-container-7W2RSPJCM5A2S"></div>
-      </div>
-    </div>
+/* Reset PayPal iframe and hosted button styles */
+[id^="paypal-container"],
+[id^="paypal-container"] *,
+iframe[src*="paypal.com"],
+iframe[src*="checkout.paypal.com"] {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  transform: none !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  text-align: left !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
 
-    <script>
-      paypal.HostedButtons({ hostedButtonId: "7W2RSPJCM5A2S" })
-        .render("#paypal-container-7W2RSPJCM5A2S");
-    </script>
-  </div>
-
-  <!-- System Optimization -->
-  <div class="card">
-    <h3>System Optimization — $35</h3>
-    <p>Speed improvements, cleanup, performance tuning, and stability fixes.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
-
-      <div class="paypal-wrapper">
-        <div id="paypal-container-DNUXEJTNPH8FE"></div>
-      </div>
-    </div>
-
-    <script>
-      paypal.HostedButtons({ hostedButtonId: "DNUXEJTNPH8FE" })
-        .render("#paypal-container-DNUXEJTNPH8FE");
-    </script>
-  </div>
-
-  <!-- OS Installation -->
-  <div class="card">
-    <h3>OS Installation / Reset — $50</h3>
-    <p>Fresh OS installation, reset, or recovery for Windows or macOS.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
-
-      <div class="paypal-wrapper">
-        <div id="paypal-container-GC3NZGK39GKEL"></div>
-      </div>
-    </div>
-
-    <script>
-      paypal.HostedButtons({ hostedButtonId: "GC3NZGK39GKEL" })
-        .render("#paypal-container-GC3NZGK39GKEL");
-    </script>
-  </div>
-</section>
-
-<section>
-  <h2>Cybersecurity</h2>
-
-  <!-- Cybersecurity Assessment -->
-  <div class="card">
-    <h3>Cybersecurity Assessment — $60</h3>
-    <p>Full security review of devices, accounts, and digital footprint.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
-
-      <div class="paypal-wrapper">
-        <div id="paypal-container-8HDQ9DYLTJSJ6"></div>
-      </div>
-    </div>
-
-    <script>
-      paypal.HostedButtons({ hostedButtonId: "8HDQ9DYLTJSJ6" })
-        .render("#paypal-container-8HDQ9DYLTJSJ6");
-    </script>
-  </div>
-
-  <!-- Secure Configuration -->
-  <div class="card">
-    <h3>Secure Configuration — $40 per device</h3>
-    <p>Hardening, secure setup, and protection for laptops, desktops, and mobile devices.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
-
-      <div class="paypal-wrapper">
-        <div id="paypal-container-H6P7MCLGU334G"></div>
-      </div>
-    </div>
-
-    <script>
-      paypal.HostedButtons({ hostedButtonId: "H6P7MCLGU334G" })
-        .render("#paypal-container-H6P7MCLGU334G");
-    </script>
-  </div>
-
-  <!-- Cloud Security Review -->
-  <div class="card">
-    <h3>Cloud Security Review — $55</h3>
-    <p>Security evaluation of cloud accounts such as Google, Microsoft, Apple, and more.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
-
-      <div class="paypal-wrapper">
-        <div id="paypal-container-K25BPLLJ7UX2G"></div>
-      </div>
-    </div>
-
-    <script>
-      paypal.HostedButtons({ hostedButtonId: "K25BPLLJ7UX2G" })
-        .render("#paypal-container-K25BPLLJ7UX2G");
-    </script>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
-  <a href="index.html">Home</a> |
-  <a href="services.html">Services</a> |
-  <a href="support.html">IT Support</a> |
-  <a href="faq.html">FAQ</a>
-</footer>
-
-</body>
-</html>
+/* Prevent PayPal injected CSS from leaking */
+.paypal-wrapper,
+[id^="paypal-container"] {
+  isolation: isolate;
+  overflow: visible;
+}
