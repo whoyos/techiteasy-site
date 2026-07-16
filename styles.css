@@ -1,4 +1,4 @@
-/* GLOBAL VARIABLES */
+/* GLOBAL */
 :root {
   --bg: #ffffff;
   --text: #111827;
@@ -7,11 +7,8 @@
   --accent: #1d4ed8;
   --card: #f9fafb;
   --border: #e5e7eb;
+  --footer: #f3f4f6;
   font-family: system-ui, "Segoe UI", Roboto, Arial;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 body {
@@ -19,6 +16,10 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* HEADER */
@@ -57,25 +58,13 @@ body {
   padding: 8px 10px;
   border-radius: 6px;
   color: var(--muted);
+  text-decoration: none;
 }
 
 .nav-links a.active {
   background: var(--card);
   color: var(--text);
   font-weight: 600;
-}
-
-/* SECTIONS */
-section {
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-section h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 16px;
 }
 
 /* HERO */
@@ -97,9 +86,21 @@ section h2 {
   margin-bottom: 20px;
 }
 
-/* GRID LAYOUTS */
-.skills-grid,
-.pricing-table {
+/* SECTIONS */
+section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* GRID */
+.skills-grid {
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -107,8 +108,7 @@ section h2 {
 }
 
 /* CARDS */
-.skill-card,
-.pricing-card {
+.skill-card {
   background: var(--card);
   padding: 24px;
   border-radius: 12px;
@@ -116,5 +116,50 @@ section h2 {
   text-align: center;
 }
 
-.pricing-icon {
-  margin-bottom:
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: var(--accent);
+}
+
+.btn.secondary {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn.secondary:hover {
+  background: var(--card);
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--footer);
+  margin-top: 40px;
+}
+
+.footer-link {
+  display: block;
+  margin-top: 8px;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
