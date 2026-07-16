@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Diagnostics – TECH IT EASY IT SERVICES LLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <title>Remote Diagnostics | TECH IT EASY IT SERVICES LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 
   <!-- PayPal SDK -->
   <script 
@@ -14,80 +15,87 @@
 
 <body>
 
-<header class="site-header">
-  <div class="logo">
-    <img src="logo.png" class="logo-img" alt="Tech It Easy Logo">
-    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
-  </div>
-  <nav class="nav-links">
+<header>
+  <h1>Remote Diagnostics</h1>
+  <p>Fast, Accurate, Affordable Device Troubleshooting</p>
+
+  <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="projects.html">Portfolio</a>
-    <a href="devices.html">Device Sales</a>
-    <a href="diagnostics.html" class="active">Diagnostics</a>
-    <a href="contact.html">Contact</a>
+    <a href="diagnostics.html">Diagnostics</a>
+    <a href="devices.html">Devices</a>
+    <a href="support.html">IT Support</a>
+    <a href="faq.html">FAQ</a>
   </nav>
 </header>
 
-<main>
-
 <section>
-  <h2>🔍 Diagnostics</h2>
+  <h2>What is Remote Diagnostics?</h2>
   <p>
-    Hardware and software issues require proper evaluation before repair or service.  
-    Diagnostics allow us to determine the exact problem and provide accurate pricing and recommendations.
+    Remote Diagnostics allows us to analyze your device, identify issues, and provide solutions 
+    without needing physical access. Perfect for laptops, desktops, tablets, and mobile devices.
   </p>
 
-  <div class="skills-grid">
+  <div class="card">
+    <h3>What We Check</h3>
+    <ul>
+      <li>System performance issues</li>
+      <li>Software errors</li>
+      <li>Startup problems</li>
+      <li>Network connectivity issues</li>
+      <li>Malware or suspicious activity</li>
+      <li>Storage and memory health</li>
+    </ul>
+  </div>
 
-    <div class="pricing-card">
-      <h3>🧪 Remote Diagnostics Session</h3>
-      <p>Full evaluation of your device, including error analysis, hardware condition check, and repair recommendations.</p>
-      <p class="price">$30 / session</p>
+  <div class="card">
+    <h3>Price: $30</h3>
+    <p>Includes full diagnostic report and recommended solutions.</p>
 
-      <!-- Stripe Button -->
+    <div class="payment-row">
+      <!-- Stripe -->
       <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" 
          class="btn primary" target="_blank" rel="noopener">
         Pay with Stripe
       </a>
 
-      <!-- PayPal Button Container -->
-      <div id="paypal-container-DIAGNOSTICS" style="margin-top:12px;"></div>
+      <!-- PayPal -->
+      <div id="paypal-container-PMU4ELQW24DM8"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "PMU4ELQW24DM8",
+        }).render("#paypal-container-PMU4ELQW24DM8");
+      </script>
     </div>
-
-    <div class="pricing-card">
-      <h3>📋 After Payment</h3>
-      <p>
-        After completing payment, you will receive instructions to begin your remote diagnostics session.  
-        Please ensure you have a stable internet connection and access to your device.
-      </p>
-      <a href="contact.html" class="btn secondary">Confirm Payment & Contact</a>
-    </div>
-
   </div>
 </section>
 
-</main>
+<div class="dark-section">
+  <h2>How It Works</h2>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC</p>
-  <div class="footer-legal">
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="agreement.html">Service Agreement</a>
-    <a href="refund.html">Refund Policy</a>
-    <a href="disclaimer.html">Legal Disclaimer</a>
+  <div class="card">
+    <h3>Step 1 — Payment</h3>
+    <p>Choose Stripe or PayPal to begin your diagnostic session.</p>
   </div>
+
+  <div class="card">
+    <h3>Step 2 — Secure Remote Session</h3>
+    <p>We connect using encrypted remote tools to inspect your device safely.</p>
+  </div>
+
+  <div class="card">
+    <h3>Step 3 — Full Report</h3>
+    <p>You receive a detailed breakdown of issues and recommended fixes.</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
+  <a href="index.html">Home</a> |
+  <a href="services.html">Services</a> |
+  <a href="support.html">IT Support</a> |
+  <a href="faq.html">FAQ</a>
 </footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // PayPal Diagnostics Button
-  paypal.HostedButtons({
-    hostedButtonId: "H5ND5GCJ5UHZC" // replace with your diagnostics PayPal button ID if different
-  }).render("#paypal-container-DIAGNOSTICS");
-</script>
 
 </body>
 </html>
