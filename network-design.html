@@ -1,43 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Network Design Request – TECH IT EASY IT SERVICES LLC</title>
-<link rel="stylesheet" href="styles.css?v=4">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Design | TECH IT EASY IT SERVICES LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="logo">
-    <img src="logo.png" class="logo-img" alt="Tech It Easy Logo">
-    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
-  </div>
-  <nav class="nav-links">
+<header>
+  <h1>Network Design Services</h1>
+  <p>Home Networks • Business Networks • Secure Infrastructure</p>
+
+  <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    plan.</li>
-  <li>Optional remote or on‑site setup.</li>
-</ol>
+    <a href="diagnostics.html">Diagnostics</a>
+    <a href="devices.html">Devices</a>
+    <a href="support.html">IT Support</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+</header>
 
-<p>Start your network design request:</p>
-<a href="contact.html" class="btn primary">Submit Network Request</a>
+<section>
+  <h2>Home Network Design</h2>
 
-</section>
-</main>
+  <div class="card">
+    <h3>Starting at $60</h3>
+    <p>
+      We optimize your home Wi‑Fi, configure routers, improve coverage,  
+      and secure your network against unauthorized access.
+    </p>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC</p>
-  <div class="footer-legal">
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="agreement.html">Service Agreement</a>
-    <a href="refund.html">Refund Policy</a>
-    <a href="disclaimer.html">Legal Disclaimer</a>
+    <div class="payment-row">
+      <!-- Stripe -->
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
+         class="btn primary" target="_blank">
+        Pay with Stripe
+      </a>
+
+      <!-- PayPal -->
+      <div id="paypal-container-8BQ4999VNGFWJ"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "8BQ4999VNGFWJ",
+        }).render("#paypal-container-8BQ4999VNGFWJ");
+      </script>
+    </div>
   </div>
-</footer>
+</section>
 
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<section class="dark-section">
+  <h2>Business Network Design</h2>
+
+  <div class="card">
+    <h3>Starting at $120</h3>
+    <p>
+      Professional network planning for offices, shops, and multi‑user environments.  
+      Includes topology design, hardware recommendations, security layers,  
+      and scalability planning for future growth.
+    </p>
+
+    <div class="payment-row">
+      <!-- Stripe -->
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
+         class="btn primary" target="_blank">
+        Pay with Stripe
+      </a>
+
+      <!-- PayPal -->
+      <div id="paypal-container-B7PWMLVLM36TN"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "B7PWMLVLM36TN",
+        }).render("#paypal-container-B7PWMLVLM36TN");
+      </script>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What We Provide</h2>
+
+  <div class="card">
+    <ul>
+      <li>Router & switch configuration</li>
+      <li>Wi‑Fi coverage optimization</li>
+      <li>Network security hardening</li>
+      <li>Firewall setup & segmentation</li>
+      <li>VPN configuration</li>
+      <li>Hardware recommendations</li>
+      <li>Scalable network planning</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
+  <a href="index.html">Home</a> |
+  <a href="services.html">Services</a> |
+  <a href="support.html">IT Support</a> |
+  <a href="faq.html">FAQ</a>
+</footer>
 
 </body>
 </html>
