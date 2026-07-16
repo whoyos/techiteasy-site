@@ -1,69 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Cybersecurity Assessment – TECH IT EASY IT SERVICES LLC</title>
-<link rel="stylesheet" href="styles.css?v=4">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Assessment | TECH IT EASY IT SERVICES LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="logo">
-    <img src="logo.png" class="logo-img" alt="Tech It Easy Logo">
-    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
-  </div>
-  <nav class="nav-links">
+<header>
+  <h1>Cybersecurity Assessment</h1>
+  <p>Protect Your Devices, Accounts & Digital Identity</p>
+
+  <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="projects.html">Portfolio</a>
-    <a href="devices.html">Device Sales</a>
     <a href="diagnostics.html">Diagnostics</a>
-    <a href="contact.html">Contact</a>
+    <a href="devices.html">Devices</a>
+    <a href="support.html">IT Support</a>
+    <a href="faq.html">FAQ</a>
   </nav>
 </header>
 
-<main>
 <section>
-<h2>🔐 Cybersecurity Assessment Request</h2>
-<p>Protect your devices, data, and business with a full cybersecurity evaluation.</p>
+  <h2>Full Cybersecurity Assessment</h2>
 
-<h3>Assessment Includes</h3>
-<ul>
-  <li>Threat detection</li>
-  <li>Vulnerability scanning</li>
-  <li>Secure configuration review</li>
-  <li>Cloud security evaluation</li>
-  <li>Network security analysis</li>
-  <li>Device protection recommendations</li>
-  <li>Privacy and compliance guidance</li>
-</ul>
+  <div class="card">
+    <h3>Starting at $60</h3>
+    <p>
+      A complete review of your digital footprint, device security, account protection,  
+      and exposure risks. You receive a full report with actionable recommendations.
+    </p>
 
-<h3>How It Works</h3>
-<ol>
-  <li>You submit your request.</li>
-  <li>We perform a remote cybersecurity assessment.</li>
-  <li>You receive a full report with recommendations.</li>
-</ol>
+    <div class="payment-row">
+      <!-- Stripe -->
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
+         class="btn primary" target="_blank">
+        Pay with Stripe
+      </a>
 
-<p>Begin your cybersecurity assessment:</p>
-<a href="contact.html" class="btn primary">Request Assessment</a>
-
-</section>
-</main>
-
-<footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC</p>
-  <div class="footer-legal">
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="agreement.html">Service Agreement</a>
-    <a href="refund.html">Refund Policy</a>
-    <a href="disclaimer.html">Legal Disclaimer</a>
+      <!-- PayPal -->
+      <div id="paypal-container-8HDQ9DYLTJSJ6"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "8HDQ9DYLTJSJ6",
+        }).render("#paypal-container-8HDQ9DYLTJSJ6");
+      </script>
+    </div>
   </div>
-</footer>
+</section>
 
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<section class="dark-section">
+  <h2>Secure Configuration</h2>
+
+  <div class="card">
+    <h3>$40 per device</h3>
+    <p>
+      We harden your device security, configure safe settings, remove vulnerabilities,  
+      and ensure your system is protected against modern threats.
+    </p>
+
+    <div class="payment-row">
+      <!-- Stripe -->
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
+         class="btn primary" target="_blank">
+        Pay with Stripe
+      </a>
+
+      <!-- PayPal -->
+      <div id="paypal-container-H6P7MCLGU334G"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "H6P7MCLGU334G",
+        }).render("#paypal-container-H6P7MCLGU334G");
+      </script>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cloud Security Review</h2>
+
+  <div class="card">
+    <h3>Starting at $55</h3>
+    <p>
+      We secure your cloud accounts (Google, Microsoft, Apple, etc.),  
+      review permissions, detect vulnerabilities, and strengthen your digital identity.
+    </p>
+
+    <div class="payment-row">
+      <!-- Stripe -->
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
+         class="btn primary" target="_blank">
+        Pay with Stripe
+      </a>
+
+      <!-- PayPal -->
+      <div id="paypal-container-K25BPLLJ7UX2G"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "K25BPLLJ7UX2G",
+        }).render("#paypal-container-K25BPLLJ7UX2G");
+      </script>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <h2>What We Check</h2>
+
+  <div class="card">
+    <ul>
+      <li>Device security posture</li>
+      <li>Account protection & MFA setup</li>
+      <li>Password strength & breach exposure</li>
+      <li>Cloud account vulnerabilities</li>
+      <li>Network security risks</li>
+      <li>Malware indicators</li>
+      <li>Privacy leaks & tracking exposure</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
+  <a href="index.html">Home</a> |
+  <a href="services.html">Services</a> |
+  <a href="support.html">IT Support</a> |
+  <a href="faq.html">FAQ</a>
+</footer>
 
 </body>
 </html>
