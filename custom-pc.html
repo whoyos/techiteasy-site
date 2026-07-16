@@ -1,66 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Custom PC Build Request – TECH IT EASY IT SERVICES LLC</title>
-<link rel="stylesheet" href="styles.css?v=4">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom PC Build | TECH IT EASY IT SERVICES LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="logo">
-    <img src="logo.png" class="logo-img" alt="Tech It Easy Logo">
-    <div class="logo-text">TECH IT EASY IT SERVICES LLC</div>
-  </div>
-  <nav class="nav-links">
+<header>
+  <h1>Custom PC Build Services</h1>
+  <p>Professional Design • Expert Assembly • Optimized Performance</p>
+
+  <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
-    <a href="projects.html">Portfolio</a>
-    <a href="devices.html">Device Sales</a>
     <a href="diagnostics.html">Diagnostics</a>
-    <a href="contact.html">Contact</a>
+    <a href="devices.html">Devices</a>
+    <a href="support.html">IT Support</a>
+    <a href="faq.html">FAQ</a>
   </nav>
 </header>
 
-<main>
 <section>
-<h2>🖥 Custom PC Build Request</h2>
-<p>We design and build custom PCs tailored to your needs — gaming, productivity, business, server, or specialized workloads.</p>
+  <h2>PC Build Design</h2>
 
-<h3>What We Offer</h3>
-<ul>
-  <li>Custom gaming PC builds</li>
-  <li>Business workstation builds</li>
-  <li>Server and NAS builds</li>
-  <li>Thermal optimization and airflow design</li>
-  <li>Component selection and compatibility checks</li>
-  <li>Budget‑optimized builds</li>
-</ul>
+  <div class="card">
+    <h3>Starting at $50</h3>
+    <p>
+      We design a custom PC tailored to your needs — gaming, productivity, editing, or business.  
+      Includes component selection, compatibility check, and performance planning.
+    </p>
 
-<h3>How It Works</h3>
-<ol>
-  <li>You submit your requirements.</li>
-  <li>We design a build tailored to your needs.</li>
-  <li>You approve the parts list.</li>
-  <li>We assemble, test, and optimize the system.</li>
-</ol>
+    <div class="payment-row">
+      <!-- Stripe -->
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
+         class="btn primary" target="_blank">
+        Pay with Stripe
+      </a>
 
-<p>Ready to begin?</p>
-<a href="contact.html" class="btn primary">Submit Build Request</a>
-
-</section>
-</main>
-
-<footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC</p>
-  <div class="footer-legal">
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="agreement.html">Service Agreement</a>
-    <a href="refund.html">Refund Policy</a>
-    <a href="disclaimer.html">Legal Disclaimer</a>
+      <!-- PayPal -->
+      <div id="paypal-container-R2Y4V95J5D5TN"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "R2Y4V95J5D5TN",
+        }).render("#paypal-container-R2Y4V95J5D5TN");
+      </script>
+    </div>
   </div>
+</section>
+
+<section class="dark-section">
+  <h2>PC Assembly</h2>
+
+  <div class="card">
+    <h3>Starting at $80</h3>
+    <p>
+      Full PC assembly with cable management, thermal optimization, BIOS configuration,  
+      and stress testing to ensure maximum stability and performance.
+    </p>
+
+    <div class="payment-row">
+      <!-- Stripe -->
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
+         class="btn primary" target="_blank">
+        Pay with Stripe
+      </a>
+
+      <!-- PayPal -->
+      <div id="paypal-container-CQSP9SYSF8B9A"></div>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "CQSP9SYSF8B9A",
+        }).render("#paypal-container-CQSP9SYSF8B9A");
+      </script>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Why Choose Us?</h2>
+
+  <div class="card">
+    <ul>
+      <li>Expert component selection</li>
+      <li>Thermal and airflow optimization</li>
+      <li>Professional cable management</li>
+      <li>Gaming, editing, and workstation builds</li>
+      <li>Stress testing and stability verification</li>
+      <li>Lifetime support for your build</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
+  <a href="index.html">Home</a> |
+  <a href="services.html">Services</a> |
+  <a href="support.html">IT Support</a> |
+  <a href="faq.html">FAQ</a>
 </footer>
 
-<script>document.getElementById("year").textContent
+</body>
+</html>
