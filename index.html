@@ -4,12 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TECH IT EASY IT SERVICES LLC</title>
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- PayPal SDK -->
-  <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=EUR">
-  </script>
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 
 <body>
@@ -22,23 +17,23 @@
 
   <nav class="nav-links">
     <a href="index.html" class="active">Home</a>
-    <a href="projects.html">Portfolio</a>
     <a href="services.html">Services</a>
+    <a href="projects.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <main>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Reliable IT Services, Hardware Repair & Secure Workflows</h1>
+      <h1>Professional IT Services, Cybersecurity & Technical Consulting</h1>
       <p class="subtitle">
-        Professional diagnostics, remote support, business tech planning, and resilient storage systems.
+        Over 10 years of experience delivering secure, reliable, and scalable technology solutions.
       </p>
 
-      <a href="https://calendly.com/techiteasy" class="btn primary" target="_blank" rel="noopener">
+      <a href="https://calendly.com/techiteasy" class="btn primary" target="_blank">
         Book a Consultation
       </a>
     </div>
@@ -46,96 +41,52 @@
 
   <!-- SERVICES PREVIEW -->
   <section>
-    <h2>Skills & Services</h2>
+    <h2>What We Offer</h2>
     <div class="skills-grid">
 
       <div class="skill-card">
-        <h3>Hardware Repair & Diagnostics</h3>
-        <p>Board-level diagnostics, power-injection testing, micro-soldering, and device repair.</p>
+        <h3>IT Consulting</h3>
+        <p>Personal and business consulting for networks, devices, workflows, and infrastructure.</p>
       </div>
 
       <div class="skill-card">
-        <h3>Business & App Planning</h3>
-        <p>Technical planning, workflow design, and documentation for apps and business systems.</p>
+        <h3>Cybersecurity</h3>
+        <p>Threat protection, secure configurations, vulnerability assessments, and cloud security.</p>
       </div>
 
       <div class="skill-card">
-        <h3>Remote IT Support</h3>
-        <p>Secure remote troubleshooting, setup, and optimization.</p>
+        <h3>IT Support</h3>
+        <p>Remote troubleshooting, system optimization, OS changes, and device configuration.</p>
       </div>
 
       <div class="skill-card">
-        <h3>Storage & Backup Systems</h3>
-        <p>Resilient, self-owned storage solutions for families and small businesses.</p>
+        <h3>Hardware & Devices</h3>
+        <p>Diagnostics, repair guidance, peripherals, mobile devices, and custom PC design.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- PAYMENTS SECTION -->
+  <!-- PORTFOLIO PREVIEW -->
   <section>
-    <h2>Payments & Donations</h2>
-    <p>Support our work or book a consultation securely through Stripe or PayPal.</p>
+    <h2>Experience & Portfolio</h2>
+    <p>
+      With over a decade in IT, cybersecurity, hardware repair, networking, and cloud systems,
+      TECH IT EASY IT SERVICES LLC delivers reliable solutions for individuals and businesses.
+    </p>
 
-    <div class="pricing-table">
-
-      <!-- Consultation Payment -->
-      <div class="pricing-card">
-        <div class="pricing-icon">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-            <path d="M4 4h16v10H5.17L4 15.17V4z" stroke="#2563eb" stroke-width="2"/>
-            <path d="M8 8h8M8 11h5" stroke="#2563eb" stroke-width="2"/>
-          </svg>
-        </div>
-
-        <h3>Consultation Session</h3>
-        <p>Professional consultation for business or technical guidance.</p>
-        <p class="price">€50 / session</p>
-
-        <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" 
-           class="btn primary" target="_blank" rel="noopener">
-           Pay with Stripe
-        </a>
-
-        <div id="paypal-container-CONSULTATION"></div>
-      </div>
-
-      <!-- Donation -->
-      <div class="pricing-card">
-        <div class="pricing-icon">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-            <path d="M12 21c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z" stroke="#2563eb" stroke-width="2"/>
-            <path d="M12 8v5l3 3" stroke="#2563eb" stroke-width="2"/>
-          </svg>
-        </div>
-
-        <h3>Support & Donations</h3>
-        <p>Help us continue providing reliable IT services and community support.</p>
-        <p class="price">Any amount</p>
-
-        <div id="paypal-container-DONATION"></div>
-      </div>
-
-    </div>
+    <a href="projects.html" class="btn secondary">View Portfolio</a>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC. All rights reserved.</p>
+  <p>© <span id="year"></span> TECH IT EASY IT SERVICES LLC</p>
+  <a href="terms.html" class="footer-link">Terms & Conditions</a>
 </footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-
-  // PayPal Buttons
-  paypal.HostedButtons({
-    hostedButtonId: "H5ND5GCJ5UHZC" // Consultation
-  }).render("#paypal-container-CONSULTATION");
-
-  paypal.HostedButtons({
-    hostedButtonId: "YOUR_DONATION_BUTTON_ID" // Replace with your donation button ID
-  }).render("#paypal-container-DONATION");
 </script>
 
 </body>
