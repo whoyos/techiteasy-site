@@ -87,4 +87,209 @@ section {
 /* Fix vertical text issue */
 .card h3, .card p, .card ul, .card li, .card span {
   writing-mode: horizontal-tb;
-  text-orientation
+  text-orientation: mixed;
+  white-space: normal;
+  word-break: normal;
+  text-align: left;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #1d4ed8;
+}
+
+/* Payment Row */
+.payment-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+/* Footer */
+footer {
+  background: #0a0f2c;
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+  margin
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-container-EGH3ZK64TW396"></div>
+      </div>
+    </div>
+
+    <script>
+      paypal.HostedButtons({ hostedButtonId: "EGH3ZK64TW396" })
+        .render("#paypal-container-EGH3ZK64TW396");
+    </script>
+  </div>
+
+  <!-- Business Consulting -->
+  <div class="card">
+    <h3>Business Consulting — $45</h3>
+    <p>Professional guidance for small businesses, IT planning, workflows, and secure operations.</p>
+
+    <div class="payment-row">
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-container-6H6VLC6ENMJ42"></div>
+      </div>
+    </div>
+
+    <script>
+      paypal.HostedButtons({ hostedButtonId: "6H6VLC6ENMJ42" })
+        .render("#paypal-container-6H6VLC6ENMJ42");
+    </script>
+  </div>
+</section>
+
+<section class="dark-section">
+  <h2>IT Support</h2>
+
+  <!-- Remote Support -->
+  <div class="card">
+    <h3>Remote Support — $40</h3>
+    <p>Full remote troubleshooting for Windows, macOS, and mobile devices.</p>
+
+    <div class="payment-row">
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-container-7W2RSPJCM5A2S"></div>
+      </div>
+    </div>
+
+    <script>
+      paypal.HostedButtons({ hostedButtonId: "7W2RSPJCM5A2S" })
+        .render("#paypal-container-7W2RSPJCM5A2S");
+    </script>
+  </div>
+
+  <!-- System Optimization -->
+  <div class="card">
+    <h3>System Optimization — $35</h3>
+    <p>Speed improvements, cleanup, performance tuning, and stability fixes.</p>
+
+    <div class="payment-row">
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-container-DNUXEJTNPH8FE"></div>
+      </div>
+    </div>
+
+    <script>
+      paypal.HostedButtons({ hostedButtonId: "DNUXEJTNPH8FE" })
+        .render("#paypal-container-DNUXEJTNPH8FE");
+    </script>
+  </div>
+
+  <!-- OS Installation -->
+  <div class="card">
+    <h3>OS Installation / Reset — $50</h3>
+    <p>Fresh OS installation, reset, or recovery for Windows or macOS.</p>
+
+    <div class="payment-row">
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-container-GC3NZGK39GKEL"></div>
+      </div>
+    </div>
+
+    <script>
+      paypal.HostedButtons({ hostedButtonId: "GC3NZGK39GKEL" })
+        .render("#paypal-container-GC3NZGK39GKEL");
+    </script>
+  </div>
+</section>
+
+<section>
+  <h2>Cybersecurity</h2>
+
+  <!-- Cybersecurity Assessment -->
+  <div class="card">
+    <h3>Cybersecurity Assessment — $60</h3>
+    <p>Full security review of devices, accounts, and digital footprint.</p>
+
+    <div class="payment-row">
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-container-8HDQ9DYLTJSJ6"></div>
+      </div>
+    </div>
+
+    <script>
+      paypal.HostedButtons({ hostedButtonId: "8HDQ9DYLTJSJ6" })
+        .render("#paypal-container-8HDQ9DYLTJSJ6");
+    </script>
+  </div>
+
+  <!-- Secure Configuration -->
+  <div class="card">
+    <h3>Secure Configuration — $40 per device</h3>
+    <p>Hardening, secure setup, and protection for laptops, desktops, and mobile devices.</p>
+
+    <div class="payment-row">
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-container-H6P7MCLGU334G"></div>
+      </div>
+    </div>
+
+    <script>
+      paypal.HostedButtons({ hostedButtonId: "H6P7MCLGU334G" })
+        .render("#paypal-container-H6P7MCLGU334G");
+    </script>
+  </div>
+
+  <!-- Cloud Security Review -->
+  <div class="card">
+    <h3>Cloud Security Review — $55</h3>
+    <p>Security evaluation of cloud accounts such as Google, Microsoft, Apple, and more.</p>
+
+    <div class="payment-row">
+      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00" class="btn primary" target="_blank">Pay with Stripe</a>
+
+      <div class="paypal-wrapper">
+        <div id="paypal-container-K25BPLLJ7UX2G"></div>
+      </div>
+    </div>
+
+    <script>
+      paypal.HostedButtons({ hostedButtonId: "K25BPLLJ7UX2G" })
+        .render("#paypal-container-K25BPLLJ7UX2G");
+    </script>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
+  <a href="index.html">Home</a> |
+  <a href="services.html">Services</a> |
+  <a href="support.html">IT Support</a> |
+  <a href="faq.html">FAQ</a>
+</footer>
+
+</body>
+</html>
