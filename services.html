@@ -59,22 +59,22 @@
   <h2>IT Support</h2>
 
   <div class="card">
-    <h3>Remote Support — $42</h3>
-    <p>Full remote troubleshooting for Windows, macOS, and mobile devices.</p>
+  <h3>Remote Support — $42</h3>
+  <p>Full remote troubleshooting for Windows, macOS, and mobile devices.</p>
 
-    <div class="payment-row">
-      <a <script async
-  src="https://js.stripe.com/v3/buy-button.js">
-</script>
+  <div class="payment-row">
+    <!-- Stripe Script (Loads the button functionality) -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
-<stripe-buy-button
-  buy-button-id="buy_btn_1Tu8WWPxRHJ5JhqgrLUwfllY"
-  publishable-key="pk_live_51TtJW7PxRHJ5Jhqgp8Q9X86VdVf7qJM5vBsSDdgnD93f8wp5YyPMslqCoRfpSzuC0S1BgenN1VCahAIW9qdNSL1L00WAsutsgD"
->
-</stripe-buy-button>
-      </a>
-    </div>
+    <!-- Stripe Button (Displays the actual button) -->
+    <stripe-buy-button
+      buy-button-id="buy_btn_1Tu8WWPxRHJ5JhqgrLUwfllY"
+      publishable-key="pk_live_51TtJW7PxRHJ5Jhqgp8Q9X86VdVf7qJM5vBsSDdgnD93f8wp5YyPMslqCoRfpSzuC0S1BgenN1VCahAIW9qdNSL1L00WAsutsgD"
+    >
+    </stripe-buy-button>
   </div>
+</div>
+
 
   <div class="card">
     <h3>System Optimization — $35</h3>
