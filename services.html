@@ -55,45 +55,39 @@
   </div>
 </section>
 
+<!-- Load the Stripe script once at the top of your section or in your HTML <head> -->
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
 <section class="dark-section">
   <h2>IT Support</h2>
 
+  <!-- Card 1: Remote Support -->
   <div class="card">
-  <h3>Remote Support — $42</h3>
-  <p>Full remote troubleshooting for Windows, macOS, and mobile devices.</p>
-
+    <h3>Remote Support — $42</h3>
+    <p>Full remote troubleshooting for Windows, macOS, and mobile devices.</p>
     <div class="payment-row">
-      <a  <script async
-  src="https://js.stripe.com/v3/buy-button.js">
-</script>
-
-<stripe-buy-button
-  buy-button-id="buy_btn_1TuAbLPxRHJ5JhqgwvbKfmqW"
-  publishable-key="pk_live_51TtJW7PxRHJ5Jhqgp8Q9X86VdVf7qJM5vBsSDdgnD93f8wp5YyPMslqCoRfpSzuC0S1BgenN1VCahAIW9qdNSL1L00WAsutsgD"
->
-</stripe-buy-button>
-      </a>
+      <stripe-buy-button
+        buy-button-id="buy_btn_1TuAbLPxRHJ5JhqgwvbKfmqW"
+        publishable-key="pk_live_51TtJW7PxRHJ5Jhqgp8Q9X86VdVf7qJM5vBsSDdgnD93f8wp5YyPMslqCoRfpSzuC0S1BgenN1VCahAIW9qdNSL1L00WAsutsgD"
+      >
+      </stripe-buy-button>
     </div>
   </div>
 
-
+  <!-- Card 2: System Optimization -->
   <div class="card">
     <h3>System Optimization — $35</h3>
     <p>Speed improvements, cleanup, performance tuning, and stability fixes.</p>
-
     <div class="payment-row">
-      <a  <script async
-  src="https://js.stripe.com/v3/buy-button.js">
-</script>
-
-<stripe-buy-button
-  buy-button-id="buy_btn_1TuASEPxRHJ5JhqgARAHfBcp"
-  publishable-key="pk_live_51TtJW7PxRHJ5Jhqgp8Q9X86VdVf7qJM5vBsSDdgnD93f8wp5YyPMslqCoRfpSzuC0S1BgenN1VCahAIW9qdNSL1L00WAsutsgD"
->
-</stripe-buy-button>
-      </a>
+      <stripe-buy-button
+        buy-button-id="buy_btn_1TuASEPxRHJ5JhqgARAHfBcp"
+        publishable-key="pk_live_51TtJW7PxRHJ5Jhqgp8Q9X86VdVf7qJM5vBsSDdgnD93f8wp5YyPMslqCoRfpSzuC0S1BgenN1VCahAIW9qdNSL1L00WAsutsgD"
+      >
+      </stripe-buy-button>
     </div>
   </div>
+</section>
+
 
   <div class="card">
     <h3>OS Installation / Reset — $50</h3>
