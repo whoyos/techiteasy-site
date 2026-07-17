@@ -3,61 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connecting to Support...</title>
+    <title>Payment Successful - Tech It Easy</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        ol {
-            text-align: left;
-            margin: 25px auto;
-            max-width: 450px;
-            line-height: 1.6;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #0076FF;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
+        body { font-family: sans-serif; background: #121212; color: #ffffff; text-align: center; padding: 40px 20px; }
+        .card { max-width: 600px; margin: 0 auto; background: #1e1e1e; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        h1 { color: #4bb543; margin-bottom: 20px; }
+        .action-block { display: none; text-align: left; line-height: 1.6; }
+        .blue-btn { display: inline-block; background: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }
+        .blue-btn:hover { background: #0056b3; }
+        ol { padding-left: 20px; }
+        /* Simple Formspree Dark Theme Styling */
+        form { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+        input, textarea { background: #2a2a2a; border: 1px solid #444; color: white; padding: 10px; border-radius: 4px; }
+        button[type="submit"] { background: #4bb543; color: white; padding: 12px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Payment Successful!</h1>
-        <p>Let's get connected and fix your device.</p>
-        
-        <ol>
-            <li>Click the blue button below to download the secure connection app.</li>
-            <li>Open and run the downloaded file.</li>
-            <li><strong>Mac Users:</strong> If prompted, go to System Settings and allow Screen Recording/Accessibility.</li>
-        </ol>
 
-        <!-- Replace the URL below with your actual HelpWire operator connection link -->
-        <a href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" class="btn">
-            Download Connection App
-        </a>
+<div class="card">
+    <h1>Payment Successful!</h1>
+    <p>Thank you for choosing Tech It Easy. Let's finish getting you sorted out.</p>
+    <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+
+    <!-- WORKFLOW 1: HELPWIRE REMOTE APP DOWNLOAD -->
+    <div id="block-helpwire" class="action-block">
+        <h3>Connect with a Technician immediately:</h3>
+        <ol>
+            <li>Click the blue button below to download the temporary HelpWire support client app.</li>
+            <li>Run the file. No installation or registration is required.</li>
+            <li>Leave the app open so our operator can request connection access.</li>
+        </ol>
+        <!-- REPLACE THE URL BELOW WITH YOUR PERMANENT HELPWIRE CUSTOMER LINK -->
+        <a href="https://helpwire.app" class="blue-btn" target="_blank">Download HelpWire App</a>
     </div>
+
+    <!-- WORKFLOW 2: CALENDLY APPOINTMENT BOOKING -->
+    <div id="block-calendar" class="action-block">
+        <h3>Schedule Your Consultation Slot:</h3>
+        <p>Please select a convenient date and time below to lock in your live consultation session.</p>
+        
+        <!-- CALENDLY EMBED ELEMENT -->
+        <!-- REPLACE THE 'data-url' WITH YOUR ACTUAL CALENDLY BOOKING LINK -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com" style="min-width:320px;height:630px;"></div>
+        <script type="text/javascript" src="https://calendly.com" async></script>
+    </div>
+
+    <!-- WORKFLOW 3: FORMSPREE INTAKE QUESTIONS -->
+    <div id="block-form" class="action-block">
+        <h3>Provide Service Details & Drop-off info:</h3>
+        <p>Please fill out this quick technical intake form so we know exactly what device model and symptoms we are treating.</p>
+        
+        <!-- FORMSPREE ELEMENT -->
+        <!-- REPLACE THE ACTION URL WITH YOUR UNIQUE FORMSPREE ID KEY -->
+        <form action="https://formspree.io" method="POST">
+            <label>Your Full Name</label>
+            <input type="text" name="name" required>
+            
+            <label>Device Model (e.g., iPhone 14, Dell XPS 15)</label>
+            <input type="text" name="device" required>
+            
+            <label>Detailed Issue Description / Preferred Drop-off Time</label>
+            <textarea name="message" rows="4" placeholder="Describe what's wrong, or tell us when you plan to drop off your device..." required></textarea>
+            
+            <button type="submit">Submit Details</button>
+        </form>
+    </div>
+
+    <!-- DEFAULT BACKUP BLOCK -->
+    <div id="block-default" class="action-block" style="display: block;">
+        <h3>Thank you for your order!</h3>
+        <p>Please check your inbox for an automated text or email with the next steps regarding your scheduled IT service.</p>
+    </div>
+</div>
+
+<script>
+    // Extract the "action" parameter from the browser URL address bar
+    const urlParams = new URLSearchParams(window.location.search);
+    const workflowAction = urlParams.get('action');
+
+    if (workflowAction) {
+        // Hide the basic default block
+        document.getElementById('block-default').style.display = 'none';
+
+        // Reveal the exact interaction widget needed
+        const targetBlock = document.getElementById('block-' + workflowAction);
+        if (targetBlock) {
+            targetBlock.style.display = 'block';
+        } else {
+            document.getElementById('block-default').style.display = 'block';
+        }
+    }
+</script>
+
 </body>
 </html>
