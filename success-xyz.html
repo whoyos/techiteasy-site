@@ -90,16 +90,26 @@
         // Populate the hidden Formspree input field silently
         const hiddenInput = document.getElementById('purchased-service');
         if (hiddenInput) { hiddenInput.value = cleanName; }
+           // 2. Format and display the service name nicely at the top of the card
+    if (serviceName) {
+        const cleanName = serviceName.replaceAll('-', ' ');
+        document.getElementById('display-service-name').innerText = "Service: " + cleanName;
         
-        // Pass the service name straight into Calendly if tracking parameter is supported
+        // Populate the hidden Formspree input field silently
+        const hiddenInput = document.getElementById('purchased-service');
+        if (hiddenInput) { hiddenInput.value = cleanName; }
+        
+        // Lock the inline widget directly onto the matching Calendly event path
         const calendlyWidget = document.getElementById('calendly-frame');
         if (calendlyWidget) {
-            // Appends custom parameters to your root calendar booking dashboard link
-            calendlyWidget.setAttribute('data-url', `https://calendly.com?a1=${encodeURIComponent(cleanName)}`);
+            // Converts "Personal-Tech-Consulting" to lowercase "personal-tech-consulting" to match your Calendly link folder
+            const eventSlug = serviceName.toLowerCase();
+            calendlyWidget.setAttribute('data-url', `https://calendly.com{eventSlug}`);
         }
     } else {
         document.getElementById('display-service-name').style.display = 'none';
     }
+
 
     // 3. Reveal the correct functional interface panel
     if (workflowAction) {
