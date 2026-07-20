@@ -7,23 +7,25 @@
     <style>
         body { font-family: sans-serif; background: #121212; color: #ffffff; text-align: center; padding: 40px 20px; }
         .card { max-width: 600px; margin: 0 auto; background: #1e1e1e; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        h1 { color: #4bb543; margin-bottom: 20px; }
+        h1 { color: #4bb543; margin-bottom: 5px; }
+        .service-badge { display: inline-block; background: #333; color: #aaa; padding: 5px 12px; border-radius: 20px; font-size: 14px; margin-bottom: 25px; text-transform: replace("-", " "); }
         .action-block { display: none; text-align: left; line-height: 1.6; }
         .blue-btn { display: inline-block; background: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }
         .blue-btn:hover { background: #0056b3; }
         ol { padding-left: 20px; }
-        /* Simple Formspree Dark Theme Styling */
         form { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
-        input, textarea { background: #2a2a2a; border: 1px solid #444; color: white; padding: 10px; border-radius: 4px; }
-        button[type="submit"] { background: #4bb543; color: white; padding: 12px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        input, textarea { background: #2a2a2a; border: 1px solid #444; color: white; padding: 10px; border-radius: 4px; font-size: 15px; }
+        button[type="submit"] { background: #4bb543; color: white; padding: 12px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 10px;}
+        label { font-weight: bold; color: #ccc; }
     </style>
 </head>
 <body>
 
 <div class="card">
     <h1>Payment Successful!</h1>
-    <p>Thank you for choosing Tech It Easy. Let's finish getting you sorted out.</p>
-    <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+    <!-- This badge lets the client know the system recognized their specific order -->
+    <div id="display-service-name" class="service-badge">Processing Order...</div>
+    <hr style="border: 0; border-top: 1px solid #333; margin: 0 0 20px 0;">
 
     <!-- WORKFLOW 1: HELPWIRE REMOTE APP DOWNLOAD -->
     <div id="block-helpwire" class="action-block">
@@ -33,8 +35,7 @@
             <li>Run the file. No installation or registration is required.</li>
             <li>Leave the app open so our operator can request connection access.</li>
         </ol>
-        <!-- REPLACE THE URL BELOW WITH YOUR PERMANENT HELPWIRE CUSTOMER LINK -->
-        <a href=https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" class="blue-btn" target="_blank">Download HelpWire App</a>
+        <a href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" class="blue-btn" target="_blank">Download HelpWire App</a>
     </div>
 
     <!-- WORKFLOW 2: CALENDLY APPOINTMENT BOOKING -->
@@ -42,9 +43,7 @@
         <h3>Schedule Your Consultation Slot:</h3>
         <p>Please select a convenient date and time below to lock in your live consultation session.</p>
         
-        <!-- CALENDLY EMBED ELEMENT -->
-        <!-- REPLACE THE 'data-url' WITH YOUR ACTUAL CALENDLY BOOKING LINK -->
-        <div class="calendly-inline-widget" data-url="https://calendly.com/techiteasy style="min-width:320px;height:630px;"></div>
+        <div class="calendly-inline-widget" id="calendly-frame" data-url="https://calendly.com/techiteasy" style="min-width:320px;height:630px;"></div>
         <script type="text/javascript" src="https://calendly.com" async></script>
     </div>
 
@@ -53,14 +52,15 @@
         <h3>Provide Service Details & Drop-off info:</h3>
         <p>Please fill out this quick technical intake form so we know exactly what device model and symptoms we are treating.</p>
         
-        <!-- FORMSPREE ELEMENT -->
-        <!-- REPLACE THE ACTION URL WITH YOUR UNIQUE FORMSPREE ID KEY -->
         <form action="https://formspree.io/f/xzdnzpka" method="POST">
+            <!-- HIDDEN FIELD FOR DYNAMIC SERVICE TRACKING -->
+            <input type="hidden" id="purchased-service" name="Service Paid For" value="Not Specified">
+
             <label>Your Full Name</label>
-            <input type="text" name="name" required>
+            <input type="text" name="name" required placeholder="John Doe">
             
-            <label>Device Model (e.g., iPhone 14, Dell XPS 15)</label>
-            <input type="text" name="device" required>
+            <label>Device Model</label>
+            <input type="text" name="device" required placeholder="e.g., iPhone 14, Dell XPS 15">
             
             <label>Detailed Issue Description / Preferred Drop-off Time</label>
             <textarea name="message" rows="4" placeholder="Describe what's wrong, or tell us when you plan to drop off your device..." required></textarea>
@@ -77,15 +77,33 @@
 </div>
 
 <script>
-    // Extract the "action" parameter from the browser URL address bar
+    // 1. Parse the tracking codes out of the address URL
     const urlParams = new URLSearchParams(window.location.search);
     const workflowAction = urlParams.get('action');
+    const serviceName = urlParams.get('service');
 
+    // 2. Format and display the service name nicely at the top of the card
+    if (serviceName) {
+        const cleanName = serviceName.replaceAll('-', ' ');
+        document.getElementById('display-service-name').innerText = "Service: " + cleanName;
+        
+        // Populate the hidden Formspree input field silently
+        const hiddenInput = document.getElementById('purchased-service');
+        if (hiddenInput) { hiddenInput.value = cleanName; }
+        
+        // Pass the service name straight into Calendly if tracking parameter is supported
+        const calendlyWidget = document.getElementById('calendly-frame');
+        if (calendlyWidget) {
+            // Appends custom parameters to your root calendar booking dashboard link
+            calendlyWidget.setAttribute('data-url', `https://calendly.com?a1=${encodeURIComponent(cleanName)}`);
+        }
+    } else {
+        document.getElementById('display-service-name').style.display = 'none';
+    }
+
+    // 3. Reveal the correct functional interface panel
     if (workflowAction) {
-        // Hide the basic default block
         document.getElementById('block-default').style.display = 'none';
-
-        // Reveal the exact interaction widget needed
         const targetBlock = document.getElementById('block-' + workflowAction);
         if (targetBlock) {
             targetBlock.style.display = 'block';
