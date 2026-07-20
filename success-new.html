@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Service Confirmation - Tech It Easy</title>
+  <style>
+    body { font-family: sans-serif; background:#121212; color:#fff; padding:30px; }
+    .card { max-width:900px; margin:0 auto; background:#1e1e1e; padding:24px; border-radius:8px; }
+    .service-badge { display:inline-block; background:#333; color:#aaa; padding:6px 12px; border-radius:20px; margin-bottom:12px; }
+    .action-block { display:none; margin-top:16px; }
+    .blue-btn { background:#007bff; color:#fff; padding:10px 16px; border-radius:6px; text-decoration:none; display:inline-block; }
+    input, textarea { width:100%; padding:10px; margin-top:6px; background:#2a2a2a; border:1px solid #444; color:#fff; border-radius:6px; }
+    label { color:#ccc; font-weight:bold; margin-top:12px; display:block; }
+    button[type="submit"] { background:#4bb543; color:#fff; padding:10px 14px; border:none; border-radius:6px; cursor:pointer; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="main-heading">Service Request Received</h1>
+    <div id="display-service-name" class="service-badge">Processing...</div>
+    <hr style="border:0;border-top:1px solid #333;margin:12px 0;">
+
+    <div id="block-helpwire" class="action-block">
+      <h3>Connect with a Technician immediately</h3>
+      <ol>
+        <li>Click the button below to download the HelpWire support client.</li>
+        <li>Run the file and leave it open so our operator can request connection access.</li>
+      </ol>
+      <a id="helpwire-link" class="blue-btn" target="_blank" rel="noopener">Download HelpWire App</a>
+    </div>
+
+    <div id="block-calendar" class="action-block">
+      <h3>Schedule Your Consultation Slot</h3>
+      <p>Select a convenient date and time below to lock in your live consultation session.</p>
+      <div id="calendly-frame" class="calendly-inline-widget" style="min-width:320px;height:630px;"></div>
+    </div>
+
+    <div id="block-form" class="action-block">
+      <h3>Provide Service Details & Drop-off info</h3>
+      <p>Please fill out this quick intake form so we know exactly what device model and symptoms we are treating.</p>
+
+      <form id="universal-form" action="https://formspree.io/f/xzdnzpka" method="POST">
+        <input type="hidden" id="service-hidden" name="Service Paid For" value="">
+        <label>Your Full Name</label>
+        <input type="text" name="name" required placeholder="John Doe">
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="you@example.com">
+        <label>Device / Notes</label>
+        <textarea name="message" rows="4" required placeholder="Describe the issue or drop-off details..."></textarea>
+        <button type="submit">Submit Details</button>
+      </form>
+    </div>
+
+    <div id="block-default" class="action-block" style="display:block;">
+      <h3>Thanks — next steps</h3>
+      <p>We received your request. If you paid, Stripe redirected you here after payment. If not, please use the options below to continue.</p>
+      <p id="followup-note" style="color:#ccc"></p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const HELPWIRE_URL = 'https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu';
+      const CALENDLY_BASE = 'https://calendly.com/techiteasy';
+
+      const params = new URLSearchParams(window.location.search);
+      const action = params.get('action') || '';
+      const serviceSlug = params.get('service') || '';
+      const serviceLabel = serviceSlug ? serviceSlug.replaceAll('-', ' ') : 'Not specified';
+
+      const badge = document.getElementById('display-service-name');
+      if (badge) badge.innerText = 'Service: ' + serviceLabel;
+
+      const hidden = document.getElementById('service-hidden');
+      if (hidden) hidden.value = serviceLabel;
+
+      const hw = document.getElementById('helpwire-link');
+      if (hw) hw.href = HELPWIRE_URL;
+
+      document.getElementById('block-default').style.display = 'none';
+      const target = document.getElementById('block-' + action);
+      if (target) {
+        target.style.display = 'block';
+        if (action === 'calendar') {
+          const calendlyWidget = document.getElementById('calendly-frame');
+          if (calendlyWidget) {
+            calendlyWidget.setAttribute('data-url', CALENDLY_BASE + '?a1=' + encodeURIComponent(serviceLabel));
+            const s = document.createElement('script');
+            s.src = 'https://assets.calendly.com/assets/external/widget.js';
+            s.async = true;
+            document.head.appendChild(s);
+          }
+        }
+      } else {
+        document.getElementById('block-default').style.display = 'block';
+        document.getElementById('followup-note').innerText = 'If you were redirected here after a Stripe payment, the form below will be shown automatically for services that require intake details.';
+      }
+    })();
+  </script>
+</body>
+</html>
