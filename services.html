@@ -1,15 +1,3 @@
-<header>
-    <div class="logo">
-        <img src="logo.png" alt="Tech It Easy IT Services LLC" style="height: 50px;">
-    </div>
-    <nav>
-        <a href="index.html">Home</a> | 
-        <a href="services.html">IT Services</a> | 
-        <a href="network-design.html">Network Design</a> | 
-        <a href="support.html">Get Remote Support</a>
-    </nav>
-</header>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +10,12 @@
 <body>
 
 <header>
+  <div class="logo">
+    <img src="logo.png" alt="Tech It Easy IT Services LLC" style="height: 50px;">
+  </div>
+
   <h1>Our Services</h1>
-  <p>Professional IT, Cybersecurity, Consulting & Device Support</p>
+  <p>Professional IT, Cybersecurity & Consulting</p>
 
   <nav>
     <a href="index.html">Home</a>
@@ -35,122 +27,82 @@
   </nav>
 </header>
 
+<!-- CONSULTING -->
 <section>
   <h2>Consulting</h2>
 
   <div class="card">
     <h3>Personal Consulting — $30</h3>
     <p>One‑on‑one guidance for personal tech needs, device issues, and digital organization.</p>
-
-    <div class="payment-row">
-      <a <!-- Calendly link widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/techiteasy/personal-consulting'});return false;">Reserve your time now</a>
-<!-- Calendly link widget end -->
-      </a>
-    </div>
+    <a class="btn primary" href="success.html?action=calendar&service=personal-consulting">
+      Book Personal Consulting
+    </a>
   </div>
 
   <div class="card">
     <h3>Business Consulting — $45</h3>
     <p>Professional guidance for small businesses, IT planning, workflows, and secure operations.</p>
-
-    <div class="payment-row">
-      <a <!-- Calendly link widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/techiteasy/30min'});return false;">Schedule time with me</a>
-<!-- Calendly link widget end -->
-      </a>
-    </div>
+    <a class="btn primary" href="success.html?action=calendar&service=business-consulting">
+      Book Business Consulting
+    </a>
   </div>
 </section>
 
-<!-- Load the Stripe script once at the top of your section or in your HTML <head> -->
-<script async src="https://js.stripe.com/v3/buy-button.js"></script>
-
+<!-- IT SUPPORT -->
 <section class="dark-section">
   <h2>IT Support</h2>
 
-  <!-- Card 1: Remote Support -->
   <div class="card">
-    <h3>Remote Support — $42</h3>
+    <h3>Remote Support — $40</h3>
     <p>Full remote troubleshooting for Windows, macOS, and mobile devices.</p>
-    <div class="payment-row">
-      <stripe-buy-button
-        buy-button-id="buy_btn_1TuAbLPxRHJ5JhqgwvbKfmqW"
-        publishable-key="pk_live_51TtJW7PxRHJ5Jhqgp8Q9X86VdVf7qJM5vBsSDdgnD93f8wp5YyPMslqCoRfpSzuC0S1BgenN1VCahAIW9qdNSL1L00WAsutsgD"
-      >
-      </stripe-buy-button>
-    </div>
+    <a class="btn primary" href="success.html?action=helpwire&service=remote-support">
+      Start Remote Support
+    </a>
   </div>
 
-  <!-- Card 2: System Optimization -->
   <div class="card">
     <h3>System Optimization — $35</h3>
     <p>Speed improvements, cleanup, performance tuning, and stability fixes.</p>
-    <div class="payment-row">
-      <stripe-buy-button
-        buy-button-id="buy_btn_1TuASEPxRHJ5JhqgARAHfBcp"
-        publishable-key="pk_live_51TtJW7PxRHJ5Jhqgp8Q9X86VdVf7qJM5vBsSDdgnD93f8wp5YyPMslqCoRfpSzuC0S1BgenN1VCahAIW9qdNSL1L00WAsutsgD"
-      >
-      </stripe-buy-button>
-    </div>
+    <a class="btn primary" href="success.html?action=form&service=system-optimization">
+      Submit Optimization Details
+    </a>
   </div>
-</section>
-
 
   <div class="card">
     <h3>OS Installation / Reset — $50</h3>
     <p>Fresh OS installation, reset, or recovery for Windows or macOS.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_5"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-    </div>
+    <a class="btn primary" href="success.html?action=form&service=os-installation">
+      Submit OS Installation Details
+    </a>
   </div>
 </section>
 
+<!-- CYBERSECURITY -->
 <section>
   <h2>Cybersecurity</h2>
 
   <div class="card">
     <h3>Cybersecurity Assessment — $60</h3>
     <p>Full security review of devices, accounts, and digital footprint.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_6"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-    </div>
+    <a class="btn primary" href="success.html?action=calendar&service=cybersecurity-assessment">
+      Book Cybersecurity Assessment
+    </a>
   </div>
 
   <div class="card">
     <h3>Secure Configuration — $40 per device</h3>
     <p>Hardening, secure setup, and protection for laptops, desktops, and mobile devices.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_7"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-    </div>
+    <a class="btn primary" href="success.html?action=form&service=secure-configuration">
+      Submit Secure Configuration Details
+    </a>
   </div>
 
   <div class="card">
     <h3>Cloud Security Review — $55</h3>
     <p>Security evaluation of cloud accounts such as Google, Microsoft, Apple, and more.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_8"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-    </div>
+    <a class="btn primary" href="success.html?action=calendar&service=cloud-security-review">
+      Book Cloud Security Review
+    </a>
   </div>
 </section>
 
