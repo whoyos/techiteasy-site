@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta viewport="width=device-width, initial-scale=1.0">
   <title>Devices | TECH IT EASY IT SERVICES LLC</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -27,45 +27,51 @@
   <h2>Device Repair & Setup</h2>
 
   <div class="card">
-    <h3>Mobile Device Repair — $45</h3>
+    <h3>Mobile Device Repair — Inquiry Only</h3>
     <p>Screen replacement, battery service, diagnostics, and hardware repair for phones and tablets.</p>
-
-<paypal-add-to-cart-button data-id="43PXP33KAU6VY"></paypal-add-to-cart-button>
-<script>
-  cartPaypal.AddToCart({ id: "43PXP33KAU6VY" })
-</script>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_4"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-    </div>
+    <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
   </div>
 
   <div class="card">
-    <h3>Computer Repair — $50</h3>
+    <h3>Computer Repair — Inquiry Only</h3>
     <p>Hardware and software troubleshooting for desktops and laptops. Includes full system testing.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_5"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-    </div>
+    <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
   </div>
 
   <div class="card">
-    <h3>Device Setup — $30</h3>
+    <h3>Device Setup — Inquiry Only</h3>
     <p>Initial configuration, account setup, and software installation for new devices.</p>
-
-    <div class="payment-row">
-      <a href="https://buy.stripe.com/YOUR_STRIPE_LINK_6"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-    </div>
+    <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
   </div>
+</section>
+
+<section class="dark-section">
+  <h2>Submit an Inquiry</h2>
+  <p>Please fill out the form below. We will contact you with details and next steps.</p>
+
+  <form action="https://formspree.io/f/xzdnzpka" method="POST" class="inquiry-form">
+    <label>
+      Full Name:
+      <input type="text" name="name" required>
+    </label>
+
+    <label>
+      Email Address:
+      <input type="email" name="email" required>
+    </label>
+
+    <label>
+      Device Type:
+      <input type="text" name="device" placeholder="Example: iPhone 12, HP Laptop, Samsung Tablet" required>
+    </label>
+
+    <label>
+      Service Needed:
+      <textarea name="service" placeholder="Describe the issue or setup needed. If you only want to purchase parts, please mention it here." required></textarea>
+    </label>
+
+    <button type="submit" class="btn primary">Submit Inquiry</button>
+  </form>
 </section>
 
 <footer>
