@@ -8,7 +8,7 @@
         body { font-family: sans-serif; background: #121212; color: #ffffff; text-align: center; padding: 40px 20px; }
         .card { max-width: 600px; margin: 0 auto; background: #1e1e1e; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         h1 { color: #4bb543; margin-bottom: 5px; }
-        .service-badge { display: inline-block; background: #333; color: #aaa; padding: 5px 12px; border-radius: 20px; font-size: 14px; margin-bottom: 25px; text-transform: replace("-", " "); }
+        .service-badge { display: inline-block; background: #333; color: #aaa; padding: 5px 12px; border-radius: 20px; font-size: 14px; margin-bottom: 25px; }
         .action-block { display: none; text-align: left; line-height: 1.6; }
         .blue-btn { display: inline-block; background: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }
         .blue-btn:hover { background: #0056b3; }
@@ -23,7 +23,6 @@
 
 <div class="card">
     <h1>Payment Successful!</h1>
-    <!-- This badge lets the client know the system recognized their specific order -->
     <div id="display-service-name" class="service-badge">Processing Order...</div>
     <hr style="border: 0; border-top: 1px solid #333; margin: 0 0 20px 0;">
 
@@ -42,7 +41,6 @@
     <div id="block-calendar" class="action-block">
         <h3>Schedule Your Consultation Slot:</h3>
         <p>Please select a convenient date and time below to lock in your live consultation session.</p>
-        
         <div class="calendly-inline-widget" id="calendly-frame" data-url="https://calendly.com/techiteasy" style="min-width:320px;height:630px;"></div>
         <script type="text/javascript" src="https://calendly.com" async></script>
     </div>
@@ -51,20 +49,14 @@
     <div id="block-form" class="action-block">
         <h3>Provide Service Details & Drop-off info:</h3>
         <p>Please fill out this quick technical intake form so we know exactly what device model and symptoms we are treating.</p>
-        
         <form action="https://formspree.io/f/xzdnzpka" method="POST">
-            <!-- HIDDEN FIELD FOR DYNAMIC SERVICE TRACKING -->
             <input type="hidden" id="purchased-service" name="Service Paid For" value="Not Specified">
-
             <label>Your Full Name</label>
             <input type="text" name="name" required placeholder="John Doe">
-            
             <label>Device Model</label>
             <input type="text" name="device" required placeholder="e.g., iPhone 14, Dell XPS 15">
-            
             <label>Detailed Issue Description / Preferred Drop-off Time</label>
             <textarea name="message" rows="4" placeholder="Describe what's wrong, or tell us when you plan to drop off your device..." required></textarea>
-            
             <button type="submit">Submit Details</button>
         </form>
     </div>
@@ -77,7 +69,7 @@
 </div>
 
 <script>
-    // 1. Parse the tracking codes out of the address URL
+    // 1. Parse tracking arguments directly out of browser address bar URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const workflowAction = urlParams.get('action');
     const serviceName = urlParams.get('service');
@@ -90,19 +82,10 @@
         // Populate the hidden Formspree input field silently
         const hiddenInput = document.getElementById('purchased-service');
         if (hiddenInput) { hiddenInput.value = cleanName; }
-           // 2. Format and display the service name nicely at the top of the card
-    if (serviceName) {
-        const cleanName = serviceName.replaceAll('-', ' ');
-        document.getElementById('display-service-name').innerText = "Service: " + cleanName;
         
-        // Populate the hidden Formspree input field silently
-        const hiddenInput = document.getElementById('purchased-service');
-        if (hiddenInput) { hiddenInput.value = cleanName; }
-        
-        // Lock the inline widget directly onto the matching Calendly event path
+        // Lock the inline widget directly onto the matching Calendly event path folder
         const calendlyWidget = document.getElementById('calendly-frame');
         if (calendlyWidget) {
-            // Converts "Personal-Tech-Consulting" to lowercase "personal-tech-consulting" to match your Calendly link folder
             const eventSlug = serviceName.toLowerCase();
             calendlyWidget.setAttribute('data-url', `https://calendly.com{eventSlug}`);
         }
@@ -110,8 +93,7 @@
         document.getElementById('display-service-name').style.display = 'none';
     }
 
-
-    // 3. Reveal the correct functional interface panel
+    // 3. Reveal the correct functional interface panel matching the checkout setup action token
     if (workflowAction) {
         document.getElementById('block-default').style.display = 'none';
         const targetBlock = document.getElementById('block-' + workflowAction);
