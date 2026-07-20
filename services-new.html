@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services | TECH IT EASY IT SERVICES LLC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header>
+  <div class="logo"><img src="logo.png" alt="Tech It Easy" style="height:50px"></div>
+  <h1>Our Services</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="services.html">Services</a> |
+    <a href="devices.html">Devices</a> |
+    <a href="faq.html">FAQ</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2><i class="fa-solid fa-laptop-code"></i> IT Support</h2>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-headset"></i> Remote Support — $40</h3>
+      <p>Full remote troubleshooting for Windows, macOS, and mobile devices.</p>
+      <button class="btn primary" data-service="remote-support" data-paid="true">Start Remote Support</button>
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-screwdriver-wrench"></i> System Optimization — $35</h3>
+      <p>Speed improvements, cleanup, performance tuning, and stability fixes.</p>
+      <button class="btn primary" data-service="system-optimization" data-paid="true">Submit Optimization Details</button>
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-desktop"></i> OS Installation / Reset — $50</h3>
+      <p>Fresh OS installation, reset, or recovery for Windows or macOS.</p>
+      <button class="btn primary" data-service="os-installation" data-paid="true">Submit OS Installation Details</button>
+    </div>
+  </section>
+
+  <section>
+    <h2><i class="fa-solid fa-shield-halved"></i> Cybersecurity</h2>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-lock"></i> Cybersecurity Assessment — $60</h3>
+      <p>Full security review of devices, accounts, and digital footprint.</p>
+      <button class="btn primary" data-service="cybersecurity-assessment" data-paid="true">Book Cybersecurity Assessment</button>
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-user-shield"></i> Secure Configuration — $40 per device</h3>
+      <p>Hardening, secure setup, and protection for laptops, desktops, and mobile devices.</p>
+      <button class="btn primary" data-service="secure-configuration" data-paid="true">Submit Secure Configuration Details</button>
+    </div>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-cloud-shield"></i> Cloud Security Review — $55</h3>
+      <p>Security evaluation of cloud accounts such as Google, Microsoft, Apple, and more.</p>
+      <button class="btn primary" data-service="cloud-security-review" data-paid="true">Book Cloud Security Review</button>
+    </div>
+  </section>
+
+  <section>
+    <h2><i class="fa-solid fa-network-wired"></i> Network Design</h2>
+
+    <div class="card">
+      <h3><i class="fa-solid fa-diagram-project"></i> Network Design & Setup — $75</h3>
+      <p>Custom wired and wireless network planning for homes and businesses.</p>
+      <button class="btn primary" data-service="network-design" data-paid="true">Submit Network Design Request</button>
+    </div>
+  </section>
+</main>
+
+<script>
+  document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('button[data-service]');
+    if (!btn) return;
+    const service = btn.getAttribute('data-service');
+    const isPaid = btn.getAttribute('data-paid') === 'true';
+
+    if (isPaid) {
+      try {
+        btn.disabled = true;
+        const originalText = btn.innerText;
+        btn.innerText = 'Processing...';
+        const resp = await fetch('/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ service })
+        });
+        const data = await resp.json();
+        if (data.url) {
+          window.location = data.url;
+        } else {
+          alert('Error creating checkout session. Check console.');
+          console.error(data);
+          btn.disabled = false;
+          btn.innerText = originalText;
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Server error creating checkout session.');
+        btn.disabled = false;
+        btn.innerText = 'Try Again';
+      }
+    } else {
+      window.location = `success.html?action=form&service=${encodeURIComponent(service)}`;
+    }
+  });
+</script>
+</body>
+</html>
