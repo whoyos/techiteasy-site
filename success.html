@@ -40,10 +40,23 @@
     <!-- WORKFLOW 2: CALENDLY APPOINTMENT BOOKING -->
     <div id="block-calendar" class="action-block">
         <h3>Schedule Your Consultation Slot:</h3>
-        <p>Please select a convenient date and time below to lock in your live consultation session.</p>
-        <div class="calendly-inline-widget" id="calendly-frame" data-url="https://calendly.com/techiteasy" style="min-width:320px;height:630px;"></div>
-        <script type="text/javascript" src="https://calendly.com" async></script>
-    </div>
+
+        <p>
+            Please select a convenient date and time below to lock in your live consultation session.
+        </p>
+
+        <div
+        class="calendly-inline-widget"
+        data-url="https://calendly.com/techiteasy"
+        style="min-width:320px;height:700px;">
+        </div>
+
+        <script
+            type="text/javascript"
+            src="https://assets.calendly.com/assets/external/widget.js"
+            async>
+        </script>
+</div>
 
     <!-- WORKFLOW 3: FORMSPREE INTAKE QUESTIONS -->
     <div id="block-form" class="action-block">
@@ -66,7 +79,7 @@
         <h3>Thank you for your order!</h3>
         <p>Please check your inbox for an automated text or email with the next steps regarding your scheduled IT service.</p>
     </div>
-</div>
+    </div>
 
 <script>
     // 1. Parse tracking arguments directly out of browser address bar URL parameters
@@ -83,12 +96,7 @@
         const hiddenInput = document.getElementById('purchased-service');
         if (hiddenInput) { hiddenInput.value = cleanName; }
         
-        // Lock the inline widget directly onto the matching Calendly event path folder
-        const calendlyWidget = document.getElementById('calendly-frame');
-        if (calendlyWidget) {
-            const eventSlug = serviceName.toLowerCase();
-            calendlyWidget.setAttribute('data-url', `https://calendly.com{eventSlug}`);
-        }
+        
     } else {
         document.getElementById('display-service-name').style.display = 'none';
     }
