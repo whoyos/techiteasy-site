@@ -12,49 +12,66 @@
             padding: 20px;
         }
         .form-card {
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 10px;
+            background: #111827;
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #1f2937;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
         h1 {
             text-align: center;
             margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -0.05em;
         }
         .subtext {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            color: #9ca3af;
         }
         label {
             display: block;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #d1d5db;
         }
         input, select, textarea {
             width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #444;
-            background: #2a2a2a;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #374151;
+            background: #1f2937;
             color: white;
+            font-size: 15px;
+            transition: border-color 0.2s ease;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2563eb;
         }
         textarea {
             min-height: 120px;
+            resize: vertical;
         }
         .pay-btn {
             width: 100%;
-            margin-top: 25px;
-            padding: 18px;
-            font-size: 20px;
+            margin-top: 30px;
+            padding: 16px;
+            font-size: 18px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            background: #4bb543;
+            background: #2563eb;
             color: white;
             font-weight: bold;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            transition: all 0.2s ease;
         }
         .pay-btn:hover {
-            opacity: .9;
+            background: #1d4ed8;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -63,36 +80,47 @@
         <h1>TECH IT EASY IT SERVICES LLC</h1>
         <p>Start Your Service Request</p>
     </header>
+    
     <div class="container">
         <div class="form-card">
             <h1>🚀 Start Service Request</h1>
             <p class="subtext">
-                Select the service you need and continue securely to payment.
+                Select the service you need and continue securely to scheduling or checkout.
             </p>
+            
             <label for="service">Service Needed</label>
             <select id="service">
-                <option value="">Select Service</option>
-                <option value="consultation">Personal Tech Consultation ($59)</option>
-                <option value="remote">Remote IT Support ($79)</option>
-                <option value="optimization">System Optimization ($69)</option>
-                <option value="os">OS Installation / Reset ($89)</option>
-                <option value="secure">Secure Device Configuration ($79)</option>
-                <option value="cloud">Cloud Security Review ($119)</option>
-                <option value="business">Business Consulting ($99)</option>
-                <option value="cyber">Cybersecurity Assessment ($149)</option>
-                <option value="network">Network Design &amp; Setup ($199)</option>
-                <option value="website">Website Design &amp; Development (Quote Required)</option>
-                <option value="app">Custom Application Development (Quote Required)</option>
+                <option value="">-- Select a Service --</option>
+                <optgroup label="Standard Flat-Rate Services">
+                    <option value="consultation">Personal Tech Consultation ($59)</option>
+                    <option value="remote">Remote IT Support ($79)</option>
+                    <option value="optimization">System Optimization ($69)</option>
+                    <option value="os">OS Installation / Reset ($89)</option>
+                    <option value="secure">Secure Device Configuration ($79)</option>
+                    <option value="cloud">Cloud Security Review ($119)</option>
+                    <option value="business">Business Consulting ($99)</option>
+                    <option value="cyber">Cybersecurity Assessment ($149)</option>
+                    <option value="network">Network Design &amp; Setup ($199)</option>
+                </optgroup>
+                <optgroup label="Custom Engineering (Free Consultation)">
+                    <option value="website">Website Design &amp; Development (Quote Required)</option>
+                    <option value="app">Custom Application Development (Quote Required)</option>
+                </optgroup>
             </select>
+            
             <label>Name</label>
-            <input type="text" placeholder="Your Name">
+            <input type="text" placeholder="Your Name" required>
+            
             <label>Email</label>
-            <input type="email" placeholder="Your Email">
+            <input type="email" placeholder="Your Email" required>
+            
             <label>Phone</label>
             <input type="tel" placeholder="Phone Number">
-            <label>Describe Your Issue</label>
-            <textarea placeholder="Tell us how we can help..."></textarea>
-            <button class="pay-btn" onclick="goToCheckout()"> Pay &amp; Continue </button>
+            
+            <label>Describe Your Project or Issue</label>
+            <textarea placeholder="Tell us how we can help... If requesting a custom quote, please share your goals here."></textarea>
+            
+            <button class="pay-btn" onclick="goToCheckout()"> Continue </button>
         </div>
     </div>
 
@@ -110,31 +138,51 @@
 
         function goToCheckout() {
             const service = document.getElementById("service").value;
-            const links = {
-                consultation: "https://buy.stripe.com/dRm5kF5Gd0bucwp58d2Fa0d",
-                remote: "https://buy.stripe.com/4gM6oJb0xaQ8aoh4492Fa0m",
-                optimization: "https://buy.stripe.com/28EaEZ7Ol0buaoheIN2Fa0l",
-                os: "https://buy.stripe.com/5kQ00lfgNgas7c59ot2Fa0k",
-                secure: "https://buy.stripe.com/aFafZj0lTbUcdAtcAF2Fa0g",
-                cloud: "https://buy.stripe.com/eVq00l7OlcYg2VP1W12Fa0f",
-                business: "https://buy.stripe.com/6oUaEZd8Ff6odAteIN2Fa0h",
-                cyber: "https://buy.stripe.com/14A14p6KhaQ86817gl2Fa0j",
-                network: "https://buy.stripe.com/5kQ28t0lTbUc6811W12Fa0e"
-            };
-            if (service === "website") {
-                window.location = "https://calendly.com/techiteasy";
-                return;
-            }
-            if (service === "app") {
-                window.location = "https://calendly.com/techiteasy";
-                return;
-            }
+            
             if (!service) {
                 alert("Please select a service.");
                 return;
             }
-            window.location = links[service];
+
+            // Route custom development services directly to Calendly
+            if (service === "website" || service === "app") {
+                window.location.href = "https://calendly.com";
+                return;
+            }
+
+            // Fixed-rate service checkout mapping links
+            const links = {
+                consultation: "https://stripe.com",
+                remote: "https://stripe.com",
+                optimization: "https://stripe.com",
+                os: "https://stripe.com",
+                secure: "https://stripe.com",
+                cloud: "https://stripe.com",
+                business: "https://stripe.com",
+                cyber: "https://stripe.com",
+                network: "https://stripe.com"
+            };
+
+            if (links[service]) {
+                window.location.href = links[service];
+            }
         }
     </script>
+
+    <footer>
+        <p><i class="fa-solid fa-copyright"></i> 2026 TECH IT EASY IT SERVICES LLC</p>
+        <div class="footer-nav" style="margin-top: 10px;">
+            <a href="index.html">Home</a> • 
+            <a href="services.html">Services</a> • 
+            <a href="support.html">IT Support</a> • 
+            <a href="faq.html">FAQ</a>
+        </div>
+        <div class="legal-nav" style="margin-top: 15px; font-size: 13px; opacity: 0.8;">
+            <a href="terms.html" style="color: #93c5fd; text-decoration: none;">Terms &amp; Conditions</a> | 
+            <a href="privacy.html" style="color: #93c5fd; text-decoration: none;">Privacy Policy</a> | 
+            <a href="refund.html" style="color: #93c5fd; text-decoration: none;">Refund Policy</a> | 
+            <a href="agreement.html" style="color: #93c5fd; text-decoration: none;">Service Agreement</a>
+        </div>
+    </footer>
 </body>
 </html>
