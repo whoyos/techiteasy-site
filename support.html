@@ -5,63 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Support | TECH IT EASY IT SERVICES LLC</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
     <header>
-        <h1>IT Support</h1>
-        <p>Reliable remote troubleshooting for Windows, macOS, and mobile devices</p>
+        <div class="logo">
+            <img src="logo.png" alt="Tech It Easy IT Services LLC" style="height: 50px;">
+        </div>
+        <h1>IT Support Desk</h1>
+        <p>Secure, rapid remote response teams for Windows, macOS, and enterprise configurations</p>
         <nav>
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
             <a href="diagnostics.html">Diagnostics</a>
             <a href="devices.html">Devices</a>
-            <a href="support.html">IT Support</a>
+            <a href="support.html" class="active">IT Support</a>
             <a href="faq.html">FAQ</a>
         </nav>
     </header>
 
     <section>
-        <h2>Support Packages</h2>
-        <div class="card">
-            <h3>Remote Support — $79</h3>
-            <p>Full remote troubleshooting for desktops, laptops, and mobile devices. Includes secure connection setup and issue resolution.</p>
-            <div class="payment-row">
-                <a href="book-service.html?service=remote" class="btn primary"> Book Remote Support </a>
+        <h2><i class="fa-solid fa-headset"></i> Support Packages</h2>
+        <div class="services-grid">
+            
+            <div class="card">
+                <div>
+                    <div class="price-badge">Flat Fee — $79</div>
+                    <h3><i class="fa-solid fa-laptop-code"></i> Remote Support</h3>
+                    <p>Full secure remote desktop session troubleshooting. Resolves technical platform bugs across modern consumer and corporate systems.</p>
+                </div>
+                <a href="book-service.html?service=remote" class="btn primary"> Book Support Session </a>
             </div>
-        </div>
 
-        <div class="card">
-            <h3>System Optimization — $69</h3>
-            <p>Performance tuning, cleanup, and stability improvements for all operating systems.</p>
-            <div class="payment-row">
-                <a href="book-service.html?service=optimization" class="btn primary"> Book System Optimization </a>
+            <div class="card">
+                <div>
+                    <div class="price-badge">Flat Fee — $69</div>
+                    <h3><i class="fa-solid fa-gauge"></i> System Optimization</h3>
+                    <p>Complete OS operational adjustments. Includes cleanup parameters tracking redundant temp storage allocations, broken registry trees, and file systems maintenance.</p>
+                </div>
+                <a href="book-service.html?service=optimization" class="btn primary"> Book Optimization </a>
             </div>
-        </div>
 
-        <div class="card">
-            <h3>OS Installation / Reset — $89</h3>
-            <p>Fresh installation or reset of Windows or macOS with full configuration and updates.</p>
-            <div class="payment-row">
-                <a href="book-service.html?service=os" class="btn primary"> Book OS Installation / Reset </a>
+            <div class="card">
+                <div>
+                    <div class="price-badge">Flat Fee — $89</div>
+                    <h3><i class="fa-solid fa-window-restore"></i> OS Installation / Reset</h3>
+                    <p>Clean structural platform recovery re-deployments or complete clean instance restorations for Microsoft Windows or Apple macOS environments.</p>
+                </div>
+                <a href="book-service.html?service=os" class="btn primary"> Book Platform Reset </a>
             </div>
+
         </div>
     </section>
 
     <footer>
-    <p><i class="fa-solid fa-copyright"></i> 2026 TECH IT EASY IT SERVICES LLC</p>
-    <div class="footer-nav" style="margin-top: 10px;">
-        <a href="index.html">Home</a> • 
-        <a href="services.html">Services</a> • 
-        <a href="support.html">IT Support</a> • 
-        <a href="faq.html">FAQ</a>
-    </div>
-    <div class="legal-nav" style="margin-top: 15px; font-size: 13px; opacity: 0.8;">
-        <a href="terms.html" style="color: #93c5fd; text-decoration: none;">Terms &amp; Conditions</a> | 
-        <a href="privacy.html" style="color: #93c5fd; text-decoration: none;">Privacy Policy</a> | 
-        <a href="refund.html" style="color: #93c5fd; text-decoration: none;">Refund Policy</a> | 
-        <a href="agreement.html" style="color: #93c5fd; text-decoration: none;">Service Agreement</a>
-    </div>
-</footer>
-
+        <p><i class="fa-solid fa-copyright"></i> 2026 TECH IT EASY IT SERVICES LLC</p>
+        <div class="footer-nav" style="margin-top: 10px;">
+            <a href="index.html">Home</a> • 
+            <a href="services.html">Services</a> • 
+            <a href="support.html">IT Support</a> • 
+            <a href="faq.html">FAQ</a>
+        </div>
+        <div class="legal-nav" style="margin-top: 15px; font-size: 13px; opacity: 0.8;">
+            <a href="terms.html" style="color: #93c5fd; text-decoration: none;">Terms &amp; Conditions</a> | 
+            <a href="privacy.html" style="color: #93c5fd; text-decoration: none;">Privacy Policy</a> | 
+            <a href="refund.html" style="color: #93c5fd; text-decoration: none;">Refund Policy</a> | 
+            <a href="agreement.html" style="color: #93c5fd; text-decoration: none;">Service Agreement</a>
+        </div>
+    </footer>
 </body>
 </html>
