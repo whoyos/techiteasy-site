@@ -1,86 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta viewport="width=device-width, initial-scale=1.0">
-  <title>Devices | TECH IT EASY IT SERVICES LLC</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devices | TECH IT EASY IT SERVICES LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .inquiry-form label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .inquiry-form input, 
+        .inquiry-form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background: #2a2a2a;
+            color: white;
+            box-sizing: border-box;
+        }
+        .inquiry-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .inquiry-form .btn.primary {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #4bb543;
+            color: white;
+            font-weight: bold;
+        }
+        .inquiry-form .btn.primary:hover {
+            opacity: .9;
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <h1>Device Services</h1>
+        <p>Professional repair, configuration, and optimization for all devices</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="diagnostics.html">Diagnostics</a>
+            <a href="devices.html">Devices</a>
+            <a href="support.html">IT Support</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
 
-<header>
-  <h1>Device Services</h1>
-  <p>Professional repair, configuration, and optimization for all devices</p>
+    <section>
+        <h2>Device Repair &amp; Setup</h2>
+        <div class="card">
+            <h3>Mobile Device Repair — Inquiry Only</h3>
+            <p>Screen replacement, battery service, diagnostics, and hardware repair for phones and tablets.</p>
+            <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
+        </div>
+        <div class="card">
+            <h3>Computer Repair — Inquiry Only</h3>
+            <p>Hardware and software troubleshooting for desktops and laptops. Includes full system testing.</p>
+            <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
+        </div>
+        <div class="card">
+            <h3>Device Setup — Inquiry Only</h3>
+            <p>Initial configuration, account setup, and software installation for new devices.</p>
+            <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
+        </div>
+    </section>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="diagnostics.html">Diagnostics</a>
-    <a href="devices.html">Devices</a>
-    <a href="support.html">IT Support</a>
-    <a href="faq.html">FAQ</a>
-  </nav>
-</header>
+    <section class="dark-section">
+        <h2>Submit an Inquiry</h2>
+        <p>Please fill out the form below. We will contact you with details and next steps.</p>
+        <form action="https://formspree.io/f/xzdnzpka" method="POST" class="inquiry-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="name" required>
 
-<section>
-  <h2>Device Repair & Setup</h2>
+            <label for="email-address">Email Address:</label>
+            <input type="email" id="email-address" name="email" required>
 
-  <div class="card">
-    <h3>Mobile Device Repair — Inquiry Only</h3>
-    <p>Screen replacement, battery service, diagnostics, and hardware repair for phones and tablets.</p>
-    <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
-  </div>
+            <label for="device-type">Device Type:</label>
+            <input type="text" id="device-type" name="device" placeholder="Example: iPhone 12, HP Laptop, Samsung Tablet" required>
 
-  <div class="card">
-    <h3>Computer Repair — Inquiry Only</h3>
-    <p>Hardware and software troubleshooting for desktops and laptops. Includes full system testing.</p>
-    <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
-  </div>
+            <label for="service-needed">Service Needed:</label>
+            <textarea id="service-needed" name="service" placeholder="Describe the issue or setup needed. If you only want to purchase parts, please mention it here." required></textarea>
 
-  <div class="card">
-    <h3>Device Setup — Inquiry Only</h3>
-    <p>Initial configuration, account setup, and software installation for new devices.</p>
-    <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
-  </div>
-</section>
+            <button type="submit" class="btn primary">Submit Inquiry</button>
+        </form>
+    </section>
 
-<section class="dark-section">
-  <h2>Submit an Inquiry</h2>
-  <p>Please fill out the form below. We will contact you with details and next steps.</p>
-
-  <form action="https://formspree.io/f/xzdnzpka" method="POST" class="inquiry-form">
-    <label>
-      Full Name:
-      <input type="text" name="name" required>
-    </label>
-
-    <label>
-      Email Address:
-      <input type="email" name="email" required>
-    </label>
-
-    <label>
-      Device Type:
-      <input type="text" name="device" placeholder="Example: iPhone 12, HP Laptop, Samsung Tablet" required>
-    </label>
-
-    <label>
-      Service Needed:
-      <textarea name="service" placeholder="Describe the issue or setup needed. If you only want to purchase parts, please mention it here." required></textarea>
-    </label>
-
-    <button type="submit" class="btn primary">Submit Inquiry</button>
-  </form>
-</section>
-
-<footer>
-  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
-  <a href="index.html">Home</a> |
-  <a href="services.html">Services</a> |
-  <a href="support.html">IT Support</a> |
-  <a href="faq.html">FAQ</a>
-</footer>
-
+    <footer>
+        <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
+        <a href="index.html">Home</a> | <a href="services.html">Services</a> | <a href="support.html">IT Support</a> | <a href="faq.html">FAQ</a>
+    </footer>
 </body>
 </html>
