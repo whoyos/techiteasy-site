@@ -43,6 +43,13 @@ nav a:hover {
     background: rgba(255,255,255,0.15);
 }
 
+/* Highlights the current page link */
+nav a.active {
+    background: rgba(255, 255, 255, 0.25);
+    border-bottom: 2px solid #ffffff;
+    border-radius: 6px 6px 0 0;
+}
+
 /* Sections */
 section {
     padding: 40px 20px;
