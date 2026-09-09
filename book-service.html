@@ -82,7 +82,6 @@
     </header>
     
     <div class="container">
-        <!-- Replaced logic wrapper into a functional Formspree endpoint target hook -->
         <form id="booking-form" action="https://formspree.io" method="POST" class="form-card">
             <h1>🚀 Start Service Request</h1>
             <p class="subtext">
@@ -132,52 +131,54 @@
             const serviceDropdown = document.getElementById('service');
 
             if (selectedService && serviceDropdown) {
+                // Keep the exact URL value matched to dropdown elements
                 serviceDropdown.value = selectedService;
             }
         });
 
-        // Intercept standard form action for custom rules redirection paths
         document.getElementById('booking-form').addEventListener('submit', function(e) {
-            const service = document.getElementById("service").value;
+            e.preventDefault(); // Hold native submit loops securely
             
-            // Custom flow handling
+            const service = document.getElementById("service").value;
+            if (!service) {
+                alert("Please select a service.");
+                return;
+            }
+
+            // Route custom project leads directly via Formspree processing background workers into Calendly
             if (service === "website" || service === "app") {
-                e.preventDefault(); // Stop standard form reload jump
-                
                 const form = e.target;
                 const data = new FormData(form);
                 
-                // Submit project data to Formspree silently in the background
                 fetch(form.action, {
                     method: form.method,
                     body: data,
                     headers: { 'Accept': 'application/json' }
-                }).then(response => {
-                    // Redirect straight onto Calendly as soon as Formspree logs data
+                }).then(() => {
                     window.location.href = "https://calendly.com";
-                }).catch(error => {
-                    // Fallback redirect if network drops out
+                }).catch(() => {
                     window.location.href = "https://calendly.com";
                 });
                 return;
             }
 
-            // Fixed-rate Stripe checkout items
-            e.preventDefault();
+            // Strictly mapped verified case-preserving Stripe checkout URLs
             const links = {
-                consultation: "https://stripe.com",
-                remote: "https://stripe.com",
-                optimization: "https://stripe.com",
-                os: "https://stripe.com",
-                secure: "https://stripe.com",
-                cloud: "https://stripe.com",
-                business: "https://stripe.com",
-                cyber: "https://stripe.com",
-                network: "https://stripe.com"
+                consultation: "https://buy.stripe.com/dRm5kF5Gd0bucwp58d2Fa0d",
+                remote: "https://buy.stripe.com/4gM6oJb0xaQ8aoh4492Fa0m",
+                optimization: "https://buy.stripe.com/28EaEZ7Ol0buaoheIN2Fa0l",
+                os: "https://buy.stripe.com/5kQ00lfgNgas7c59ot2Fa0k",
+                secure: "https://buy.stripe.com/aFafZj0lTbUcdAtcAF2Fa0g",
+                cloud: "https://buy.stripe.com/eVq00l7OlcYg2VP1W12Fa0f",
+                business: "https://buy.stripe.com/6oUaEZd8Ff6odAteIN2Fa0h",
+                cyber: "https://buy.stripe.com/14A14p6KhaQ86817gl2Fa0j",
+                network: "https://buy.stripe.com/5kQ28t0lTbUc6811W12Fa0e"
             };
 
             if (links[service]) {
                 window.location.href = links[service];
+            } else {
+                alert("Routing mismatch. Please contact support.");
             }
         });
     </script>
