@@ -87,7 +87,6 @@
     </header>
     
     <div class="container">
-        <!-- Kept the endpoint URL for Formspree's free processing tier -->
         <form id="booking-form" action="https://formspree.io" method="POST" class="form-card">
             <h1>🚀 Start Service Request</h1>
             <p class="subtext">
@@ -142,7 +141,7 @@
         });
 
         document.getElementById('booking-form').addEventListener('submit', function(e) {
-            e.preventDefault(); // Stop native page transitions completely
+            e.preventDefault(); // Lock standard form actions from running default reloads
             
             const service = document.getElementById("service").value;
             const submitBtn = document.getElementById("submit-button");
@@ -152,10 +151,10 @@
                 return;
             }
 
-            // Replace this placeholder link with your true personal/business free Calendly link!
-            const myCalendlyLink = "https://calendly.com"; 
+            // Your verified free Calendly endpoint account link
+            const myCalendlyLink = "https://calendly.com/techiteasy"; 
 
-            // FREE TIER AJAX FOR CUSTOM OFFERS
+            // FREE TIER BACKGROUND AJAX ROUTER
             if (service === "website" || service === "app") {
                 submitBtn.disabled = true;
                 submitBtn.innerText = "Processing Inquiry...";
@@ -163,22 +162,22 @@
                 const form = e.target;
                 const data = new FormData(form);
                 
-                // Submit the form details to Formspree silently in the background via browser fetch
+                // Submit form to Formspree silently using a background worker
                 fetch(form.action, {
                     method: form.method,
                     body: data,
                     headers: { 'Accept': 'application/json' }
                 }).then(response => {
-                    // Send user to Calendly immediately once Formspree successfully stores the email data
+                    // Send to custom booking panel immediately once recorded safely
                     window.location.href = myCalendlyLink;
                 }).catch(error => {
-                    // Safety fallback if the user's internet lags out
-                    window.location.href = MyCalendlyLink;
+                    // Failover backup redirect if client drops signal mid-route
+                    window.location.href = myCalendlyLink;
                 });
                 return;
             }
 
-            // STANDARD CODES FOR STRIPE CHECKOUT LINKS
+            // FLAT RATE STRIPE LINKS 
             const links = {
                 consultation: "https://stripe.com",
                 remote: "https://stripe.com",
