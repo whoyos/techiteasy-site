@@ -207,8 +207,32 @@ footer a:hover {
 }
 
 /* Smartphone Scale Triggers */
+/* Tablet & Medium Screen Optimization */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* Clean 2-column grid for tablets */
+        gap: 20px;
+    }
+    section {
+        padding: 40px 25px;
+    }
+}
+
+/* Smartphone Scale Triggers */
 @media (max-width: 768px) {
-    header { padding: 25px 20px; }
-    section { padding: 40px 15px; }
-    .services-grid { grid-template-columns: 1fr; }
+    header { 
+        padding: 25px 20px; 
+    }
+    nav {
+        gap: 10px;
+    }
+    section { 
+        padding: 30px 15px; 
+    }
+    .services-grid { 
+        grid-template-columns: 1fr; /* 1 column for phones */
+    }
+    .card {
+        padding: 20px;
+    }
 }
