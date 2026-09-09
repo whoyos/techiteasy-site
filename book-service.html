@@ -82,14 +82,15 @@
     </header>
     
     <div class="container">
-        <div class="form-card">
+        <!-- Replaced logic wrapper into a functional Formspree endpoint target hook -->
+        <form id="booking-form" action="https://formspree.io" method="POST" class="form-card">
             <h1>🚀 Start Service Request</h1>
             <p class="subtext">
                 Select the service you need and continue securely to scheduling or checkout.
             </p>
             
             <label for="service">Service Needed</label>
-            <select id="service">
+            <select id="service" name="service" required>
                 <option value="">-- Select a Service --</option>
                 <optgroup label="Standard Flat-Rate Services">
                     <option value="consultation">Personal Tech Consultation ($59)</option>
@@ -108,24 +109,23 @@
                 </optgroup>
             </select>
             
-            <label>Name</label>
-            <input type="text" placeholder="Your Name" required>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
             
-            <label>Email</label>
-            <input type="email" placeholder="Your Email" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
             
-            <label>Phone</label>
-            <input type="tel" placeholder="Phone Number">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number">
             
-            <label>Describe Your Project or Issue</label>
-            <textarea placeholder="Tell us how we can help... If requesting a custom quote, please share your goals here."></textarea>
+            <label for="message">Describe Your Project or Issue</label>
+            <textarea id="message" name="message" placeholder="Tell us how we can help... If requesting a custom quote, please share your goals here." required></textarea>
             
-            <button class="pay-btn" onclick="goToCheckout()"> Continue </button>
-        </div>
+            <button type="submit" class="pay-btn"> Continue </button>
+        </form>
     </div>
 
     <script>
-        // Auto-select service from URL parameter
         document.addEventListener("DOMContentLoaded", () => {
             const urlParams = new URLSearchParams(window.location.search);
             const selectedService = urlParams.get('service');
@@ -136,21 +136,34 @@
             }
         });
 
-        function goToCheckout() {
+        // Intercept standard form action for custom rules redirection paths
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
             const service = document.getElementById("service").value;
             
-            if (!service) {
-                alert("Please select a service.");
-                return;
-            }
-
-            // Route custom development services directly to Calendly
+            // Custom flow handling
             if (service === "website" || service === "app") {
-                window.location.href = "https://calendly.com";
+                e.preventDefault(); // Stop standard form reload jump
+                
+                const form = e.target;
+                const data = new FormData(form);
+                
+                // Submit project data to Formspree silently in the background
+                fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    // Redirect straight onto Calendly as soon as Formspree logs data
+                    window.location.href = "https://calendly.com";
+                }).catch(error => {
+                    // Fallback redirect if network drops out
+                    window.location.href = "https://calendly.com";
+                });
                 return;
             }
 
-            // Fixed-rate service checkout mapping links
+            // Fixed-rate Stripe checkout items
+            e.preventDefault();
             const links = {
                 consultation: "https://stripe.com",
                 remote: "https://stripe.com",
@@ -166,7 +179,7 @@
             if (links[service]) {
                 window.location.href = links[service];
             }
-        }
+        });
     </script>
 
     <footer>
