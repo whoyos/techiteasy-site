@@ -1,168 +1,198 @@
-/* ============================ TECH IT EASY — BASE THEME ============================ */
+/* ============================ TECH IT EASY — MODERN BLUE THEME ============================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Roboto, sans-serif;
+    font-family: "Segoe UI", system-ui, Roboto, sans-serif;
 }
 
 body {
-    background: #f5f7fa;
-    color: #222;
+    background: #0b0f19; /* Deep premium midnight theme */
+    color: #f3f4f6;
     line-height: 1.6;
 }
 
-/* Header */
+/* Header & Navigation Hero */
 header {
-    background: linear-gradient(135deg, #0a0f2c, #1a2a6c, #2a4ea0);
+    background: linear-gradient(135deg, #030712, #0b1530, #0f255c);
     color: #fff;
-    padding: 25px 40px;
+    padding: 35px 40px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-bottom: 1px solid #1e293b;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* Navigation */
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    background: linear-gradient(to right, #60a5fa, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 15px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 nav a {
-    color: #fff;
+    color: #9ca3af;
     text-decoration: none;
     font-weight: 600;
-    padding: 8px 14px;
-    border-radius: 6px;
-    transition: 0.3s;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-nav a:hover {
-    background: rgba(255,255,255,0.15);
+nav a:hover, nav a.active {
+    color: #ffffff;
+    background: rgba(37, 99, 235, 0.15);
+    border-color: #2563eb;
 }
 
-/* Highlights the current page link */
-nav a.active {
-    background: rgba(255, 255, 255, 0.25);
-    border-bottom: 2px solid #ffffff;
-    border-radius: 6px 6px 0 0;
-}
-
-/* Sections */
+/* Advanced Bento Content Layout */
 section {
-    padding: 40px 20px;
-    max-width: 1100px;
+    padding: 60px 20px;
+    max-width: 1200px;
     margin: auto;
 }
 
-/* Dark Contrast Sections */
-.dark-section {
-    background: #111827;
-    color: #f9fafb;
-    border-radius: 12px;
-    padding: 40px 20px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-left: 4px solid #2563eb;
+    padding-left: 15px;
+    letter-spacing: -0.03em;
 }
 
-.dark-section .card {
-    background: #1f2937;
-    color: #fff;
-    border: 1px solid #374151;
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
 }
 
-/* Cards */
+/* Elite Cards System */
 .card {
-    background: #fff;
-    color: #222;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 25px;
-    width: 100%;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+    background: #111827;
+    border: 1px solid #1f2937;
+    padding: 30px;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .card h3 {
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .card p {
-    margin-bottom: 15px;
+    color: #9ca3af;
+    font-size: 15px;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
-/* Buttons */
-.btn {
+/* Modern Price & Badge Strips */
+.price-badge {
     display: inline-block;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 4px 12px;
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px dashed rgba(59, 130, 246, 0.3);
+    margin-bottom: 15px;
+    width: fit-content;
+}
+
+.price-badge.custom {
+    background: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* Clean Action Items */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
-    transition: 0.3s;
+    font-size: 15px;
     text-align: center;
+    transition: all 0.2s ease;
 }
 
 .btn.primary {
     background: #2563eb;
     color: #fff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
 }
 
 .btn.primary:hover {
     background: #1d4ed8;
+    transform: scale(1.02);
 }
 
-/* Payment Row & Utilities */
-.payment-row {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 15px;
+.btn.secondary {
+    background: transparent;
+    color: #d1d5db;
+    border: 1px solid #374151;
 }
 
-/* Footer */
-footer {
-    background: #0a0f2c;
+.btn.secondary:hover {
+    background: #1f2937;
     color: #fff;
-    padding: 25px;
+    border-color: #4b5563;
+}
+
+/* Footer Architecture */
+footer {
+    background: #030712;
+    padding: 40px 20px;
     text-align: center;
-    margin-top: 40px;
+    border-top: 1px solid #1e293b;
+    margin-top: 60px;
 }
 
 footer a {
-    color: #93c5fd;
+    color: #60a5fa;
     text-decoration: none;
-    margin: 0 10px;
+    transition: 0.2s;
 }
 
 footer a:hover {
+    color: #3b82f6;
     text-decoration: underline;
 }
 
-/* Responsive Scaling rules */
+/* Smartphone Scale Triggers */
 @media (max-width: 768px) {
-    header {
-        padding: 20px;
-    }
-    
-    nav {
-        gap: 10px;
-    }
-    
-    nav a {
-        font-size: 14px;
-        padding: 6px 10px;
-    }
-    
-    section {
-        padding: 20px 15px;
-    }
-    
-    .card {
-        padding: 20px;
-    }
+    header { padding: 25px 20px; }
+    section { padding: 40px 15px; }
+    .services-grid { grid-template-columns: 1fr; }
 }
