@@ -5,22 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devices | TECH IT EASY IT SERVICES LLC</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         .inquiry-form label {
             display: block;
             margin-top: 15px;
             margin-bottom: 5px;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 14px;
+            color: #d1d5db;
         }
-        .inquiry-form input, 
-        .inquiry-form textarea {
+        .inquiry-form input, .inquiry-form textarea {
             width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            border: 1px solid #444;
-            background: #2a2a2a;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #374151;
+            background: #1f2937;
             color: white;
             box-sizing: border-box;
+            font-size: 15px;
+            transition: border-color 0.2s ease;
+        }
+        .inquiry-form input:focus, .inquiry-form textarea:focus {
+            outline: none;
+            border-color: #2563eb;
         }
         .inquiry-form textarea {
             min-height: 120px;
@@ -29,70 +37,86 @@
         .inquiry-form .btn.primary {
             width: 100%;
             margin-top: 25px;
-            padding: 15px;
+            padding: 16px;
             font-size: 18px;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            background: #4bb543;
+            background: #2563eb;
             color: white;
             font-weight: bold;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            transition: all 0.2s ease;
         }
         .inquiry-form .btn.primary:hover {
-            opacity: .9;
+            background: #1d4ed8;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <header>
-    <!-- UNIFIED LOGO BRAND COMPONENT -->
-    <div class="logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
-        <!-- Graphic Logo Asset with black background removed via CSS blending -->
-        <img src="logo.png" alt="Tech It Easy Logo" style="height: 65px; width: auto; object-fit: contain; mix-blend-mode: screen;">
-        
-        <!-- Clean Typography Block -->
-        <div class="logo-brand-text" style="text-align: left;">
-            <span style="display: block; font-size: 24px; font-weight: 800; letter-spacing: 0.03em; color: #ffffff; line-height: 1.2;">TECH IT EASY</span>
-            <span style="display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; color: #60a5fa; line-height: 1;">IT SERVICES LLC</span>
+        <!-- UNIFIED LOGO BRAND COMPONENT -->
+        <div class="logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+            <!-- Graphic Logo Asset with black background removed via CSS blending -->
+            <img src="logo.png" alt="Tech It Easy Logo" style="height: 65px; width: auto; object-fit: contain; mix-blend-mode: screen;">
+            
+            <!-- Clean Typography Block -->
+            <div class="logo-brand-text" style="text-align: left;">
+                <span style="display: block; font-size: 24px; font-weight: 800; letter-spacing: 0.03em; color: #ffffff; line-height: 1.2;">TECH IT EASY</span>
+                <span style="display: block; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; color: #60a5fa; line-height: 1;">IT SERVICES LLC</span>
+            </div>
         </div>
-    </div>
-
-    <h1>Our Services</h1>
-    <p>Professional IT, Cybersecurity &amp; Custom Technical Deployments</p>
-    
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="diagnostics.html">Diagnostics</a>
-        <a href="devices.html">Devices</a>
-        <a href="support.html">IT Support</a>
-        <a href="faq.html">FAQ</a>
-    </nav>
-</header>
-
+        <h1>Device Services</h1>
+        <p>Professional assessment, component sourcing, and configuration setups</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="diagnostics.html">Diagnostics</a>
+            <a href="devices.html" class="active">Devices</a>
+            <a href="support.html">IT Support</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
 
     <section>
-        <h2>Device Repair &amp; Setup</h2>
-        <div class="card">
-            <h3>Mobile Device Repair — Inquiry Only</h3>
-            <p>Screen replacement, battery service, diagnostics, and hardware repair for phones and tablets.</p>
-            <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
-        </div>
-        <div class="card">
-            <h3>Computer Repair — Inquiry Only</h3>
-            <p>Hardware and software troubleshooting for desktops and laptops. Includes full system testing.</p>
-            <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
-        </div>
-        <div class="card">
-            <h3>Device Setup — Inquiry Only</h3>
-            <p>Initial configuration, account setup, and software installation for new devices.</p>
-            <p><strong>If repairs are not needed but you would like to purchase parts, please indicate this in the form.</strong></p>
+        <h2><i class="fa-solid fa-screwdriver-wrench"></i> Device Repair &amp; Setup</h2>
+        <div class="services-grid">
+            
+            <div class="card">
+                <div>
+                    <div class="price-badge custom"><i class="fa-solid fa-info"></i> Inquiry Only</div>
+                    <h3><i class="fa-solid fa-mobile-button"></i> Mobile Device Repair</h3>
+                    <p>Screen replacement options, technical battery replacements, general hardware component checking, and software optimization loops for cellular phones and tablets.</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin-top: 10px;"><strong>If hardware parts sourcing is preferred without physical assembly services, declare it inside the message container below.</strong></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="price-badge custom"><i class="fa-solid fa-info"></i> Inquiry Only</div>
+                    <h3><i class="fa-solid fa-laptop"></i> Computer Repair</h3>
+                    <p>Internal hardware component checking, custom performance troubleshooting, stability diagnostic test evaluations, and structural components configurations for laptops and desktops.</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin-top: 10px;"><strong>If hardware parts sourcing is preferred without physical assembly services, declare it inside the message container below.</strong></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="price-badge custom"><i class="fa-solid fa-info"></i> Inquiry Only</div>
+                    <h3><i class="fa-solid fa-display"></i> Device Setup</h3>
+                    <p>Initial system initializations, core cloud account linking matrices, localized application distributions, storage backups configurations, and security verification for new tech gear.</p>
+                    <p style="font-size: 13px; color: #9ca3af; margin-top: 10px;"><strong>If hardware parts sourcing is preferred without physical assembly services, declare it inside the message container below.</strong></p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section class="dark-section">
-        <h2>Submit an Inquiry</h2>
-        <p>Please fill out the form below. We will contact you with details and next steps.</p>
+    <section style="background: #0f172a; border-radius: 20px; padding: 40px 30px; border: 1px solid #1e293b; max-width: 800px; margin: auto;">
+        <h2><i class="fa-solid fa-paper-plane"></i> Submit an Inquiry</h2>
+        <p style="color: #cbd5e1; margin-bottom: 20px;">Please provide your hardware specifications below. Our support panel will review the logs and return an itemized quote vector breakdown.</p>
+        
         <form action="https://formspree.io/f/xzdnzpka" method="POST" class="inquiry-form">
             <label for="full-name">Full Name:</label>
             <input type="text" id="full-name" name="name" required>
@@ -100,33 +124,30 @@
             <label for="email-address">Email Address:</label>
             <input type="email" id="email-address" name="email" required>
 
-            <label for="device-type">Device Type:</label>
-            <input type="text" id="device-type" name="device" placeholder="Example: iPhone 12, HP Laptop, Samsung Tablet" required>
+            <label for="device-type">Device Model / Variant:</label>
+            <input type="text" id="device-type" name="device" placeholder="Example: iPhone 14 Pro, HP Spectre x360, M2 Mac Mini" required>
 
-            <label for="service-needed">Service Needed:</label>
-            <textarea id="service-needed" name="service" placeholder="Describe the issue or setup needed. If you only want to purchase parts, please mention it here." required></textarea>
+            <label for="service-needed">Describe Needed Components or Fix:</label>
+            <textarea id="service-needed" name="service" placeholder="Detail the fault signatures or setup configurations requested. If you are sourcing bare parts, identify part numbers here." required></textarea>
 
             <button type="submit" class="btn primary">Submit Inquiry</button>
         </form>
     </section>
 
     <footer>
-        <footer>
-    <p><i class="fa-solid fa-copyright"></i> 2026 TECH IT EASY IT SERVICES LLC</p>
-    <div class="footer-nav" style="margin-top: 10px;">
-        <a href="index.html">Home</a> • 
-        <a href="services.html">Services</a> • 
-        <a href="support.html">IT Support</a> • 
-        <a href="faq.html">FAQ</a>
-    </div>
-    <div class="legal-nav" style="margin-top: 15px; font-size: 13px; opacity: 0.8;">
-        <a href="terms.html" style="color: #93c5fd; text-decoration: none;">Terms &amp; Conditions</a> | 
-        <a href="privacy.html" style="color: #93c5fd; text-decoration: none;">Privacy Policy</a> | 
-        <a href="refund.html" style="color: #93c5fd; text-decoration: none;">Refund Policy</a> | 
-        <a href="agreement.html" style="color: #93c5fd; text-decoration: none;">Service Agreement</a>
-    </div>
-</footer>
-
+        <p><i class="fa-solid fa-copyright"></i> 2026 TECH IT EASY IT SERVICES LLC</p>
+        <div class="footer-nav" style="margin-top: 10px;">
+            <a href="index.html">Home</a> • 
+            <a href="services.html">Services</a> • 
+            <a href="support.html">IT Support</a> • 
+            <a href="faq.html">FAQ</a>
+        </div>
+        <div class="legal-nav" style="margin-top: 15px; font-size: 13px; opacity: 0.8;">
+            <a href="terms.html" style="color: #93c5fd; text-decoration: none;">Terms &amp; Conditions</a> | 
+            <a href="privacy.html" style="color: #93c5fd; text-decoration: none;">Privacy Policy</a> | 
+            <a href="refund.html" style="color: #93c5fd; text-decoration: none;">Refund Policy</a> | 
+            <a href="agreement.html" style="color: #93c5fd; text-decoration: none;">Service Agreement</a>
+        </div>
     </footer>
 </body>
 </html>
