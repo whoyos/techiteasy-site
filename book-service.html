@@ -86,7 +86,6 @@
         <!-- EXPANDED HIGH-IMPACT LOGO BRAND COMPONENT -->
         <div class="logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
             <img src="logo.png" alt="Tech It Easy Logo" style="height: 95px; width: auto; object-fit: contain; mix-blend-mode: screen;">
-            
             <div class="logo-brand-text" style="text-align: left;">
                 <span style="display: block; font-size: 32px; font-weight: 900; letter-spacing: 0.04em; color: #ffffff; line-height: 1.1;">TECH IT EASY</span>
                 <span style="display: block; font-size: 15px; font-weight: 700; letter-spacing: 0.2em; color: #60a5fa; line-height: 1.1; margin-top: 4px;">IT SERVICES LLC</span>
@@ -106,8 +105,7 @@
     </header>
     
     <div class="container">
-        <!-- Exact form actions directed to Formspree free data capture point -->
-        <form id="booking-form" action="https://formspree.io/f/xzdnzpka" method="POST" class="form-card">
+        <form id="booking-form" action="https://formspree.io" method="POST" class="form-card">
             <h1>🚀 Start Service Request</h1>
             <p class="subtext">
                 Select the service you need and continue securely to scheduling or checkout.
@@ -161,7 +159,7 @@
         });
 
         document.getElementById('booking-form').addEventListener('submit', function(e) {
-            e.preventDefault(); // Securely intercepts default action reloads
+            e.preventDefault(); 
             
             const service = document.getElementById("service").value;
             const submitBtn = document.getElementById("submit-button");
@@ -171,10 +169,8 @@
                 return;
             }
 
-            // Your exact custom free Calendly scheduling endpoint link
-            const myCalendlyLink = "https://calendly.com/techiteasy"; 
+            const myCalendlyLink = "https://calendly.com"; 
 
-            // FREE-TIER BACKGROUND AJAX DATA PIPELINE
             if (service === "website" || service === "app") {
                 submitBtn.disabled = true;
                 submitBtn.innerText = "Processing Inquiry...";
@@ -187,30 +183,26 @@
                     body: data,
                     headers: { 'Accept': 'application/json' }
                 }).then(() => {
-                    // Instantly forward to booking form once recorded securely in background
                     window.location.href = myCalendlyLink;
                 }).catch(() => {
-                    // Safety failover redirect logic
                     window.location.href = myCalendlyLink;
                 });
                 return;
             }
 
-            // VERIFIED CASE-PRESERVING STRIPE LINKS DICTIONARY
             const links = {
-                "consultation": "https://buy.stripe.com/dRm5kF5Gd0bucwp58d2Fa0d",
-                "personal-consulting": "https://buy.stripe.com/dRm5kF5Gd0bucwp58d2Fa0d",
-                "remote": "https://buy.stripe.com/4gM6oJb0xaQ8aoh4492Fa0m",
-                "optimization": "https://buy.stripe.com/28EaEZ7Ol0buaoheIN2Fa0l",
-                "os": "https://buy.stripe.com/5kQ00lfgNgas7c59ot2Fa0k",
-                "secure": "https://buy.stripe.com/aFafZj0lTbUcdAtcAF2Fa0g",
-                "cloud": "https://buy.stripe.com/eVq00l7OlcYg2VP1W12Fa0f",
-                "business": "https://buy.stripe.com/6oUaEZd8Ff6odAteIN2Fa0h",
-                "cyber": "https://buy.stripe.com/14A14p6KhaQ86817gl2Fa0j",
-                "network": "https://buy.stripe.com/5kQ28t0lTbUc6811W12Fa0e"
+                "consultation": "https://stripe.com",
+                "personal-consulting": "https://stripe.com",
+                "remote": "https://stripe.com",
+                "optimization": "https://stripe.com",
+                "os": "https://stripe.com",
+                "secure": "https://stripe.com",
+                "cloud": "https://stripe.com",
+                "business": "https://stripe.com",
+                "cyber": "https://stripe.com",
+                "network": "https://stripe.com"
             };
 
-            // Force exact string normalization
             const cleanKey = service.toLowerCase().trim();
 
             if (links[cleanKey]) {
@@ -231,3 +223,12 @@
         </div>
         <div class="legal-nav" style="margin-top: 15px; font-size: 13px; opacity: 0.8;">
             <a href="terms.html" style="color: #93c5fd; text-decoration: none;">Terms &amp; Conditions</a> | 
+            <a href="privacy.html" style="color: #93c5fd; text-decoration: none;">Privacy Policy</a> | 
+            <a href="refund.html" style="color: #93c5fd; text-decoration: none;">Refund Policy</a> | 
+            <a href="agreement.html" style="color: #93c5fd; text-decoration: none;">Service Agreement</a>
+        </div>
+    </footer>
+
+    <!-- SECURE LIVE CHAT CONTAINER ANCHOR AND VETTED EMBED OVERLAYS -->
+    <div id="zsiqchat"></div>
+    <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
