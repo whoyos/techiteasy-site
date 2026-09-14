@@ -1,136 +1,128 @@
-                <tbody>
-                    <tr><td>AI Image Design &amp; Creative</td><td>$1,200</td><td>$500 - $2,500</td><td>1 - 3 Days</td><td>2x - 5x Value Yield</td></tr>
-                    <tr><td>Website Design Systems</td><td>$4,500</td><td>$1,500 - $8,000</td><td>2 - 6 Weeks</td><td>3x - 10x Pipeline Return</td></tr>
-                    <tr><td>Website Redesign Frameworks</td><td>$6,500</td><td>$2,500 - $10,000</td><td>3 - 8 Weeks</td><td>3x - 12x Conversion Boost</td></tr>
-                    <tr><td>Business Automation Systems</td><td>$8,500</td><td>$3,000 - $15,000</td><td>4 - 8 Weeks</td><td>4x - 20x Labor Restructure</td></tr>
-                    <tr><td>Azure &amp; Data Cloud Platforms</td><td>$15,000</td><td>$8,000 - $25,000+</td><td>6 - 12 Weeks</td><td>2x - 8x Scalability Return</td></tr>
-                    <tr><td>Custom Application Portals</td><td>$22,500</td><td>$5,000 - $50,000+</td><td>6 - 24 Weeks</td><td>3x - 15x Platform Asset Return</td></tr>
-                    <tr><td>Security &amp; Compliance Projects</td><td>$10,000</td><td>$2,500 - $20,000+</td><td>2 - 10 Weeks</td><td>Risk Mitigation Focus</td></tr>
-                </tbody>
-            </table>
-        </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Case Studies &amp; Portfolio | TECH IT EASY IT SERVICES LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        /* Base Themes & Reset Definitions */
+        body { background-color: #0b0f19; color: #f3f4f6; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: #111827; padding: 40px 20px; text-align: center; border-bottom: 1px solid #1f2937; }
+        nav a { color: #9ca3af; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 15px; }
+        nav a.active, nav a:hover { color: #3b82f6; border-bottom: 2px solid #3b82f6; padding-bottom: 4px; }
+        
+        .portfolio-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        
+        /* High Trust Statistics Banner layout */
+        .stats-banner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            border: 1px solid #312e81;
+            padding: 35px 25px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .stat-item h3 { font-size: 28px; color: #3b82f6; margin: 0 0 5px 0; font-weight: 800; }
+        .stat-item p { font-size: 13px; color: #cbd5e1; margin: 0; font-weight: 500; }
 
-        <!-- FILTER NAVIGATION CONTROLS -->
-        <div class="filter-nav">
-            <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
-            <button class="filter-btn" onclick="filterProjects('website')">Website Design</button>
-            <button class="filter-btn" onclick="filterProjects('apps')">Applications</button>
-            <button class="filter-btn" onclick="filterProjects('cloud')">Cloud &amp; Azure</button>
-            <button class="filter-btn" onclick="filterProjects('automation')">Automation</button>
-            <button class="filter-btn" onclick="filterProjects('creative')">Creative Design</button>
+        /* Color-Coded Portfolio Badges & Tags */
+        .legend-grid { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        .legend-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 6px; }
+        .bg-starter { background: rgba(34, 197, 94, 0.1); color: #4ade80; border: 1px solid #22c55e; }
+        .bg-growth { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid #3b82f6; }
+        .bg-biztech { background: rgba(139, 92, 246, 0.1); color: #a78bfa; border: 1px solid #8b5cf6; }
+        .bg-enterprise { background: rgba(249, 115, 22, 0.1); color: #fb923c; border: 1px solid #f97316; }
+        .bg-quote { background: rgba(239, 68, 68, 0.1); color: #f87171; border: 1px solid #ef4444; }
+
+        /* Overview Matrix Table Layout */
+        .roi-table-wrapper { overflow-x: auto; margin: 25px 0 40px 0; border-radius: 12px; border: 1px solid #1f2937; }
+        .roi-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; background: #111827; }
+        .roi-table th { background: #1e293b; color: #ffffff; padding: 14px; font-weight: 600; }
+        .roi-table td { padding: 14px; border-bottom: 1px solid #1f2937; color: #cbd5e1; }
+        .roi-table tr:last-child td { border-bottom: none; }
+        .roi-table tr:hover { background: #1f2937; }
+
+        /* Filter Controls */
+        .filter-nav { display: flex; justify-content: center; gap: 12px; margin: 40px 0; flex-wrap: wrap; }
+        .filter-btn { background: #1e293b; color: #9ca3af; border: 1px solid #334155; padding: 12px 24px; border-radius: 30px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.2s ease; }
+        .filter-btn.active, .filter-btn:hover { background: #2563eb; color: #ffffff; border-color: #3b82f6; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
+
+        /* 3-Column Desktop Grid Sequence Layout */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .portfolio-card { background: #111827; border: 1px solid #1f2937; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .portfolio-card:hover { transform: translateY(-6px); border-color: #3b82f6; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
+        
+        /* Premium Card Layout Elements */
+        .card-banner { background: #1f2937; padding: 45px 20px; text-align: center; font-size: 52px; border-bottom: 1px solid #1f2937; position: relative; }
+        .badge-row { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; }
+        .card-badge { background: #0f172a; border: 1px solid #374151; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; color: #cbd5e1; }
+        
+        .card-body { padding: 28px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-body h3 { font-size: 22px; color: #ffffff; margin: 0 0 15px 0; font-weight: 800; }
+        .meta-line { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 13px; color: #9ca3af; border-bottom: 1px dashed #1e293b; padding-bottom: 8px; }
+        .meta-line strong { color: #f3f4f6; }
+        
+        .block-box { background: #0f172a; border: 1px solid #1e293b; padding: 14px; border-radius: 8px; margin: 15px 0; font-size: 13px; }
+        .block-box h5 { color: #60a5fa; margin: 0 0 6px 0; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        .block-box p { margin: 0; color: #9ca3af; line-height: 1.4; }
+        
+        .quote-box { background: #1f2937; border-left: 4px solid #10b981; padding: 16px; border-radius: 0 12px 12px 0; margin: 20px 0; font-style: italic; font-size: 13.5px; color: #e5e7eb; position: relative; }
+        .quote-box span { display: block; margin-top: 10px; font-weight: 700; color: #34d399; font-style: normal; font-size: 12px; text-transform: uppercase; }
+        
+        .check-list { list-style: none; padding: 0; margin: 15px 0; }
+        .check-list li { font-size: 13.5px; color: #e2e8f0; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        
+        /* Full-Width Social Proof Trust Break Row */
+        .trust-divider { grid-column: 1 / -1; background: linear-gradient(90deg, #0f172a 0%, #1e1b4b 100%); border: 1px solid #1e293b; padding: 35px; border-radius: 16px; text-align: center; margin: 15px 0; }
+        
+        .btn.primary { background: #2563eb; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; display: block; text-align: center; transition: background 0.2s; }
+        .btn.primary:hover { background: #1d4ed8; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <img src="logo.png" alt="Tech It Easy Logo" style="height: 95px; width: auto; object-fit: contain; mix-blend-mode: screen;">
+            <div class="logo-brand-text" style="text-align: left;">
+                <span style="display: block; font-size: 32px; font-weight: 900; letter-spacing: 0.04em; color: #ffffff; line-height: 1.1;">TECH IT EASY</span>
+                <span style="display: block; font-size: 15px; font-weight: 700; letter-spacing: 0.2em; color: #60a5fa; line-height: 1.1; margin-top: 4px;">IT SERVICES LLC</span>
+            </div>
+        </div>
+        <h1>Case Studies &amp; Portfolio</h1>
+        <p>Real-world performance metrics, deployment timelines, investment profiles, and corporate testimonials.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="diagnostics.html">Diagnostics</a>
+            <a href="devices.html">Devices</a>
+            <a href="support.html">IT Support</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <div class="portfolio-container">
+        <!-- PROVEN RESULTS AGENCY METRICS BANNER -->
+        <div class="stats-banner">
+            <div class="stat-item"><h3>🏆 100+</h3><p>Projects Safely Delivered</p></div>
+            <div class="stat-item"><h3>⭐ 5-Star</h3><p>Client Satisfaction Rating</p></div>
+            <div class="stat-item"><h3>⏱️ 5.4 Wks</h3><p>Average Delivery Time</p></div>
+            <div class="stat-item"><h3>💰 $9,500</h3><p>Average Project Value</p></div>
+            <div class="stat-item"><h3>📈 37%</h3><p>Average Efficiency Improvement</p></div>
         </div>
 
-        <!-- PORTFOLIO CARD GRID -->
-        <div class="portfolio-grid">
-            
-            <!-- PROJECT 1: WEBSITE REDESIGN -->
-            <div class="portfolio-card" data-category="website">
-                <div class="card-image-placeholder">
-                    🖥️
-                    <span class="badge-size">🔵 Growth Project</span>
-                    <span class="badge-cat">Website Design</span>
-                </div>
-                <div class="card-content">
-                    <h3>E-Commerce Website Redesign</h3>
-                    <div class="meta-row"><span>Industry: <strong>Retail</strong></span><span>Investment: <strong>$4,800</strong></span></div>
-                    <div class="meta-row"><span>Avg Cost: <strong>$4,500</strong></span><span>ROI: <strong>6.5x First Year</strong></span></div>
-                    
-                    <div class="timeline-box">
-                        <h5>⏱️ Project Timeline: 4 Weeks</h5>
-                        <p style="color:#9ca3af; font-size:12px; line-height:1.4;">Wk 1: Discovery &bull; Wk 2: Mockups &bull; Wk 3: Content &bull; Wk 4: Testing &bull; Launch</p>
-                    </div>
-
-                    <p style="font-size:14px; line-height:1.5; margin-top:10px;"><strong>Challenge:</strong> An outdated website was negatively affecting customer engagement and mobile usability.</p>
-                    <p style="font-size:14px; line-height:1.5;"><strong>Solution:</strong> Designed and developed a fully responsive website with modern branding and streamlined navigation.</p>
-                    
-                    <div class="testimonial-box">
-                        "The redesign exceeded our expectations. Within the first month, we saw more inquiries and better engagement from customers."
-                        <span>★ ★ ★ ★ ★ &bull; Sarah M. | Business Owner</span>
-                    </div>
-
-                    <h5 style="color:#60a5fa; font-size:13px; font-weight:700; margin-bottom:5px;">Success Metrics:</h5>
-                    <ul class="metrics-list">
-                        <li>📈 42% Increase in Contact Form Submissions</li>
-                        <li>📱 31% Increase in Mobile Engagement</li>
-                        <li>⚡ 58% Faster Page Load Speed</li>
-                        <li>📉 25% Reduction in Bounce Rate (ROI in 5 Months)</li>
-                    </ul>
-                </div>
-                <div style="padding:0 25px 25px 25px;"><a href="book-service.html?service=website" class="btn primary" style="display:block; text-align:center;">View Case Study</a></div>
-            </div>
-
-            <!-- PROJECT 2: CLOUD MIGRATION -->
-            <div class="portfolio-card" data-category="cloud">
-                <div class="card-image-placeholder">
-                    ☁️
-                    <span class="badge-size">🟣 Business Tech</span>
-                    <span class="badge-cat">Cloud &amp; Azure</span>
-                </div>
-                <div class="card-content">
-                    <h3>Azure Cloud Migration</h3>
-                    <div class="meta-row"><span>Industry: <strong>Professional Services</strong></span><span>Investment: <strong>$18,500</strong></span></div>
-                    <div class="meta-row"><span>Avg Cost: <strong>$15,000</strong></span><span>ROI: <strong>3.8x Over 24 Mos</strong></span></div>
-                    
-                    <div class="timeline-box">
-                        <h5>⏱️ Project Timeline: 8 Weeks</h5>
-                        <p style="color:#9ca3af; font-size:12px; line-height:1.4;">Wks 1-2: Assessment &bull; Wks 3-4: Planning &bull; Wks 5-6: Deployment &bull; Wks 7-8: Training</p>
-                    </div>
-
-                    <p style="font-size:14px; line-height:1.5; margin-top:10px;"><strong>Challenge:</strong> Aging legacy physical servers were becoming expensive and difficult to maintain.</p>
-                    <p style="font-size:14px; line-height:1.5;"><strong>Solution:</strong> Planned and executed complete migration to Azure with architecture security hardening.</p>
-                    
-                    <div class="testimonial-box">
-                        "The migration was seamless. Our systems are more reliable and easier to manage than ever before."
-                        <span>★ ★ ★ ★ ★ &bull; David R. | Operations Director</span>
-                    </div>
-
-                    <h5 style="color:#60a5fa; font-size:13px; font-weight:700; margin-bottom:5px;">Success Metrics:</h5>
-                    <ul class="metrics-list">
-                        <li>🛡️ 99.9% Core Service Infrastructure Availability</li>
-                        <li>💰 35% Permanent Reduction in Maintenance Overhead</li>
-                        <li>🚀 60% Faster Internal System Deployment Horizons</li>
-                        <li>🔒 Fully Automated Compliance Infrastructure Logs</li>
-                    </ul>
-                </div>
-                <div style="padding:0 25px 25px 25px;"><a href="book-service.html?service=cloud" class="btn primary" style="display:block; text-align:center;">View Project Build</a></div>
-            </div>
-
-            <!-- PROJECT 3: AUTOMATION -->
-            <div class="portfolio-card" data-category="automation">
-                <div class="card-image-placeholder">
-                    ⚙️
-                    <span class="badge-size">🔵 Growth Project</span>
-                    <span class="badge-cat">Automation</span>
-                </div>
-                <div class="card-content">
-                    <h3>Business Process Automation</h3>
-                    <div class="meta-row"><span>Industry: <strong>Manufacturing</strong></span><span>Investment: <strong>$7,200</strong></span></div>
-                    <div class="meta-row"><span>Avg Cost: <strong>$8,500</strong></span><span>ROI: <strong>12x Over 12 Mos</strong></span></div>
-                    
-                    <div class="timeline-box">
-                        <h5>⏱️ Project Timeline: 6 Weeks</h5>
-                        <p style="color:#9ca3af; font-size:12px; line-height:1.4;">Wk 1: Workflow Analysis &bull; Wk 2: Architecture &bull; Wks 3-5: Development &bull; Wk 6: Testing</p>
-                    </div>
-
-                    <p style="font-size:14px; line-height:1.5; margin-top:10px;"><strong>Challenge:</strong> Staff spending extensive hours each week running manual data tasks.</p>
-                    <p style="font-size:14px; line-height:1.5;"><strong>Solution:</strong> Implemented end-to-end automated system tasks workflows via custom API bridges.</p>
-                    
-                    <div class="testimonial-box">
-                        "The automation has paid for itself in time savings alone. Tasks that took hours now resolve instantly."
-                        <span>★ ★ ★ ★ ★ &bull; Jennifer T. | Business Manager</span>
-                    </div>
-
-                    <h5 style="color:#60a5fa; font-size:13px; font-weight:700; margin-bottom:5px;">Success Metrics:</h5>
-                    <ul class="metrics-list">
-                        <li>⏱️ 15 Hours Saved Weekly across administrative workers</li>
-                        <li>📉 70% Drastic Reduction in Manual Keyboard Pipeline Steps</li>
-                        <li>❌ 90% Fewer Data Entry Entry-Level Logging Errors</li>
-                        <li>💵 Estimated Annual System Resource Savings: $36,000+</li>
-                    </ul>
-                </div>
-                <div style="padding:0 25px 25px 25px;"><a href="book-service.html?service=optimization" class="btn primary" style="display:block; text-align:center;">View Automation Log</a></div>
-            </div>
-
-            <div class="trust-divider">
-                <h4 style="font-size: 20px; color:#ffffff; margin-bottom: 5px;">What Clients Are Saying</h4>
-                <div style="color:#ffab00; font-size:18px; margin-bottom:10px;">⭐ ⭐ ⭐ ⭐ ⭐ <span style="color:#fff; font-size:14px; font-weight:700;">4.9/5 Average Rating</span></div>
+        <!-- FULL-WIDTH PREMIUM FEATURED PROJECT SECTION -->
+        <section style="background: linear-gradient(145deg, #111827 0%, #0f172a 100%); border: 1px solid #1e293b; padding: 40px; border-radius: 20px; margin-bottom: 40px; position: relative;">
+            <span style="position: absolute; top: 20px; right: 20px; background: #8b5cf6; color: #fff; padding: 6px 16px; border-radius: 30px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">★ Premium Featured Success Story</span>
+            <h2 style="font-size: 28px; margin-top: 0; margin-bottom: 15px; font-weight: 900; color: #ffffff;">Multi-Location Business Digital Transformation</h2>
+            <p style="color: #cbd5e1; font-size: 15px; max-width: 900px; line-height: 1.6; margin-bottom: 25px;">
+                A complete modernization project engineered across multiple operating facilities. This initiative seamlessly unifies front-end web identity deployments, private secure database clouds, process automation systems, and organizational digital parameter frameworks.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 30px;">
+                <div>
+                    <h4 style="color: #60a5fa; margin-bottom: 12px; font-size: 16px; font-weight: 700; text-transform: uppercase;">Services Delivered</h4>
