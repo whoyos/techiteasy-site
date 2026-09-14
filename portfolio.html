@@ -3,154 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies &amp; Project Portfolio | TECH IT EASY IT SERVICES LLC</title>
-    <meta name="description" content="Explore real enterprise metrics, cloud migrations, workflow automations, and custom applications engineered by Tech It Easy IT Services LLC.">
+    <title>Enterprise Case Studies &amp; Portfolio | TECH IT EASY IT SERVICES LLC</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        /* Portfolio Filter Control Classes */
-        .filter-nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0 40px 0;
-            flex-wrap: wrap;
-        }
-        .filter-btn {
-            background: #1e293b;
-            color: #9ca3af;
-            border: 1px solid #334155;
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.2s ease;
-        }
-        .filter-btn.active, .filter-btn:hover {
-            background: #2563eb;
-            color: #ffffff;
-            border-color: #3b82f6;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-        }
+        .portfolio-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
         
-        /* Stats Dashboard Matrix Layout */
+        /* Stats Dashboard Grid */
         .stats-banner {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             background: linear-gradient(135deg, #0f172a, #1e1b4b);
             border: 1px solid #312e81;
             padding: 30px;
             border-radius: 16px;
-            margin: 40px auto;
+            margin-bottom: 40px;
             text-align: center;
-            max-width: 1100px;
         }
-        .stat-item h3 { font-size: 28px; color: #3b82f6; margin-bottom: 5px; font-weight: 800; }
-        .stat-item p { font-size: 13px; color: #cbd5e1; }
+        .stat-item h3 { font-size: 32px; color: #3b82f6; margin-bottom: 5px; font-weight: 800; }
+        .stat-item p { font-size: 14px; color: #cbd5e1; }
 
-        /* Multi-Column Project Showcase Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto 50px auto;
-            padding: 0 20px;
-        }
-        .portfolio-card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 16px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-            border-color: #3b82f6;
-        }
-        .card-banner-img {
-            background: #1f2937;
-            padding: 40px 20px;
-            text-align: center;
-            font-size: 48px;
-            border-bottom: 1px solid #1f2937;
-            position: relative;
-        }
-        .badge-category {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #1e293b;
-            color: #60a5fa;
-            border: 1px solid #3b82f6;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .card-body-content { padding: 25px; }
-        .card-meta-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 12px;
-            color: #9ca3af;
-            border-bottom: 1px dashed #1e293b;
-            padding-bottom: 10px;
-        }
-        .card-meta-row strong { color: #f3f4f6; }
-        
-        /* Inline Component Testimonial Layouts */
-        .card-quote-box {
-            background: #0f172a;
-            border-left: 3px solid #10b981;
-            padding: 15px;
-            border-radius: 0 8px 8px 0;
-            margin: 20px 0;
-            font-style: italic;
-            font-size: 13px;
-            color: #d1d5db;
-        }
-        .card-quote-author {
-            display: block;
-            margin-top: 5px;
-            font-weight: 700;
-            color: #10b981;
-            font-size: 12px;
-            font-style: normal;
-        }
-        
-        /* ROI Table Layout Matrix */
+        /* Investment Dashboard Table */
         .roi-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 25px 0 40px 0;
             font-size: 14px;
             text-align: left;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 12px;
+            overflow: hidden;
         }
-        .roi-table th { background: #1e293b; color: #ffffff; padding: 12px; font-weight: 600; }
-        .roi-table td { padding: 12px; border-bottom: 1px solid #1f2937; color: #cbd5e1; }
-        .roi-table tr:hover { background: #0f172a; }
+        .roi-table th { background: #1e293b; color: #ffffff; padding: 14px; font-weight: 600; }
+        .roi-table td { padding: 14px; border-bottom: 1px solid #1f2937; color: #cbd5e1; }
+        .roi-table tr:hover { background: #1f2937; }
 
-        /* Investment Color Badges */
-        .legend-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; margin: 5px; padding: 4px 12px; border-radius: 4px; }
-        .tag-starter { background: rgba(34, 197, 94, 0.1); color: #4ade80; border: 1px solid #22c55e; }
-        .tag-growth { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid #3b82f6; }
-        .tag-biztech { background: rgba(139, 92, 246, 0.1); color: #a78bfa; border: 1px solid #8b5cf6; }
-        .tag-enterprise { background: rgba(249, 115, 22, 0.1); color: #fb923c; border: 1px solid #f97316; }
-        .tag-quote { background: rgba(239, 68, 68, 0.1); color: #f87171; border: 1px solid #ef4444; }
+        /* Filter Controls */
+        .filter-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+        .filter-btn { background: #1e293b; color: #9ca3af; border: 1px solid #334155; padding: 10px 22px; border-radius: 30px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.2s ease; }
+        .filter-btn.active, .filter-btn:hover { background: #2563eb; color: #ffffff; border-color: #3b82f6; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); }
+
+        /* Portfolio Grid */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .portfolio-card { background: #111827; border: 1px solid #1f2937; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; }
+        .portfolio-card:hover { transform: translateY(-5px); border-color: #3b82f6; box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+        
+        .card-image-placeholder { background: #1f2937; padding: 40px 20px; text-align: center; font-size: 48px; border-bottom: 1px solid #1f2937; position: relative; transition: all 0.3s; }
+        .portfolio-card:hover .card-image-placeholder { transform: scale(1.02); }
+        .badge-size { position: absolute; top: 15px; left: 15px; background: #0f172a; border: 1px solid #4b5563; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+        .badge-cat { position: absolute; top: 15px; right: 15px; background: #1e293b; color: #60a5fa; border: 1px solid #3b82f6; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+        
+        .card-content { padding: 25px; flex-grow: 1; }
+        .card-content h3 { font-size: 22px; color: #ffffff; margin-bottom: 10px; font-weight: 800; }
+        .meta-row { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 13px; color: #9ca3af; border-bottom: 1px dashed #1e293b; padding-bottom: 10px; }
+        .meta-row strong { color: #f3f4f6; }
+        
+        .timeline-box { background: #0f172a; border: 1px solid #1e293b; padding: 12px 15px; border-radius: 8px; margin: 15px 0; font-size: 13px; }
+        .timeline-box h5 { color: #60a5fa; margin-bottom: 5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .testimonial-box { background: #1e293b; border-left: 4px solid #10b981; padding: 15px; border-radius: 0 12px 12px 0; margin: 20px 0; font-style: italic; font-size: 13px; color: #d1d5db; }
+        .testimonial-box span { display: block; margin-top: 8px; font-weight: 700; color: #10b981; font-style: normal; font-size: 12px; }
+        
+        .metrics-list { list-style: none; padding: 0; margin: 15px 0; }
+        .metrics-list li { font-size: 13px; color: #e2e8f0; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+
+        .trust-divider { grid-column: 1 / -1; background: #0f172a; border: 1px solid #1e293b; padding: 25px; border-radius: 12px; text-align: center; }
     </style>
 </head>
 <body>
     <header>
-        <!-- EXPANDED HIGH-IMPACT LOGO BRAND COMPONENT -->
         <div class="logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
             <img src="logo.png" alt="Tech It Easy Logo" style="height: 95px; width: auto; object-fit: contain; mix-blend-mode: screen;">
             <div class="logo-brand-text" style="text-align: left;">
@@ -158,8 +81,8 @@
                 <span style="display: block; font-size: 15px; font-weight: 700; letter-spacing: 0.2em; color: #60a5fa; line-height: 1.1; margin-top: 4px;">IT SERVICES LLC</span>
             </div>
         </div>
-        <h1>Featured Projects</h1>
-        <p>See how we've helped businesses transform websites, operations, and cloud infrastructure.</p>
+        <h1>Case Studies &amp; Portfolio</h1>
+        <p>Real performance metrics, timelines, investment parameters, and client testimonies.</p>
         <nav>
             <a href="index.html">Home</a>
             <a href="services.html">Services</a>
@@ -171,69 +94,58 @@
         </nav>
     </header>
 
-    <!-- PROVEN RESULTS AGENCY STATISTICS BANNER -->
-    <div class="stats-banner">
-        <div class="stat-item">
-            <h3>100+</h3>
-            <p>Custom Solutions Delivered</p>
+    <div class="portfolio-container">
+        <!-- PROVEN BUSINESS RESULTS BANNER -->
+        <div class="stats-banner">
+            <div class="stat-item"><h3>🏆 100%</h3><p>Custom Solutions Delivered</p></div>
+            <div class="stat-item"><h3>⏱️ 5.4 Wks</h3><p>Average Delivery Time</p></div>
+            <div class="stat-item"><h3>💰 $9,500</h3><p>Average Project Investment</p></div>
+            <div class="stat-item"><h3>📈 5.7x</h3><p>Average Reported ROI</p></div>
+            <div class="stat-item"><h3>⚡ 37%</h3><p>Average Efficiency Gains</p></div>
         </div>
-        <div class="stat-item">
-            <h3>5.4 Wks</h3>
-            <p>Average Delivery Time</p>
-        </div>
-        <div class="stat-item">
-            <h3>$9,500</h3>
-            <p>Average Project Value</p>
-        </div>
-        <div class="stat-item">
-            <h3>5.7x</h3>
-            <p>Average Reported ROI</p>
-        </div>
-        <div class="stat-item">
-            <h3>37%</h3>
-            <p>Average Efficiency Gains</p>
-        </div>
-    </div>
 
-    <main style="max-width: 1200px; margin: auto; padding: 0 20px;">
-        <!-- INTERACTIVE PORTFOLIO OVERVIEW SECTION -->
+        <!-- INVESTMENT NOTICES & SNAPSHOT MATRIX -->
         <section style="background: #0f172a; border: 1px solid #1e293b; border-radius: 16px; padding: 30px; margin-bottom: 40px;">
-            <h2><i class="fa-solid fa-chart-line"></i> Results, Investment &amp; ROI Dashboard</h2>
-            <p style="color: #cbd5e1; font-size: 14px; margin-bottom: 15px;">
-                Every project is unique. Some engagements may be completed for a few hundred dollars, while enterprise-level technology initiatives can exceed $50,000. All projects begin with a free consultation to map explicit business goals before providing custom proposal paths.
+            <h2 style="margin-bottom: 10px;"><i class="fa-solid fa-chart-line"></i> Results, Investment &amp; ROI Dashboard</h2>
+            <p style="color: #cbd5e1; font-size: 14px; margin-bottom: 20px; line-height: 1.5;">
+                Every project is unique. Some engagements may be completed for a few hundred dollars, while enterprise-level technology initiatives can exceed $50,000. All projects begin with a free consultation to discuss goals, requirements, timeline, and budget before a custom proposal is provided. No blind checkouts available.
             </p>
             
-            <div style="margin-bottom: 20px; flex-wrap: wrap;">
-                <span class="legend-tag tag-starter">🟢 Starter: $500 - $2,500</span>
-                <span class="legend-tag tag-growth">🔵 Growth: $2,500 - $10,000</span>
-                <span class="legend-tag tag-biztech">🟣 Business Tech: $10,000 - $25,000</span>
-                <span class="legend-tag tag-enterprise">🟠 Enterprise: $25,000 - $50,000+</span>
-                <span class="legend-tag tag-quote">🔴 Custom Quote Required</span>
-            </div>
-
             <table class="roi-table">
                 <thead>
                     <tr>
-                        <th>Service Overview</th>
+                        <th>Service Category</th>
                         <th>Average Investment</th>
-                        <th>Typical Range</th>
+                        <th>Project Range</th>
                         <th>Average Duration</th>
                         <th>Typical ROI Range</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>AI Image Design &amp; Creative</strong></td>
-                        <td>$1,200</td>
-                        <td>$500 - $2,500</td>
-                        <td>1 - 3 Days</td>
-                        <td>2x - 5x Value Yield</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Website Design &amp; Setup</strong></td>
-                        <td>$4,500</td>
-                        <td>$1,500 - $8,000</td>
-                        <td>2 - 6 Weeks</td>
-                        <td>3x - 10x Pipeline Return</td>
-                    </tr>
-                    <tr>
+                    <tr><td>AI Image Design &amp; Creative</td><td>$1,200</td><td>$500 - $2,500</td><td>1 - 3 Days</td><td>2x - 5x Value Yield</td></tr>
+                    <tr><td>Website Design Systems</td><td>$4,500</td><td>$1,500 - $8,000</td><td>2 - 6 Weeks</td><td>3x - 10x Pipeline Return</td></tr>
+                    <tr><td>Website Redesign Frameworks</td><td>$6,500</td><td>$2,500 - $10,000</td><td>3 - 8 Weeks</td><td>3x - 12x Conversion Boost</td></tr>
+                    <tr><td>Business Automation Systems</td><td>$8,500</td><td>$3,000 - $15,000</td><td>4 - 8 Weeks</td><td>4x - 20x Labor Restructure</td></tr>
+                    <tr><td>Azure &amp; Data Cloud Platforms</td><td>$15,000</td><td>$8,000 - $25,000+</td><td>6 - 12 Weeks</td><td>2x - 8x Scalability Return</td></tr>
+                    <tr><td>Custom Application Portals</td><td>$22,500</td><td>$5,000 - $50,000+</td><td>6 - 24 Weeks</td><td>3x - 15x Platform Asset Return</td></tr>
+                    <tr><td>Security &amp; Compliance Projects</td><td>$10,000</td><td>$2,500 - #20,000+</td><td>2 - 10 Weeks</td><td>Risk Mitigation Focus</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- FILTER NAVIGATION CONTROLS -->
+        <div class="filter-nav">
+            <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+            <button class="filter-btn" onclick="filterProjects('website')">Website Design</button>
+            <button class="filter-btn" onclick="filterProjects('apps')">Applications</button>
+            <button class="filter-btn" onclick="filterProjects('cloud')">Cloud &amp; Azure</button>
+            <button class="filter-btn" onclick="filterProjects('automation')">Automation</button>
+            <button class="filter-btn" onclick="filterProjects('creative')">Creative Design</button>
+        </div>
+
+        <!-- PORTFOLIO CARD GRID -->
+        <div class="portfolio-grid">
+            
+            <!-- PROJECT 1: WEBSITE REDESIGN -->
+            <div class="portfolio-card" data-category="website">
+                <div class="card-image-placeholder">
