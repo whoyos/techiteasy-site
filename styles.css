@@ -84,6 +84,16 @@ section h2 {
     color: #ffffff;
 }
 
+/* Dark Contrast Subsections Layout Definition */
+.dark-section {
+    background: #0f172a;
+    border-radius: 20px;
+    padding: 50px 30px;
+    border: 1px solid #1e293b;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -206,7 +216,8 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Smartphone Scale Triggers */
+/* ============================ RESPONSIVE BREAKPOINTS ============================ */
+
 /* Tablet & Medium Screen Optimization */
 @media (max-width: 1024px) {
     .services-grid {
@@ -220,16 +231,16 @@ footer a:hover {
 
 /* Smartphone Scale Triggers */
 @media (max-width: 768px) {
-    header { 
-        padding: 25px 20px; 
+    header {
+        padding: 25px 20px;
     }
     nav {
         gap: 10px;
     }
-    section { 
-        padding: 30px 15px; 
+    section {
+        padding: 30px 15px;
     }
-    .services-grid { 
+    .services-grid {
         grid-template-columns: 1fr; /* 1 column for phones */
     }
     .card {
