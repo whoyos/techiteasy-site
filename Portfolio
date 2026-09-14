@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | TECH IT EASY IT SERVICES LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+    <header>
+        <!-- UNIFIED LARGE EMBLEM COMPONENT -->
+        <div class="logo-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+            <img src="logo.png" alt="Tech It Easy Logo" style="height: 95px; width: auto; object-fit: contain; mix-blend-mode: screen;">
+            <div class="logo-brand-text" style="text-align: left;">
+                <span style="display: block; font-size: 32px; font-weight: 900; letter-spacing: 0.04em; color: #ffffff; line-height: 1.1;">TECH IT EASY</span>
+                <span style="display: block; font-size: 15px; font-weight: 700; letter-spacing: 0.2em; color: #60a5fa; line-height: 1.1; margin-top: 4px;">IT SERVICES LLC</span>
+            </div>
+        </div>
+        <h1>Featured Projects</h1>
+        <p>See how we help businesses transform operations, software, and digital infrastructure</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="diagnostics.html">Diagnostics</a>
+            <a href="devices.html">Devices</a>
+            <a href="support.html">IT Support</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <!-- METRICS BANNER SECTION -->
+    <section style="padding: 20px 20px 40px 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; background: #111827; padding: 30px; border-radius: 16px; border: 1px solid #1f2937; text-align: center;">
+            <div>
+                <h2 style="border: none; padding: 0; margin: 0; color: #60a5fa; font-size: 2.2rem;">100%</h2>
+                <p style="color: #9ca3af; font-size: 14px; margin-top: 5px;">Custom Technical Solutions</p>
+            </div>
+            <div>
+                <h2 style="border: none; padding: 0; margin: 0; color: #10b981; font-size: 2.2rem;">5.2 Wks</h2>
+                <p style="color: #9ca3af; font-size: 14px; margin-top: 5px;">Average Delivery Timeline</p>
+            </div>
+            <div>
+                <h2 style="border: none; padding: 0; margin: 0; color: #fbbf24; font-size: 2.2rem;">5.7x</h2>
+                <p style="color: #9ca3af; font-size: 14px; margin-top: 5px;">Average Reported Project ROI</p>
+            </div>
+            <div>
+                <h2 style="border: none; padding: 0; margin: 0; color: #ffffff; font-size: 2.2rem;">5-Star</h2>
+                <p style="color: #9ca3af; font-size: 14px; margin-top: 5px;">Client Satisfaction Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN PORTFOLIO PROJECTS GRID -->
+    <section>
+        <h2 style="margin-bottom: 15px;"><i class="fa-solid fa-folder-open" style="color: #3b82f6; margin-right: 10px;"></i> Representative Engagements &amp; Demos</h2>
+        <p style="color: #9ca3af; margin-bottom: 35px;">Comprehensive breakdown of historical digital transformations, engineering ranges, and real outcomes.</p>
+
+        <div class="services-grid">
+
+            <!-- PROJECT 1: E-COMMERCE REDESIGN -->
+            <div class="card">
+                <div>
+                    <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                        <span class="price-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">🟢 Growth Project</span>
+                        <span class="price-badge">Timeline: 4 Weeks</span>
+                        <span class="price-badge" style="background: rgba(37, 99, 235, 0.1); color: #60a5fa;">Website Design</span>
+                    </div>
+                    <h3><i class="fa-solid fa-desktop"></i> Modern Retail Storefront</h3>
+                    <p style="font-size: 14px; color: #9ca3af; margin-bottom: 10px;"><strong>Industry:</strong> Retail | <strong>Range:</strong> $2,500 - $8,000</p>
+                    <p>Rebuilt an outdated web instance into a modern, responsive interface focused on user conversion journeys and fast asset rendering speeds.</p>
+                    
+                    <div style="background: #1f2937; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 14px;">
+                        <span style="color: #60a5fa; font-weight: bold; display: block; margin-bottom: 5px;">📈 Verified Outcome Metrics:</span>
+                        <span style="display: block;">✅ 42% Increase in Lead Form Conversions</span>
+                        <span style="display: block;">✅ 58% Faster Frame Loading Performance</span>
+                        <span style="display: block;">🚀 Estimated ROI: 6.5x Within 12 Months</span>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid #1f2937; padding-top: 15px; margin-top: 10px;">
+                    <p style="font-style: italic; font-size: 13px; color: #cbd5e1; margin-bottom: 0;">"The redesign completely transformed our online sales presence. Inquiries went up almost instantly." — Sarah M., Owner</p>
+                </div>
+            </div>
+
+            <!-- PROJECT 2: AZURE CLOUD MIGRATION -->
+            <div class="card">
+                <div>
+                    <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                        <span class="price-badge" style="background: rgba(139, 92, 246, 0.1); color: #a78bfa; border-color: rgba(139, 92, 246, 0.3);">🟣 Business Tech</span>
+                        <span class="price-badge">Timeline: 8 Weeks</span>
+                        <span class="price-badge" style="background: rgba(37, 99, 235, 0.1); color: #60a5fa;">Cloud Infra</span>
+                    </div>
+                    <h3><i class="fa-solid fa-cloud"></i> Azure Infrastructure Migration</h3>
+                    <p style="font-size: 14px; color: #9ca3af; margin-bottom: 10px;"><strong>Industry:</strong> Professional Services | <strong>Range:</strong> $8,000 - $25,000+</p>
+                    <p>Migrated legacy on-premise physical servers onto Microsoft Azure Cloud virtualization layers with enhanced perimeter firewalls.</p>
+                    
+                    <div style="background: #1f2937; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 14px;">
+                        <span style="color: #60a5fa; font-weight: bold; display: block; margin-bottom: 5px;">📈 Verified Outcome Metrics:</span>
+                        <span style="display: block;">✅ 35% Total Reduction in Hard Maintenance Fees</span>
+                        <span style="display: block;">✅ 99.9% Highly Available Environment Redundancy</span>
+                        <span style="display: block;">🚀 Payback Period: Less than 5 Months</span>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid #1f2937; padding-top: 15px; margin-top: 10px;">
+                    <p style="font-style: italic; font-size: 13px; color: #cbd5e1; margin-bottom: 0;">"The cloud deployment execution was flawless. Operational maintenance over engineering dropped massively." — David R., Ops Director</p>
+                </div>
+            </div>
+
+            <!-- PROJECT 3: AUTOMATION WORKFLOWS -->
+            <div class="card">
+                <div>
+                    <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                        <span class="price-badge" style="background: rgba(37, 99, 235, 0.1); color: #60a5fa; border-color: rgba(37, 99, 235, 0.3);">🔵 Growth Solutions</span>
+                        <span class="price-badge">Timeline: 6 Weeks</span>
+                        <span class="price-badge" style="background: rgba(37, 99, 235, 0.1); color: #60a5fa;">Automation</span>
+                    </div>
+                    <h3><i class="fa-solid fa-gears"></i> Business Process Automation</h3>
+                    <p style="font-size: 14px; color: #9ca3af; margin-bottom: 10px;"><strong>Industry:</strong> Manufacturing | <strong>Range:</strong> $3,000 - $15,000</p>
+                    <p>Designed and deployed automated background logic script layers to catch manual administrative reporting tasks between SaaS layers.</p>
+                    
+                    <div style="background: #1f2937; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 14px;">
+                        <span style="color: #60a5fa; font-weight: bold; display: block; margin-bottom: 5px;">📈 Verified Outcome Metrics:</span>
+                        <span style="display: block;">✅ 15 Engineering Hours Recovered Weekly</span>
+                        <span style="display: block;">✅ 90% Reduction in Standard Data Typing Flaws</span>
+                        <span style="display: block;">🚀 Estimated Annual Savings: $36,000+</span>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid #1f2937; padding-top: 15px; margin-top: 10px;">
+                    <p style="font-style: italic; font-size: 13px; color: #cbd5e1; margin-bottom: 0;">"Tasks that used to tie up multiple administrators for hours daily are now completed instantly." — Jennifer T., Business Manager</p>
+                </div>
+            </div>
+
+            <!-- PROJECT 4: SECURE WEB PORTAL -->
+            <div class="card">
+                <div>
+                    <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
