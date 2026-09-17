@@ -328,3 +328,81 @@
                                 <li><i class="fa-solid fa-circle-arrow-right"></i> Infrastructure Audits.</li>
                             </ul>
                         </div>
+        <section class="investment-philosophy-section">
+            <h4 style="margin: 0; font-size: 18px; color: #ffffff; font-weight: 800; text-align: center;">Every Project Is a Strategic Business Investment</h4>
+            <p style="margin: 8px auto 0 auto; font-size: 13.5px; color: #cbd5e1; text-align: center; max-width: 800px; line-height: 1.4;">
+                Whether you are budgeting $500 for focused asset creation layouts or routing $50,000+ into scalable technical framework pipelines, our deployment targets remain identically strict:
+            </p>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h5>Measurable Outcomes</h5>
+                    <p>We build targets tied explicitly to your business data indicators.</p>
+                </div>
+                <div class="philosophy-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h5>Defined Timelines</h5>
+                    <p>Every milestone features concrete, predictable tracking boundaries.</p>
+                </div>
+                <div class="philosophy-card">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <h5>Success Metrics</h5>
+                    <p>We audit platform capacity using precise system performance logging.</p>
+                </div>
+                <div class="philosophy-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h5>Return on Value</h5>
+                    <p>We architect features engineered to recover structural expenses quickly.</p>
+                </div>
+            </div>
+            <p style="margin: 24px 0 0 0; font-size: 12.5px; font-weight: 700; color: #3b82f6; text-align: center; text-transform: uppercase; letter-spacing: 0.05em;">
+                🚫 Zero Instant Checkout Terminals &bull; 📋 Tailored Consultation Framework Scopes Only
+            </p>
+        </section>
+
+        <section class="bottom-disclaimer-card">
+            <h4><i class="fa-solid fa-triangle-exclamation" style="color:#fb923c; margin-right:4px;"></i> Strategic Consultation Disclaimer Framework</h4>
+            <p>
+                Every engineering development is completely different. Core technology project investment scopes and delivery duration profiles scale dynamically based on total technical depth, security criteria, infrastructure integrations, and individual operational mechanics.
+            </p>
+            <p>
+                A localized system update can easily be completed within a few days for minor overhead fees. Conversely, a custom internal web application array, complex Azure migration track, or structural digital modernization architecture deployment can necessitate months of development alongside deeper capital resource allocations.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; font-weight: 700; font-size: 12px; color: #fb923c; text-transform: uppercase;">
+                <span>📞 Discovery Consultation Required First</span> &bull; <span>📋 Tailored Custom Quote Provided Post-Review</span> &bull; <span>🚫 Blind Digital Payment Terminals Disabled</span>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 style="font-size:22px; margin:0 0 8px 0; font-weight:800; color:#ffffff;">Ready to Map Out Custom Project Goals?</h2>
+            <p style="color:#cbd5e1; font-size:14px; max-width:700px; margin:0 auto 20px auto; line-height:1.4;">Schedule a dedicated alignment discovery call. We sit down to organize clear project metrics, timeline maps, and customized return horizons explicitly configured around your firm's workflows.</p>
+            <a href="book-service.html" class="btn primary" style="display:inline-block; width:auto; padding:12px 30px; font-size:15px; margin:0 auto;">Schedule Discovery Consultation</a>
+        </section>
+    </div> <!-- Close portfolio-container -->
+
+    <footer>
+        <p style="text-align:center; padding: 24px 0; border-top: 1px solid #1f2937; margin:0; font-size:13px; color:#9ca3af;"><i class="fa-solid fa-copyright"></i> 2026 TECH IT EASY IT SERVICES LLC</p>
+    </footer>
+
+    <script>
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.portfolio-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if(btn.getAttribute('onclick').includes(category)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
