@@ -1,31 +1,60 @@
-/* ============================ TECH IT EASY — MODERN BLUE THEME ============================ */
+/* ============================ TECH IT EASY — CONSULTANCY SYSTEM ============================ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+    --site-ink: #07101d;
+    --site-panel: #0e1b2d;
+    --site-panel-soft: #142943;
+    --site-line: #29425f;
+    --site-muted: #a9b9cc;
+    --site-blue: #62b2ff;
+    --site-green: #4bd5a0;
+    --site-gold: #f5c76b;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", system-ui, Roboto, sans-serif;
+    font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
 }
 
 body {
-    background: #0b0f19; /* Deep premium midnight theme */
-    color: #e5e7eb; /* Bright, highly readable body text */
+    background: radial-gradient(circle at 82% 0%, rgba(30, 91, 145, .28), transparent 30%), var(--site-ink);
+    color: #e5e7eb;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Header & Navigation Hero */
 header {
-    background: linear-gradient(135deg, #030712, #0b1530, #0f255c);
+    background: linear-gradient(90deg, rgba(4, 12, 24, .96), rgba(7, 25, 48, .82)), url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=85") center / cover;
     color: #fff;
-    padding: 35px 40px;
+    padding: clamp(34px, 6vw, 66px) 24px 34px;
     text-align: center;
     border-bottom: 1px solid #1e293b;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.36);
+    position: relative;
+    isolation: isolate;
+}
+
+header::after {
+    background: linear-gradient(90deg, var(--site-blue), transparent 60%);
+    bottom: -1px;
+    content: "";
+    height: 2px;
+    left: 0;
+    opacity: .8;
+    position: absolute;
+    width: 46%;
+    z-index: -1;
 }
 
 header h1 {
-    font-size: 2.2rem;
+    font-family: "Manrope", "DM Sans", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 800;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.045em;
     background: linear-gradient(to right, #60a5fa, #ffffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -39,57 +68,61 @@ nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 7px;
+    margin-top: 28px;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav a {
     color: #9ca3af;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
-    padding: 8px 16px;
-    border-radius: 20px;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 7px;
     border: 1px solid transparent;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.22s ease;
 }
 
 nav a:hover, nav a.active {
     color: #ffffff;
-    background: rgba(37, 99, 235, 0.15);
-    border-color: #2563eb;
+    background: rgba(98, 178, 255, .12);
+    border-color: #3b719f;
 }
 
 /* Highlights the current page link */
 nav a.active {
-    background: rgba(255, 255, 255, 0.25);
-    border-bottom: 2px solid #ffffff;
-    border-radius: 6px 6px 0 0;
+    background: rgba(98, 178, 255, .18);
+    border-bottom: 2px solid var(--site-blue);
+    border-radius: 7px;
 }
 
 /* Advanced Bento Content Layout */
 section {
-    padding: 60px 20px;
-    max-width: 1200px;
+    padding: clamp(42px, 6vw, 76px) 24px;
+    max-width: 1240px;
     margin: auto;
 }
 
 section h2 {
-    font-size: 1.8rem;
+    font-family: "Manrope", "DM Sans", sans-serif;
+    font-size: clamp(1.55rem, 3vw, 2.2rem);
     font-weight: 700;
     margin-bottom: 30px;
-    border-left: 4px solid #2563eb;
-    padding-left: 15px;
+    border-left: 3px solid var(--site-blue);
+    padding-left: 14px;
     letter-spacing: -0.03em;
     color: #ffffff;
 }
 
 /* Dark Contrast Subsections Layout Definition */
 .dark-section {
-    background: #0f172a;
-    border-radius: 20px;
-    padding: 50px 30px;
-    border: 1px solid #1e293b;
+    background: linear-gradient(135deg, rgba(20, 41, 67, .88), rgba(14, 27, 45, .96));
+    border-radius: 14px;
+    padding: 42px 30px;
+    border: 1px solid var(--site-line);
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -97,17 +130,17 @@ section h2 {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
+    gap: 16px;
     margin-bottom: 40px;
 }
 
 /* Elite Cards System */
 .card {
-    background: #111827;
-    border: 1px solid #1f2937;
-    padding: 30px;
-    border-radius: 16px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(145deg, rgba(20, 41, 67, .82), rgba(14, 27, 45, .96));
+    border: 1px solid var(--site-line);
+    padding: 26px;
+    border-radius: 12px;
+    transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -115,13 +148,14 @@ section h2 {
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    border-color: #3b82f6;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-6px);
+    border-color: var(--site-blue);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, .28);
 }
 
 .card h3 {
-    font-size: 1.3rem;
+    font-family: "Manrope", "DM Sans", sans-serif;
+    font-size: 1.18rem;
     color: #ffffff;
     margin-bottom: 12px;
     display: flex;
@@ -130,7 +164,7 @@ section h2 {
 }
 
 .card p {
-    color: #cbd5e1; /* Clean text visibility inside cards */
+    color: var(--site-muted);
     font-size: 15px;
     margin-bottom: 20px;
     flex-grow: 1;
@@ -140,12 +174,12 @@ section h2 {
 .price-badge {
     display: inline-block;
     padding: 4px 12px;
-    background: rgba(59, 130, 246, 0.1);
-    color: #60a5fa;
-    border-radius: 30px;
+    background: rgba(98, 178, 255, .1);
+    color: var(--site-blue);
+    border-radius: 6px;
     font-size: 13px;
     font-weight: 700;
-    border: 1px dashed rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(98, 178, 255, .28);
     margin-bottom: 15px;
     width: fit-content;
 }
@@ -161,43 +195,43 @@ section h2 {
     display: block;
     width: 100%;
     padding: 14px 20px;
-    border-radius: 10px;
+    border-radius: 7px;
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
     text-align: center;
-    transition: all 0.2s ease;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
 }
 
 .btn.primary {
-    background: #2563eb;
-    color: #fff;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    background: var(--site-blue);
+    color: #071322;
+    box-shadow: 0 8px 22px rgba(98, 178, 255, .18);
 }
 
 .btn.primary:hover {
-    background: #1d4ed8;
-    transform: scale(1.02);
+    background: #8bcaff;
+    transform: translateY(-2px);
 }
 
 .btn.secondary {
     background: transparent;
     color: #d1d5db;
-    border: 1px solid #374151;
+    border: 1px solid #466987;
 }
 
 .btn.secondary:hover {
-    background: #1f2937;
+    background: rgba(98, 178, 255, .1);
     color: #fff;
-    border-color: #4b5563;
+    border-color: var(--site-blue);
 }
 
 /* Footer Architecture */
 footer {
-    background: #030712;
-    padding: 40px 20px;
+    background: #050b15;
+    padding: 44px 20px;
     text-align: center;
-    border-top: 1px solid #1e293b;
+    border-top: 1px solid var(--site-line);
     margin-top: 60px;
 }
 
@@ -206,14 +240,57 @@ footer p {
 }
 
 footer a {
-    color: #60a5fa;
+    color: var(--site-blue);
     text-decoration: none;
     transition: 0.2s;
 }
 
 footer a:hover {
-    color: #3b82f6;
+    color: #b7ddff;
     text-decoration: underline;
+}
+
+.banner-alert {
+    background: linear-gradient(90deg, #f5c76b, #ffd98e) !important;
+    color: #17202b !important;
+    letter-spacing: .01em;
+}
+
+.hero-visual {
+    background: linear-gradient(90deg, rgba(7, 16, 29, .12), rgba(7, 16, 29, .66)), url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85") center / cover;
+    border: 1px solid rgba(98, 178, 255, .35);
+    border-radius: 14px;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, .24);
+    min-height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-visual::after {
+    align-items: flex-end;
+    background: linear-gradient(transparent, rgba(7, 16, 29, .88));
+    color: #fff;
+    content: "Secure systems. Clear decisions. Human support.";
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    inset: 0;
+    letter-spacing: .02em;
+    padding: 24px;
+    position: absolute;
+}
+
+.reveal-on-load {
+    animation: site-rise .65s ease both;
+}
+
+@keyframes site-rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
 /* ============================ RESPONSIVE BREAKPOINTS ============================ */
@@ -222,7 +299,7 @@ footer a:hover {
 @media (max-width: 1024px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr); /* Clean 2-column grid for tablets */
-        gap: 20px;
+        gap: 16px;
     }
     section {
         padding: 40px 25px;
@@ -232,10 +309,10 @@ footer a:hover {
 /* Smartphone Scale Triggers */
 @media (max-width: 768px) {
     header {
-        padding: 25px 20px;
+        padding: 30px 16px;
     }
     nav {
-        gap: 10px;
+        gap: 6px;
     }
     section {
         padding: 30px 15px;
@@ -246,4 +323,6 @@ footer a:hover {
     .card {
         padding: 20px;
     }
+
+    .hero-visual { min-height: 190px; }
 }

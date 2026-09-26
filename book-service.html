@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start Service Request | Tech It Easy IT Services LLC</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         .container {
             max-width: 800px;
@@ -105,7 +104,8 @@
     </header>
     
     <div class="container">
-        <form id="booking-form" action="https://formspree.io" method="POST" class="form-card">
+        <form id="booking-form" action="https://formspree.io/f/xzdnzpka" method="POST" class="form-card">
+            <input type="hidden" name="_subject" value="TECH IT EASY service request">
             <h1>🚀 Start Service Request</h1>
             <p class="subtext">
                 Select the service you need and continue securely to scheduling or checkout.
@@ -115,8 +115,8 @@
             <select id="service" name="service" required>
                 <option value="">-- Select a Service --</option>
                 <optgroup label="Standard Flat-Rate Services">
-                    <option value="consultation">Personal Tech Consultation ($59)</option>
-                    <option value="remote">Remote IT Support ($79)</option>
+                    <option value="consultation">Personal Tech Consultation ($79)</option>
+                    <option value="remote">Remote IT Support ($59)</option>
                     <option value="optimization">System Optimization ($69)</option>
                     <option value="os">OS Installation / Reset ($89)</option>
                     <option value="secure">Secure Device Configuration ($79)</option>
@@ -169,47 +169,42 @@
                 return;
             }
 
-            const myCalendlyLink = "https://calendly.com"; 
-
-            if (service === "website" || service === "app") {
-                submitBtn.disabled = true;
-                submitBtn.innerText = "Processing Inquiry...";
-
-                const form = e.target;
-                const data = new FormData(form);
-                
-                fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                }).then(() => {
-                    window.location.href = myCalendlyLink;
-                }).catch(() => {
-                    window.location.href = myCalendlyLink;
-                });
-                return;
-            }
-
+            const myCalendlyLink = "https://calendly.com/techiteasy";
             const links = {
-                "consultation": "https://stripe.com",
-                "personal-consulting": "https://stripe.com",
-                "remote": "https://stripe.com",
-                "optimization": "https://stripe.com",
-                "os": "https://stripe.com",
-                "secure": "https://stripe.com",
-                "cloud": "https://stripe.com",
-                "business": "https://stripe.com",
-                "cyber": "https://stripe.com",
-                "network": "https://stripe.com"
+                "consultation": "https://buy.stripe.com/4gM6oJb0xaQ8aoh4492Fa0m",
+                "remote": "https://buy.stripe.com/dRm5kF5Gd0bucwp58d2Fa0d",
+                "optimization": "https://buy.stripe.com/28EaEZ7Ol0buaoheIN2Fa0l",
+                "os": "https://buy.stripe.com/5kQ00lfgNgas7c59ot2Fa0k",
+                "secure": "https://buy.stripe.com/aFafZj0lTbUcdAtcAF2Fa0g",
+                "cloud": "https://buy.stripe.com/eVq00l7OlcYg2VP1W12Fa0f",
+                "business": "https://buy.stripe.com/6oUaEZd8Ff6odAteIN2Fa0h",
+                "cyber": "https://buy.stripe.com/14A14p6KhaQ86817gl2Fa0j",
+                "network": "https://buy.stripe.com/5kQ28t0lTbUc6811W12Fa0e"
             };
 
             const cleanKey = service.toLowerCase().trim();
+            const form = e.target;
+            const destination = service === "website" || service === "app" ? myCalendlyLink : links[cleanKey];
 
-            if (links[cleanKey]) {
-                window.location.href = links[cleanKey];
-            } else {
+            if (!destination) {
                 alert("Routing configuration parameters mismatch. Please contact support.");
+                return;
             }
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = service === "website" || service === "app" ? "Sending Inquiry..." : "Preparing Secure Checkout...";
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(function (response) {
+                if (!response.ok) throw new Error("Form submission failed");
+                window.location.href = destination;
+            }).catch(function () {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Continue";
+                alert("We could not send your request. Please try again before continuing.");
+            });
         });
     </script>
 

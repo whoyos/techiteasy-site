@@ -1,126 +1,119 @@
-<header>
-    <div class="logo">
-        <img src="logo.png" alt="Tech It Easy IT Services LLC" style="height: 50px;">
-    </div>
-    <nav>
-        <a href="index.html">Home</a> | 
-        <a href="services.html">IT Services</a> | 
-        <a href="network-design.html">Network Design</a> | 
-        <a href="support.html">Get Remote Support</a>
-    </nav>
-</header>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Network Design | TECH IT EASY IT SERVICES LLC</title>
+  <meta name="description" content="Residential Wi-Fi, home network setup, camera wiring, equipment guidance, and remote support from TECH IT EASY IT SERVICES LLC.">
+  <title>Home Networking &amp; Camera Wiring | TECH IT EASY</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-
-  <!-- PayPal SDK -->
-  <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
-  </script>
+  <style>
+    :root { --net-ink: #08111f; --net-panel: #101d2f; --net-panel-2: #142943; --net-line: #29425f; --net-muted: #a9b9cc; --net-blue: #62b2ff; --net-green: #4bd5a0; }
+    .network-page { background: radial-gradient(circle at 80% 0%, #173d65 0, transparent 34%), var(--net-ink); color: #f4f8fc; min-height: 100vh; }
+    .network-page header { background: rgba(8, 17, 31, .94); border-bottom: 1px solid var(--net-line); padding: 42px 20px 30px; text-align: center; }
+    .network-page header h1 { color: #fff; font-size: clamp(30px, 5vw, 54px); letter-spacing: -.04em; margin: 0; }
+    .network-page header p { color: var(--net-muted); margin: 10px 0 0; }
+    .network-page nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .network-page nav a { border: 1px solid transparent; border-radius: 7px; color: var(--net-muted); font-size: 14px; font-weight: 600; padding: 8px 12px; text-decoration: none; }
+    .network-page nav a:hover, .network-page nav a.active { background: rgba(98, 178, 255, .12); border-color: #3b719f; color: #fff; }
+    .network-shell { margin: 0 auto; max-width: 1240px; padding: 44px 24px 68px; }
+    .network-hero, .network-section, .network-cta { background: rgba(16, 29, 47, .95); border: 1px solid var(--net-line); border-radius: 14px; box-shadow: 0 18px 44px rgba(0, 0, 0, .2); }
+    .network-hero { background: linear-gradient(135deg, rgba(25, 65, 104, .95), rgba(16, 29, 47, .98)); padding: clamp(24px, 5vw, 48px); }
+    .eyebrow { color: var(--net-blue); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .network-hero h2 { color: #fff; font-size: clamp(25px, 4vw, 42px); line-height: 1.1; margin: 12px 0 16px; max-width: 760px; }
+    .network-hero p { color: #d5e3f0; line-height: 1.7; margin: 0; max-width: 730px; }
+    .hero-actions, .network-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .network-btn { border-radius: 7px; display: inline-block; font-size: 13px; font-weight: 800; padding: 12px 18px; text-align: center; text-decoration: none; }
+    .network-btn.primary { background: var(--net-blue); color: #071322; }
+    .network-btn.primary:hover { background: #8bcaff; }
+    .network-btn.secondary { border: 1px solid #4c769b; color: #dcecff; }
+    .network-btn.secondary:hover { background: rgba(98, 178, 255, .12); }
+    .rate-note { color: var(--net-muted); font-size: 12px; margin: 15px 0 0; }
+    .network-section { margin-top: 24px; padding: clamp(22px, 4vw, 34px); }
+    .network-section h2 { color: #fff; font-size: clamp(22px, 3vw, 30px); margin: 0 0 8px; }
+    .section-lead { color: var(--net-muted); margin: 0 0 24px; max-width: 780px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .service-card { background: rgba(20, 41, 67, .72); border: 1px solid var(--net-line); border-radius: 10px; display: flex; flex-direction: column; padding: 21px; }
+    .service-icon { align-items: center; background: rgba(98, 178, 255, .12); border-radius: 8px; color: var(--net-blue); display: flex; height: 40px; justify-content: center; width: 40px; }
+    .service-icon svg { height: 21px; width: 21px; }
+    .service-card h3 { color: #fff; font-size: 18px; line-height: 1.25; margin: 17px 0 8px; }
+    .service-card p { color: var(--net-muted); font-size: 13px; line-height: 1.6; margin: 0; }
+    .price-line { border-top: 1px solid var(--net-line); color: var(--net-green); font-size: 18px; font-weight: 800; margin-top: auto; padding-top: 17px; }
+    .price-line small { color: var(--net-muted); display: block; font-size: 11px; font-weight: 600; margin-top: 3px; }
+    .rate-table-wrap { overflow-x: auto; }
+    .rate-table { border-collapse: collapse; min-width: 700px; width: 100%; }
+    .rate-table th, .rate-table td { border-bottom: 1px solid var(--net-line); padding: 14px; text-align: left; }
+    .rate-table th { background: #1a3553; color: var(--net-blue); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+    .rate-table td { color: #d5e3f0; font-size: 13px; }
+    .rate-table td:nth-child(2) { color: var(--net-green); font-weight: 800; white-space: nowrap; }
+    .rate-table tr:last-child td { border-bottom: 0; }
+    .included-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 28px; list-style: none; margin: 0; padding: 0; }
+    .included-grid li { color: #d5e3f0; font-size: 13px; padding-left: 22px; position: relative; }
+    .included-grid li::before { color: var(--net-green); content: "✓"; font-weight: 900; left: 0; position: absolute; }
+    .network-cta { margin-top: 24px; padding: clamp(24px, 4vw, 36px); text-align: center; }
+    .network-cta h2 { color: #fff; margin: 0 0 9px; }
+    .network-cta p { color: var(--net-muted); margin: 0 auto; max-width: 680px; }
+    .network-cta-actions { justify-content: center; }
+    .network-page footer { border-top: 1px solid var(--net-line); color: var(--net-muted); font-size: 13px; padding: 24px; text-align: center; }
+    .network-page footer a { color: var(--net-blue); margin: 0 6px; }
+    @media (max-width: 850px) { .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .network-shell { padding: 28px 15px 48px; } .service-grid, .included-grid { grid-template-columns: 1fr; } .hero-actions, .network-cta-actions { flex-direction: column; } .network-btn { width: 100%; } }
+  </style>
 </head>
+<body class="network-page">
+  <header>
+    <h1>Home Networking &amp; Camera Wiring</h1>
+    <p>Reliable Wi-Fi, clean wiring, secure cameras, and clear instructions for your home.</p>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="network-design.html" class="active">Home Networking</a><a href="business-network.html">Business Networking</a><a href="diagnostics.html">Diagnostics</a><a href="devices.html">Devices</a><a href="support.html">IT Support</a><a href="faq.html">FAQ</a>
+    </nav>
+  </header>
 
-<body>
+  <main class="network-shell">
+    <section class="network-hero">
+      <span class="eyebrow">Residential network services</span>
+      <h2>Make every room work better, from the router to the last camera.</h2>
+      <p>We design and configure home Wi-Fi, install and organize network equipment, plan camera wiring, and provide a simple handoff guide so you know what was installed and how to use it.</p>
+      <div class="hero-actions"><a class="network-btn primary" href="https://calendly.com/techiteasy" target="_blank" rel="noopener noreferrer">Book a Consultation</a><a class="network-btn secondary" href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" target="_blank" rel="noopener noreferrer">Get Remote Help</a></div>
+      <p class="rate-note">Starting prices are labor estimates. Equipment, permits, difficult access, and new in-wall cable runs are quoted separately.</p>
+    </section>
 
-<header>
-  <h1>Network Design Services</h1>
-  <p>Home Networks • Business Networks • Secure Infrastructure</p>
+    <section class="network-section">
+      <span class="eyebrow">What we can handle</span>
+      <h2>One practical plan for your home</h2>
+      <p class="section-lead">Choose one service or combine them into a complete home network project. We will confirm the final scope before work begins.</p>
+      <div class="service-grid">
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15a8 8 0 0 1 16 0M7 15a5 5 0 0 1 10 0M10 15a2 2 0 0 1 4 0M12 19h.01"/></svg></span><h3>Home Wi-Fi Setup</h3><p>Router configuration, secure Wi-Fi naming, passwords, firmware updates, and device connection help.</p><div class="price-line">From $149<small>Remote setup</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M12 3v18M5 5l14 14M19 5L5 19"/></svg></span><h3>Mesh &amp; Coverage</h3><p>Wi-Fi dead-zone review, mesh access point placement, wired backhaul planning, and speed testing.</p><div class="price-line">From $249<small>Onsite labor, equipment separate</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10l9-7 9 7v10H3zM8 20v-6h8v6M9 10h.01M15 10h.01"/></svg></span><h3>Camera Wiring &amp; Setup</h3><p>Camera placement, Ethernet or power planning, device setup, app access, and recording checks.</p><div class="price-line">From $149 / camera<small>Existing-access labor estimate</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="14" rx="1"/><path d="M8 9h8M8 13h5M8 16h3"/></svg></span><h3>Network Plan &amp; Instructions</h3><p>Simple layout, equipment list, labeled connections, admin details handoff, and a homeowner quick guide.</p><div class="price-line">From $99<small>Remote planning document</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h3"/></svg></span><h3>Equipment Sourcing</h3><p>We can recommend and supply routers, switches, access points, cable, racks, cameras, and accessories.</p><div class="price-line">Cost + 10-20%<small>Equipment sourcing range</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5h14v14H5zM8 12h8M12 8v8"/></svg></span><h3>Remote Network Help</h3><p>Guided troubleshooting, router and device setup, password changes, and screen-share assistance.</p><div class="price-line">From $60 / session<small>Remote support via HelpWire</small></div></article>
+      </div>
+    </section>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="diagnostics.html">Diagnostics</a>
-    <a href="devices.html">Devices</a>
-    <a href="support.html">IT Support</a>
-    <a href="faq.html">FAQ</a>
-  </nav>
-</header>
+    <section class="network-section">
+      <span class="eyebrow">Transparent starting rates</span>
+      <h2>Typical project pricing</h2>
+      <p class="section-lead">These ranges separate service labor from hardware so you can compare options clearly. A consultation confirms the exact quote.</p>
+      <div class="rate-table-wrap"><table class="rate-table"><thead><tr><th>Service</th><th>Starting labor</th><th>Typical time</th><th>Includes</th></tr></thead><tbody>
+        <tr><td>Remote Wi-Fi setup</td><td>$149</td><td>60-90 minutes</td><td>Router setup, security, device connection</td></tr>
+        <tr><td>Onsite home network setup</td><td>$249</td><td>2-3 hours</td><td>Router, switch, basic Wi-Fi optimization</td></tr>
+        <tr><td>Mesh Wi-Fi installation</td><td>$249-$499</td><td>2-5 hours</td><td>Placement, setup, testing; equipment separate</td></tr>
+        <tr><td>Camera installation</td><td>$149 per camera</td><td>1-2 hours each</td><td>Mounting, setup, app access; difficult cable runs quoted</td></tr>
+        <tr><td>Network plan and equipment list</td><td>$99-$199</td><td>1-3 business days</td><td>Layout, shopping list, labeling, homeowner instructions</td></tr>
+      </tbody></table></div>
+      <p class="rate-note">Market-informed starting estimates for typical residential work. Prices may vary by location, access, wall construction, attic or crawlspace work, travel, and local code requirements.</p>
+    </section>
 
-<section>
-  <h2>Home Network Design</h2>
+    <section class="network-section">
+      <span class="eyebrow">Included with the handoff</span>
+      <h2>No mystery after the install</h2>
+      <ul class="included-grid"><li>Simple network layout and device map</li><li>Router and Wi-Fi security review</li><li>Equipment recommendations by budget</li><li>Labels for key cables and devices</li><li>Speed and coverage testing</li><li>Written setup and troubleshooting notes</li><li>Camera app and notification walkthrough</li><li>Remote follow-up option through HelpWire</li></ul>
+    </section>
 
-  <div class="card">
-    <h3>Starting at $60</h3>
-    <p>
-      We optimize your home Wi‑Fi, configure routers, improve coverage,  
-      and secure your network against unauthorized access.
-    </p>
+    <section class="network-cta"><h2>Plan the right setup before buying parts.</h2><p>Tell us about your home, rooms, cameras, internet service, and goals. We will recommend the practical next step.</p><div class="network-cta-actions"><a class="network-btn primary" href="https://calendly.com/techiteasy" target="_blank" rel="noopener noreferrer">Schedule Consultation</a><a class="network-btn secondary" href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" target="_blank" rel="noopener noreferrer">Start Remote Support</a></div></section>
+  </main>
 
-    <div class="payment-row">
-      <!-- Stripe -->
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-
-      <!-- PayPal -->
-      <div id="paypal-container-8BQ4999VNGFWJ"></div>
-      <script>
-        paypal.HostedButtons({
-          hostedButtonId: "8BQ4999VNGFWJ",
-        }).render("#paypal-container-8BQ4999VNGFWJ");
-      </script>
-    </div>
-  </div>
-</section>
-
-<section class="dark-section">
-  <h2>Business Network Design</h2>
-
-  <div class="card">
-    <h3>Starting at $120</h3>
-    <p>
-      Professional network planning for offices, shops, and multi‑user environments.  
-      Includes topology design, hardware recommendations, security layers,  
-      and scalability planning for future growth.
-    </p>
-
-    <div class="payment-row">
-      <!-- Stripe -->
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-
-      <!-- PayPal -->
-      <div id="paypal-container-B7PWMLVLM36TN"></div>
-      <script>
-        paypal.HostedButtons({
-          hostedButtonId: "B7PWMLVLM36TN",
-        }).render("#paypal-container-B7PWMLVLM36TN");
-      </script>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>What We Provide</h2>
-
-  <div class="card">
-    <ul>
-      <li>Router & switch configuration</li>
-      <li>Wi‑Fi coverage optimization</li>
-      <li>Network security hardening</li>
-      <li>Firewall setup & segmentation</li>
-      <li>VPN configuration</li>
-      <li>Hardware recommendations</li>
-      <li>Scalable network planning</li>
-    </ul>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
-  <a href="index.html">Home</a> |
-  <a href="services.html">Services</a> |
-  <a href="support.html">IT Support</a> |
-  <a href="faq.html">FAQ</a>
-</footer>
-
+  <footer><p>2026 TECH IT EASY IT SERVICES LLC</p><a href="index.html">Home</a><a href="services.html">Services</a><a href="support.html">IT Support</a><a href="faq.html">FAQ</a></footer>
 </body>
 </html>

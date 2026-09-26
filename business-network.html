@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Small and medium business network setup, Wi-Fi, firewall, cabling, equipment planning, and documentation from TECH IT EASY IT SERVICES LLC.">
+  <title>Small Business Network Setup | TECH IT EASY</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root { --biz-ink: #08111f; --biz-panel: #101d2f; --biz-panel-2: #142943; --biz-line: #29425f; --biz-muted: #a9b9cc; --biz-blue: #62b2ff; --biz-green: #4bd5a0; --biz-gold: #f5c76b; }
+    .business-page { background: radial-gradient(circle at 76% 0%, #173d65 0, transparent 32%), var(--biz-ink); color: #f4f8fc; min-height: 100vh; }
+    .business-page header { background: rgba(8, 17, 31, .94); border-bottom: 1px solid var(--biz-line); padding: 42px 20px 30px; text-align: center; }
+    .business-page header h1 { color: #fff; font-size: clamp(30px, 5vw, 54px); letter-spacing: -.04em; margin: 0; }
+    .business-page header p { color: var(--biz-muted); margin: 10px 0 0; }
+    .business-page nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .business-page nav a { border: 1px solid transparent; border-radius: 7px; color: var(--biz-muted); font-size: 14px; font-weight: 600; padding: 8px 12px; text-decoration: none; }
+    .business-page nav a:hover, .business-page nav a.active { background: rgba(98, 178, 255, .12); border-color: #3b719f; color: #fff; }
+    .business-shell { margin: 0 auto; max-width: 1240px; padding: 44px 24px 68px; }
+    .business-hero, .business-section, .business-cta { background: rgba(16, 29, 47, .95); border: 1px solid var(--biz-line); border-radius: 14px; box-shadow: 0 18px 44px rgba(0, 0, 0, .2); }
+    .business-hero { background: linear-gradient(135deg, rgba(25, 65, 104, .95), rgba(16, 29, 47, .98)); padding: clamp(24px, 5vw, 48px); }
+    .eyebrow { color: var(--biz-blue); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .business-hero h2 { color: #fff; font-size: clamp(25px, 4vw, 42px); line-height: 1.1; margin: 12px 0 16px; max-width: 800px; }
+    .business-hero p { color: #d5e3f0; line-height: 1.7; margin: 0; max-width: 760px; }
+    .hero-actions, .business-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .business-btn { border-radius: 7px; display: inline-block; font-size: 13px; font-weight: 800; padding: 12px 18px; text-align: center; text-decoration: none; }
+    .business-btn.primary { background: var(--biz-blue); color: #071322; }
+    .business-btn.primary:hover { background: #8bcaff; }
+    .business-btn.secondary { border: 1px solid #4c769b; color: #dcecff; }
+    .business-btn.secondary:hover { background: rgba(98, 178, 255, .12); }
+    .note { color: var(--biz-muted); font-size: 12px; line-height: 1.6; margin: 15px 0 0; }
+    .business-section { margin-top: 24px; padding: clamp(22px, 4vw, 34px); }
+    .business-section h2 { color: #fff; font-size: clamp(22px, 3vw, 30px); margin: 0 0 8px; }
+    .section-lead { color: var(--biz-muted); margin: 0 0 24px; max-width: 800px; }
+    .package-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .package-card { background: rgba(20, 41, 67, .72); border: 1px solid var(--biz-line); border-radius: 10px; display: flex; flex-direction: column; padding: 22px; }
+    .package-card.featured { border-color: var(--biz-blue); box-shadow: inset 0 3px 0 var(--biz-blue); }
+    .package-label { color: var(--biz-gold); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .package-card h3 { color: #fff; font-size: 20px; line-height: 1.25; margin: 12px 0 8px; }
+    .package-card p { color: var(--biz-muted); font-size: 13px; line-height: 1.6; margin: 0 0 17px; }
+    .package-card ul { color: #d5e3f0; flex: 1; font-size: 13px; line-height: 1.8; list-style: none; margin: 0 0 20px; padding: 0; }
+    .package-card li { padding-left: 19px; position: relative; }
+    .package-card li::before { color: var(--biz-green); content: "✓"; font-weight: 900; left: 0; position: absolute; }
+    .package-price { border-top: 1px solid var(--biz-line); color: var(--biz-green); font-size: 21px; font-weight: 800; padding-top: 16px; }
+    .package-price small { color: var(--biz-muted); display: block; font-size: 11px; font-weight: 600; margin-top: 3px; }
+    .schematic-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr); gap: 18px; align-items: stretch; }
+    .diagram { background: #0b1728; border: 1px solid var(--biz-line); border-radius: 10px; min-height: 285px; padding: 24px; }
+    .diagram-title { color: var(--biz-muted); font-size: 11px; font-weight: 800; letter-spacing: .08em; margin-bottom: 20px; text-transform: uppercase; }
+    .diagram-flow { align-items: center; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .node { background: #173553; border: 1px solid #4a7ba5; border-radius: 8px; color: #eaf4fd; font-size: 12px; font-weight: 800; min-width: 100px; padding: 13px 9px; text-align: center; }
+    .node small { color: var(--biz-muted); display: block; font-size: 10px; font-weight: 500; margin-top: 4px; }
+    .connector { color: var(--biz-blue); font-size: 21px; font-weight: 800; }
+    .branch-wrap { border-top: 1px dashed #456783; margin: 30px auto 0; max-width: 470px; padding-top: 22px; position: relative; }
+    .branch-wrap::before { border-left: 1px dashed #456783; content: ""; height: 22px; left: 50%; position: absolute; top: 0; }
+    .branch-list { display: grid; gap: 8px; grid-template-columns: repeat(3, 1fr); }
+    .branch-list .node { min-width: 0; }
+    .option-list { display: grid; gap: 12px; }
+    .option { background: rgba(20, 41, 67, .72); border: 1px solid var(--biz-line); border-radius: 9px; padding: 18px; }
+    .option h3 { color: #fff; font-size: 16px; margin: 0 0 6px; }
+    .option p { color: var(--biz-muted); font-size: 13px; line-height: 1.6; margin: 0; }
+    .cost-table-wrap { overflow-x: auto; }
+    .cost-table { border-collapse: collapse; min-width: 730px; width: 100%; }
+    .cost-table th, .cost-table td { border-bottom: 1px solid var(--biz-line); padding: 14px; text-align: left; }
+    .cost-table th { background: #1a3553; color: var(--biz-blue); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+    .cost-table td { color: #d5e3f0; font-size: 13px; }
+    .cost-table td:nth-child(2), .cost-table td:nth-child(3) { color: var(--biz-green); font-weight: 800; white-space: nowrap; }
+    .cost-table tr:last-child td { border-bottom: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; counter-reset: step; list-style: none; margin: 0; padding: 0; }
+    .steps li { background: rgba(20, 41, 67, .72); border: 1px solid var(--biz-line); border-radius: 9px; color: var(--biz-muted); font-size: 13px; line-height: 1.6; padding: 19px; }
+    .steps li::before { background: var(--biz-blue); border-radius: 50%; color: #071322; content: counter(step); counter-increment: step; display: grid; font-size: 12px; font-weight: 900; height: 25px; margin-bottom: 13px; place-items: center; width: 25px; }
+    .steps strong { color: #fff; display: block; font-size: 15px; margin-bottom: 5px; }
+    .business-cta { margin-top: 24px; padding: clamp(24px, 4vw, 36px); text-align: center; }
+    .business-cta h2 { color: #fff; margin: 0 0 9px; }
+    .business-cta p { color: var(--biz-muted); margin: 0 auto; max-width: 700px; }
+    .business-cta-actions { justify-content: center; }
+    .business-page footer { border-top: 1px solid var(--biz-line); color: var(--biz-muted); font-size: 13px; padding: 24px; text-align: center; }
+    .business-page footer a { color: var(--biz-blue); margin: 0 6px; }
+    @media (max-width: 900px) { .package-grid, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .schematic-layout { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .business-shell { padding: 28px 15px 48px; } .package-grid, .steps { grid-template-columns: 1fr; } .hero-actions, .business-cta-actions { flex-direction: column; } .business-btn { width: 100%; } .diagram { padding: 18px 10px; } .branch-list { grid-template-columns: 1fr; } .connector { transform: rotate(90deg); } }
+  </style>
+</head>
+<body class="business-page">
+  <header>
+    <h1>Small &amp; Medium Business Networking</h1>
+    <p>Secure infrastructure, dependable Wi-Fi, organized cabling, and a plan that can grow.</p>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="network-design.html">Home Networking</a><a href="business-network.html" class="active">Business Networking</a><a href="diagnostics.html">Diagnostics</a><a href="support.html">IT Support</a><a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <main class="business-shell">
+    <section class="business-hero">
+      <span class="eyebrow">Business network setup</span>
+      <h2>A network your team can work on today and expand tomorrow.</h2>
+      <p>We design and configure the practical layer between your internet provider and your people: firewall, switches, business Wi-Fi, guest access, cameras, cabling, equipment sourcing, and documentation.</p>
+      <div class="hero-actions"><a class="business-btn primary" href="https://calendly.com/techiteasy" target="_blank" rel="noopener noreferrer">Book a Business Consultation</a><a class="business-btn secondary" href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" target="_blank" rel="noopener noreferrer">Get Remote Help</a></div>
+      <p class="note">Starting labor estimates are for typical small and medium business projects. Hardware, cabling materials, permits, travel, and after-hours work are quoted separately.</p>
+    </section>
+
+    <section class="business-section">
+      <span class="eyebrow">Choose the right starting point</span>
+      <h2>Business network packages</h2>
+      <p class="section-lead">Packages are a planning guide, not a one-size-fits-all promise. We confirm device count, floor plan, cabling, security needs, and business hours before final pricing.</p>
+      <div class="package-grid">
+        <article class="package-card"><span class="package-label">Small office</span><h3>Foundation Setup</h3><p>For a small office, storefront, studio, or home-based team that needs a clean and secure starting point.</p><ul><li>Router or firewall configuration</li><li>Business Wi-Fi setup</li><li>Up to 15 devices</li><li>Guest Wi-Fi and password handoff</li><li>Basic network diagram</li></ul><div class="package-price">From $1,200<small>Labor; typical hardware budget $1,500-$4,000</small></div></article>
+        <article class="package-card featured"><span class="package-label">Growing team</span><h3>Connected Office</h3><p>For teams adding access points, wired workstations, cameras, phones, or separate guest and staff networks.</p><ul><li>Firewall, switch, and VLAN setup</li><li>Up to 40 devices</li><li>Two to four access points</li><li>Guest, staff, and device networks</li><li>Documentation and training</li></ul><div class="package-price">From $3,500<small>Labor; typical hardware budget $4,000-$10,000</small></div></article>
+        <article class="package-card"><span class="package-label">Multi-area site</span><h3>Scalable Infrastructure</h3><p>For larger offices, multi-floor spaces, warehouses, clinics, or sites that need structured planning and room to grow.</p><ul><li>Site survey and coverage plan</li><li>Managed firewall and switching</li><li>40-100 devices</li><li>PoE cameras or phones</li><li>As-built diagram and handoff</li></ul><div class="package-price">From $7,500<small>Labor; typical hardware budget $8,000-$20,000+</small></div></article>
+      </div>
+    </section>
+
+    <section class="business-section">
+      <span class="eyebrow">Example architecture</span>
+      <h2>What a clean business network could look like</h2>
+      <p class="section-lead">This schematic shows the separation between internet service, security, wired infrastructure, wireless access, and business devices.</p>
+      <div class="schematic-layout">
+        <div class="diagram" role="img" aria-label="Business network schematic showing internet connected to a firewall, PoE switch, wireless access points, cameras, phones, and workstations">
+          <div class="diagram-title">Typical small office topology</div>
+          <div class="diagram-flow"><div class="node">Internet<small>ISP modem</small></div><span class="connector">&rarr;</span><div class="node">Firewall<small>Security gateway</small></div><span class="connector">&rarr;</span><div class="node">PoE Switch<small>Wired core</small></div></div>
+          <div class="branch-wrap"><div class="branch-list"><div class="node">Wi-Fi APs<small>Staff + guest</small></div><div class="node">Cameras<small>PoE devices</small></div><div class="node">Workstations<small>Printers + phones</small></div></div></div>
+        </div>
+        <div class="option-list"><article class="option"><h3>Secure by default</h3><p>Separate staff, guest, camera, and management traffic so one device does not expose the whole network.</p></article><article class="option"><h3>Ready for growth</h3><p>Leave capacity for additional access points, cameras, phones, and workstations instead of replacing everything later.</p></article><article class="option"><h3>Easy to hand off</h3><p>Receive a labeled equipment list, network map, and instructions your team can actually use.</p></article></div>
+      </div>
+    </section>
+
+    <section class="business-section">
+      <span class="eyebrow">Transparent planning ranges</span>
+      <h2>Typical business project pricing</h2>
+      <p class="section-lead">Labor and hardware are shown separately so you can compare a DIY equipment purchase with a professionally planned installation.</p>
+      <div class="cost-table-wrap"><table class="cost-table"><thead><tr><th>Work area</th><th>Starting labor</th><th>Typical time</th><th>What is included</th></tr></thead><tbody>
+        <tr><td>Discovery and site survey</td><td>$199-$499</td><td>1-3 hours</td><td>Needs review, floor plan notes, device count, recommendations</td></tr>
+        <tr><td>Firewall and network core</td><td>$750-$1,800</td><td>1-2 days</td><td>Firewall, switch, VLAN, DHCP, firmware, secure admin setup</td></tr>
+        <tr><td>Business Wi-Fi access point</td><td>$225-$450 each</td><td>1-2 hours each</td><td>Mounting, configuration, placement testing; hardware separate</td></tr>
+        <tr><td>Structured cable drop</td><td>$175-$350 each</td><td>2-5 hours each</td><td>Run, terminate, label, and test; difficult access quoted</td></tr>
+        <tr><td>Documentation and staff handoff</td><td>$299-$799</td><td>1-3 days</td><td>Diagram, asset list, admin handoff, and walkthrough</td></tr>
+      </tbody></table></div>
+      <p class="note">Market-informed starting estimates for common U.S. small business work. Local labor, building access, code requirements, cable distance, and after-hours scheduling can change the final quote.</p>
+    </section>
+
+    <section class="business-section">
+      <span class="eyebrow">From first conversation to handoff</span>
+      <h2>A straightforward project process</h2>
+      <ol class="steps"><li><strong>Discover</strong>We review the space, internet service, devices, users, cameras, and business priorities.</li><li><strong>Design</strong>You receive a recommended layout, equipment list, scope, and price range before installation.</li><li><strong>Build</strong>We configure, label, test, and document the network with minimal disruption to work.</li><li><strong>Handoff</strong>Your team gets instructions, credentials handoff, a diagram, and a clear path for remote follow-up.</li></ol>
+    </section>
+
+    <section class="business-cta"><h2>Ready to plan a better business network?</h2><p>Bring your floor plan, device count, internet details, or even a few phone photos. We can turn them into a practical next step.</p><div class="business-cta-actions"><a class="business-btn primary" href="https://calendly.com/techiteasy" target="_blank" rel="noopener noreferrer">Schedule Consultation</a><a class="business-btn secondary" href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" target="_blank" rel="noopener noreferrer">Start Remote Support</a></div></section>
+  </main>
+
+  <footer><p>2026 TECH IT EASY IT SERVICES LLC</p><a href="index.html">Home</a><a href="services.html">Services</a><a href="network-design.html">Home Networking</a><a href="support.html">IT Support</a><a href="faq.html">FAQ</a></footer>
+</body>
+</html>

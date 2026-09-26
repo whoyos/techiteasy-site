@@ -3,110 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom PC Build | TECH IT EASY IT SERVICES LLC</title>
+  <meta name="description" content="Custom laptops, desktops, business systems, gaming PCs, Linux workstations, and AI workstation planning from TECH IT EASY IT SERVICES LLC.">
+  <title>Custom Computers &amp; Workstations | TECH IT EASY</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-
-  <!-- PayPal SDK -->
-  <script 
-    src="https://www.paypal.com/sdk/js?client-id=BAA3EvpMaKXasXcU4liqkulFaDWePa5xd_ShO6RuT2F6QO-1KdSpzOLnn3Y0bDoTXmBNMeq-Eh-ofl-Ziw&components=hosted-buttons&enable-funding=venmo&currency=USD">
-  </script>
+  <style>
+    :root { --pc-ink: #080f1d; --pc-panel: #101d2f; --pc-panel-2: #142943; --pc-line: #29425f; --pc-muted: #a9b9cc; --pc-blue: #62b2ff; --pc-green: #4bd5a0; --pc-gold: #f5c76b; }
+    .pc-page { background: radial-gradient(circle at 78% 0%, #173d65 0, transparent 32%), var(--pc-ink); color: #f4f8fc; min-height: 100vh; }
+    .pc-page header { background: rgba(8, 15, 29, .94); border-bottom: 1px solid var(--pc-line); padding: 42px 20px 30px; text-align: center; }
+    .pc-page header h1 { color: #fff; font-size: clamp(30px, 5vw, 54px); letter-spacing: -.04em; margin: 0; }
+    .pc-page header p { color: var(--pc-muted); margin: 10px 0 0; }
+    .pc-page nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .pc-page nav a { border: 1px solid transparent; border-radius: 7px; color: var(--pc-muted); font-size: 14px; font-weight: 600; padding: 8px 12px; text-decoration: none; }
+    .pc-page nav a:hover, .pc-page nav a.active { background: rgba(98, 178, 255, .12); border-color: #3b719f; color: #fff; }
+    .pc-shell { margin: 0 auto; max-width: 1240px; padding: 44px 24px 68px; }
+    .pc-hero, .pc-section, .pc-cta { background: rgba(16, 29, 47, .95); border: 1px solid var(--pc-line); border-radius: 14px; box-shadow: 0 18px 44px rgba(0, 0, 0, .2); }
+    .pc-hero { background: linear-gradient(135deg, rgba(25, 65, 104, .95), rgba(16, 29, 47, .98)); padding: clamp(24px, 5vw, 48px); }
+    .eyebrow { color: var(--pc-blue); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .pc-hero h2 { color: #fff; font-size: clamp(25px, 4vw, 42px); line-height: 1.1; margin: 12px 0 16px; max-width: 820px; }
+    .pc-hero p { color: #d5e3f0; line-height: 1.7; margin: 0; max-width: 780px; }
+    .pc-actions, .pc-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .pc-btn { border-radius: 7px; display: inline-block; font-size: 13px; font-weight: 800; padding: 12px 18px; text-align: center; text-decoration: none; }
+    .pc-btn.primary { background: var(--pc-blue); color: #071322; }
+    .pc-btn.primary:hover { background: #8bcaff; }
+    .pc-btn.secondary { border: 1px solid #4c769b; color: #dcecff; }
+    .pc-btn.secondary:hover { background: rgba(98, 178, 255, .12); }
+    .note { color: var(--pc-muted); font-size: 12px; line-height: 1.6; margin: 15px 0 0; }
+    .pc-section { margin-top: 24px; padding: clamp(22px, 4vw, 34px); }
+    .pc-section h2 { color: #fff; font-size: clamp(22px, 3vw, 30px); margin: 0 0 8px; }
+    .section-lead { color: var(--pc-muted); margin: 0 0 24px; max-width: 820px; }
+    .build-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .build-card { background: rgba(20, 41, 67, .72); border: 1px solid var(--pc-line); border-radius: 10px; display: flex; flex-direction: column; padding: 22px; }
+    .build-card.featured { border-color: var(--pc-blue); box-shadow: inset 0 3px 0 var(--pc-blue); }
+    .build-label { color: var(--pc-gold); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .build-card h3 { color: #fff; font-size: 20px; line-height: 1.25; margin: 12px 0 8px; }
+    .build-card p { color: var(--pc-muted); font-size: 13px; line-height: 1.6; margin: 0 0 17px; }
+    .build-card ul { color: #d5e3f0; flex: 1; font-size: 13px; line-height: 1.8; list-style: none; margin: 0 0 20px; padding: 0; }
+    .build-card li { padding-left: 19px; position: relative; }
+    .build-card li::before { color: var(--pc-green); content: "✓"; font-weight: 900; left: 0; position: absolute; }
+    .build-price { border-top: 1px solid var(--pc-line); color: var(--pc-green); font-size: 20px; font-weight: 800; padding-top: 16px; }
+    .build-price small { color: var(--pc-muted); display: block; font-size: 11px; font-weight: 600; margin-top: 3px; }
+    .price-table-wrap { overflow-x: auto; }
+    .price-table { border-collapse: collapse; min-width: 800px; width: 100%; }
+    .price-table th, .price-table td { border-bottom: 1px solid var(--pc-line); padding: 14px; text-align: left; }
+    .price-table th { background: #1a3553; color: var(--pc-blue); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+    .price-table td { color: #d5e3f0; font-size: 13px; }
+    .price-table td:nth-child(2), .price-table td:nth-child(3) { color: var(--pc-green); font-weight: 800; white-space: nowrap; }
+    .price-table tr:last-child td { border-bottom: 0; }
+    .os-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+    .os-card { background: rgba(20, 41, 67, .72); border: 1px solid var(--pc-line); border-radius: 10px; padding: 21px; }
+    .os-card h3 { color: #fff; margin: 0 0 8px; }
+    .os-card p { color: var(--pc-muted); font-size: 13px; line-height: 1.6; margin: 0; }
+    .included-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 28px; list-style: none; margin: 0; padding: 0; }
+    .included-grid li { color: #d5e3f0; font-size: 13px; padding-left: 22px; position: relative; }
+    .included-grid li::before { color: var(--pc-green); content: "✓"; font-weight: 900; left: 0; position: absolute; }
+    .pc-cta { margin-top: 24px; padding: clamp(24px, 4vw, 36px); text-align: center; }
+    .pc-cta h2 { color: #fff; margin: 0 0 9px; }
+    .pc-cta p { color: var(--pc-muted); margin: 0 auto; max-width: 700px; }
+    .pc-cta-actions { justify-content: center; }
+    .pc-page footer { border-top: 1px solid var(--pc-line); color: var(--pc-muted); font-size: 13px; padding: 24px; text-align: center; }
+    .pc-page footer a { color: var(--pc-blue); margin: 0 6px; }
+    @media (max-width: 900px) { .build-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 620px) { .pc-shell { padding: 28px 15px 48px; } .build-grid, .os-grid, .included-grid { grid-template-columns: 1fr; } .pc-actions, .pc-cta-actions { flex-direction: column; } .pc-btn { width: 100%; } }
+  </style>
 </head>
+<body class="pc-page">
+  <header>
+    <h1>Custom Computers &amp; Workstations</h1>
+    <p>Laptops, desktops, business systems, gaming PCs, Linux builds, and AI-ready workstations.</p>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="custom-pc.html" class="active">Custom Computers</a><a href="devices.html">Devices</a><a href="diagnostics.html">Diagnostics</a><a href="support.html">IT Support</a><a href="faq.html">FAQ</a>
+    </nav>
+  </header>
 
-<body>
+  <main class="pc-shell">
+    <section class="pc-hero">
+      <span class="eyebrow">Hardware planning and setup</span>
+      <h2>Buy the computer that fits the work, not just the biggest specifications.</h2>
+      <p>We help individuals and businesses choose, source, configure, build, and support the right computer. That can be a dependable everyday laptop, a quiet office desktop, a Linux workstation, a high-refresh gaming PC, or a multi-GPU system for AI and creative work.</p>
+      <div class="pc-actions"><a class="pc-btn primary" href="https://calendly.com/techiteasy" target="_blank" rel="noopener noreferrer">Book a Hardware Consultation</a><a class="pc-btn secondary" href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" target="_blank" rel="noopener noreferrer">Get Remote Help</a></div>
+      <p class="note">Prices are planning ranges, not fixed product quotes. Hardware prices change, and the final recommendation depends on workload, availability, warranty, software, and upgrade goals.</p>
+    </section>
 
-<header>
-  <h1>Custom PC Build Services</h1>
-  <p>Professional Design • Expert Assembly • Optimized Performance</p>
+    <section class="pc-section">
+      <span class="eyebrow">Choose by use case</span>
+      <h2>Build categories</h2>
+      <p class="section-lead">Start with what the computer must do. We can recommend a prebuilt system, a custom build, or a laptop and dock setup when portability matters.</p>
+      <div class="build-grid">
+        <article class="build-card"><span class="build-label">Portable everyday</span><h3>Everyday Laptop</h3><p>For email, documents, web apps, streaming, school, travel, and normal home use.</p><ul><li>Windows or Linux options</li><li>Solid-state storage and modern Wi-Fi</li><li>Setup, updates, backup, and transfer</li></ul><div class="build-price">$600-$1,500<small>Typical hardware budget</small></div></article>
+        <article class="build-card"><span class="build-label">Home and office</span><h3>Everyday Desktop</h3><p>For users who prefer a larger screen, quiet operation, easier upgrades, and reliable daily performance.</p><ul><li>Windows or Linux configuration</li><li>Monitor, keyboard, and printer setup</li><li>Optional small-form-factor build</li></ul><div class="build-price">$700-$1,800<small>Typical hardware budget</small></div></article>
+        <article class="build-card featured"><span class="build-label">Small business</span><h3>Business Workstation</h3><p>For accounting, design, operations, office applications, remote teams, and multi-user workflows.</p><ul><li>Business-grade warranty options</li><li>Encrypted storage and user setup</li><li>Docking, backup, and network integration</li></ul><div class="build-price">$1,200-$3,500<small>Typical hardware budget</small></div></article>
+        <article class="build-card"><span class="build-label">High performance</span><h3>Pro Gaming PC</h3><p>For competitive gaming, high-refresh monitors, streaming, simulation, and demanding 1440p or 4K play.</p><ul><li>GPU and monitor matched to resolution</li><li>Thermals, airflow, and quiet-fan planning</li><li>BIOS tuning and stability testing</li></ul><div class="build-price">$1,500-$4,500<small>Typical hardware budget</small></div></article>
+        <article class="build-card"><span class="build-label">Creative production</span><h3>Creator Workstation</h3><p>For Photoshop, video editing, 3D, animation, photography, music, and large project files.</p><ul><li>CPU, GPU, RAM, and storage balance</li><li>Color and monitor workflow planning</li><li>Scratch disks and backup strategy</li></ul><div class="build-price">$2,000-$6,000<small>Typical hardware budget</small></div></article>
+        <article class="build-card"><span class="build-label">AI and compute</span><h3>AI Workstation</h3><p>For local models, image generation, development, data work, and GPU-accelerated applications.</p><ul><li>VRAM-first GPU selection</li><li>Linux, Windows, or dual-boot options</li><li>Power, cooling, and upgrade planning</li></ul><div class="build-price">$2,500-$12,000+<small>Typical hardware budget</small></div></article>
+      </div>
+    </section>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="diagnostics.html">Diagnostics</a>
-    <a href="devices.html">Devices</a>
-    <a href="support.html">IT Support</a>
-    <a href="faq.html">FAQ</a>
-  </nav>
-</header>
+    <section class="pc-section">
+      <span class="eyebrow">Transparent service ranges</span>
+      <h2>Design, build, and setup pricing</h2>
+      <p class="section-lead">The computer budget pays for the equipment. These service ranges cover the planning, assembly, configuration, testing, and handoff work.</p>
+      <div class="price-table-wrap"><table class="price-table"><thead><tr><th>Service</th><th>Starting range</th><th>Typical time</th><th>What is included</th></tr></thead><tbody>
+        <tr><td>Hardware consultation and parts list</td><td>$99-$249</td><td>1-3 business days</td><td>Needs review, compatibility check, and recommended parts or systems</td></tr>
+        <tr><td>Laptop or prebuilt setup</td><td>$149-$299</td><td>2-4 hours</td><td>Updates, user setup, data transfer, apps, security, and handoff</td></tr>
+        <tr><td>Custom desktop assembly</td><td>$249-$499</td><td>1-2 days</td><td>Assembly, cable management, BIOS, drivers, thermals, and stress testing</td></tr>
+        <tr><td>Windows, Linux, or dual-boot setup</td><td>$149-$399</td><td>2-6 hours</td><td>OS installation, drivers, partitions, updates, and recovery guidance</td></tr>
+        <tr><td>Business fleet or workstation setup</td><td>$249-$599 each</td><td>1-4 hours each</td><td>Accounts, policies, apps, encryption, backup, and network integration</td></tr>
+        <tr><td>AI workstation configuration</td><td>$399-$1,200</td><td>1-3 days</td><td>GPU drivers, environments, storage, thermals, and application validation</td></tr>
+      </tbody></table></div>
+      <p class="note">Market-informed starting estimates for common U.S. computer setup work. Data migration, software licensing, custom water cooling, complex Linux environments, and on-site travel can change the final quote.</p>
+    </section>
 
-<section>
-  <h2>PC Build Design</h2>
+    <section class="pc-section">
+      <span class="eyebrow">Windows and Linux</span>
+      <h2>Choose the operating system that fits the workflow</h2>
+      <div class="os-grid"><article class="os-card"><h3>Windows setup</h3><p>Best for broad commercial software, Microsoft 365, gaming, Adobe applications, business tools, and the widest hardware compatibility.</p></article><article class="os-card"><h3>Linux setup</h3><p>Best for development, servers, privacy-focused workflows, automation, research, and many AI or engineering tools. We can help choose a practical distribution.</p></article><article class="os-card"><h3>Dual-boot setup</h3><p>Keep Windows for required applications and Linux for development or compute work, with clear storage partitions and recovery guidance.</p></article><article class="os-card"><h3>Managed handoff</h3><p>Receive account setup, update guidance, backup recommendations, recovery notes, and a simple record of what was installed.</p></article></div>
+    </section>
 
-  <div class="card">
-    <h3>Starting at $50</h3>
-    <p>
-      We design a custom PC tailored to your needs — gaming, productivity, editing, or business.  
-      Includes component selection, compatibility check, and performance planning.
-    </p>
+    <section class="pc-section">
+      <span class="eyebrow">Every build should arrive ready</span>
+      <h2>What the service can include</h2>
+      <ul class="included-grid"><li>Compatibility and upgrade review</li><li>Professional assembly and cable management</li><li>BIOS, firmware, driver, and operating system updates</li><li>Thermal, memory, storage, and stability testing</li><li>Data transfer and application installation</li><li>Security, backup, and recovery guidance</li><li>Monitor, dock, printer, and peripheral setup</li><li>Written parts list and configuration handoff</li></ul>
+    </section>
 
-    <div class="payment-row">
-      <!-- Stripe -->
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
+    <section class="pc-cta"><h2>Not sure which system fits?</h2><p>Tell us what you do, what software you use, your budget, and whether you need portability. We will turn that into a practical recommendation before you buy parts.</p><div class="pc-cta-actions"><a class="pc-btn primary" href="https://calendly.com/techiteasy" target="_blank" rel="noopener noreferrer">Schedule Hardware Consultation</a><a class="pc-btn secondary" href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" target="_blank" rel="noopener noreferrer">Start Remote Support</a></div></section>
+  </main>
 
-      <!-- PayPal -->
-      <div id="paypal-container-R2Y4V95J5D5TN"></div>
-      <script>
-        paypal.HostedButtons({
-          hostedButtonId: "R2Y4V95J5D5TN",
-        }).render("#paypal-container-R2Y4V95J5D5TN");
-      </script>
-    </div>
-  </div>
-</section>
-
-<section class="dark-section">
-  <h2>PC Assembly</h2>
-
-  <div class="card">
-    <h3>Starting at $80</h3>
-    <p>
-      Full PC assembly with cable management, thermal optimization, BIOS configuration,  
-      and stress testing to ensure maximum stability and performance.
-    </p>
-
-    <div class="payment-row">
-      <!-- Stripe -->
-      <a href="https://buy.stripe.com/fZufZj2u13nG53XgQV2Fa00"
-         class="btn primary" target="_blank">
-        Pay with Stripe
-      </a>
-
-      <!-- PayPal -->
-      <div id="paypal-container-CQSP9SYSF8B9A"></div>
-      <script>
-        paypal.HostedButtons({
-          hostedButtonId: "CQSP9SYSF8B9A",
-        }).render("#paypal-container-CQSP9SYSF8B9A");
-      </script>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Why Choose Us?</h2>
-
-  <div class="card">
-    <ul>
-      <li>Expert component selection</li>
-      <li>Thermal and airflow optimization</li>
-      <li>Professional cable management</li>
-      <li>Gaming, editing, and workstation builds</li>
-      <li>Stress testing and stability verification</li>
-      <li>Lifetime support for your build</li>
-    </ul>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 TECH IT EASY IT SERVICES LLC</p>
-  <a href="index.html">Home</a> |
-  <a href="services.html">Services</a> |
-  <a href="support.html">IT Support</a> |
-  <a href="faq.html">FAQ</a>
-</footer>
-
+  <footer><p>2026 TECH IT EASY IT SERVICES LLC</p><a href="index.html">Home</a><a href="services.html">Services</a><a href="devices.html">Devices</a><a href="support.html">IT Support</a><a href="faq.html">FAQ</a></footer>
 </body>
 </html>

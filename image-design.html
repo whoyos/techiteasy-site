@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional Photoshop editing, AI image creation, product retouching, compositing, and creative design services from TECH IT EASY IT SERVICES LLC.">
+  <title>Image Creation &amp; Editing Services | TECH IT EASY</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root { --art-ink: #111016; --art-panel: #1d1b26; --art-panel-2: #292536; --art-line: #403950; --art-muted: #b8b1c5; --art-text: #f8f5fb; --art-pink: #ed8ab4; --art-violet: #b49aff; --art-green: #71dbb1; }
+    .art-page { background: radial-gradient(circle at 83% 0%, #492d55 0, transparent 31%), var(--art-ink); color: var(--art-text); min-height: 100vh; }
+    .art-page header { background: rgba(17, 16, 22, .94); border-bottom: 1px solid var(--art-line); padding: 42px 20px 30px; text-align: center; }
+    .art-page header h1 { color: #fff; font-size: clamp(30px, 5vw, 54px); letter-spacing: -.04em; margin: 0; }
+    .art-page header p { color: var(--art-muted); margin: 10px 0 0; }
+    .art-page nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .art-page nav a { border: 1px solid transparent; border-radius: 7px; color: var(--art-muted); font-size: 14px; font-weight: 600; padding: 8px 12px; text-decoration: none; }
+    .art-page nav a:hover, .art-page nav a.active { background: rgba(237, 138, 180, .12); border-color: #845071; color: #fff; }
+    .art-shell { margin: 0 auto; max-width: 1240px; padding: 44px 24px 68px; }
+    .art-hero, .art-section, .art-cta { background: rgba(29, 27, 38, .95); border: 1px solid var(--art-line); border-radius: 14px; box-shadow: 0 18px 44px rgba(0, 0, 0, .24); }
+    .art-hero { background: linear-gradient(135deg, rgba(73, 45, 85, .96), rgba(29, 27, 38, .98)); padding: clamp(24px, 5vw, 48px); }
+    .eyebrow { color: var(--art-pink); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .art-hero h2 { color: #fff; font-size: clamp(25px, 4vw, 42px); line-height: 1.1; margin: 12px 0 16px; max-width: 800px; }
+    .art-hero p { color: #eadfeb; line-height: 1.7; margin: 0; max-width: 760px; }
+    .art-actions, .art-cta-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .art-btn { border-radius: 7px; display: inline-block; font-size: 13px; font-weight: 800; padding: 12px 18px; text-align: center; text-decoration: none; }
+    .art-btn.primary { background: var(--art-pink); color: #24121d; }
+    .art-btn.primary:hover { background: #ffb4d1; }
+    .art-btn.secondary { border: 1px solid #845071; color: #f8e9f1; }
+    .art-btn.secondary:hover { background: rgba(237, 138, 180, .12); }
+    .note { color: var(--art-muted); font-size: 12px; line-height: 1.6; margin: 15px 0 0; }
+    .art-section { margin-top: 24px; padding: clamp(22px, 4vw, 34px); }
+    .art-section h2 { color: #fff; font-size: clamp(22px, 3vw, 30px); margin: 0 0 8px; }
+    .section-lead { color: var(--art-muted); margin: 0 0 24px; max-width: 800px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
+    .service-card { background: rgba(41, 37, 54, .76); border: 1px solid var(--art-line); border-radius: 10px; display: flex; flex-direction: column; padding: 21px; }
+    .service-icon { align-items: center; background: rgba(237, 138, 180, .12); border-radius: 8px; color: var(--art-pink); display: flex; height: 40px; justify-content: center; width: 40px; }
+    .service-icon svg { height: 21px; width: 21px; }
+    .service-card h3 { color: #fff; font-size: 18px; line-height: 1.25; margin: 17px 0 8px; }
+    .service-card p { color: var(--art-muted); font-size: 13px; line-height: 1.6; margin: 0 0 17px; }
+    .price-line { border-top: 1px solid var(--art-line); color: var(--art-green); font-size: 18px; font-weight: 800; margin-top: auto; padding-top: 17px; }
+    .price-line small { color: var(--art-muted); display: block; font-size: 11px; font-weight: 600; margin-top: 3px; }
+    .price-table-wrap { overflow-x: auto; }
+    .price-table { border-collapse: collapse; min-width: 760px; width: 100%; }
+    .price-table th, .price-table td { border-bottom: 1px solid var(--art-line); padding: 14px; text-align: left; }
+    .price-table th { background: #342d43; color: var(--art-violet); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+    .price-table td { color: #eadfeb; font-size: 13px; }
+    .price-table td:nth-child(2) { color: var(--art-green); font-weight: 800; white-space: nowrap; }
+    .price-table tr:last-child td { border-bottom: 0; }
+    .deliverables { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 28px; list-style: none; margin: 0; padding: 0; }
+    .deliverables li { color: #eadfeb; font-size: 13px; padding-left: 22px; position: relative; }
+    .deliverables li::before { color: var(--art-green); content: "✓"; font-weight: 900; left: 0; position: absolute; }
+    .process { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; counter-reset: step; list-style: none; margin: 0; padding: 0; }
+    .process li { background: rgba(41, 37, 54, .76); border: 1px solid var(--art-line); border-radius: 9px; color: var(--art-muted); font-size: 13px; line-height: 1.6; padding: 19px; }
+    .process li::before { background: var(--art-pink); border-radius: 50%; color: #24121d; content: counter(step); counter-increment: step; display: grid; font-size: 12px; font-weight: 900; height: 25px; margin-bottom: 13px; place-items: center; width: 25px; }
+    .process strong { color: #fff; display: block; font-size: 15px; margin-bottom: 5px; }
+    .art-cta { margin-top: 24px; padding: clamp(24px, 4vw, 36px); text-align: center; }
+    .art-cta h2 { color: #fff; margin: 0 0 9px; }
+    .art-cta p { color: var(--art-muted); margin: 0 auto; max-width: 700px; }
+    .art-cta-actions { justify-content: center; }
+    .art-page footer { border-top: 1px solid var(--art-line); color: var(--art-muted); font-size: 13px; padding: 24px; text-align: center; }
+    .art-page footer a { color: var(--art-pink); margin: 0 6px; }
+    @media (max-width: 900px) { .service-grid, .process { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .art-shell { padding: 28px 15px 48px; } .service-grid, .process, .deliverables { grid-template-columns: 1fr; } .art-actions, .art-cta-actions { flex-direction: column; } .art-btn { width: 100%; } }
+  </style>
+</head>
+<body class="art-page">
+  <header>
+    <h1>Image Creation &amp; Editing</h1>
+    <p>Photoshop polish, AI-assisted concepts, product visuals, and creative assets ready to use.</p>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="image-design.html" class="active">Image Design</a><a href="portfolio.html">Portfolio</a><a href="diagnostics.html">Diagnostics</a><a href="support.html">IT Support</a><a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+
+  <main class="art-shell">
+    <section class="art-hero">
+      <span class="eyebrow">Creative production services</span>
+      <h2>Turn rough ideas, product photos, and AI concepts into finished visuals.</h2>
+      <p>We create and edit images for websites, social media, product listings, presentations, ads, and brand materials. Every project can include Photoshop editing, AI-assisted generation, human art direction, and final export preparation.</p>
+      <div class="art-actions"><a class="art-btn primary" href="https://calendly.com/techiteasy" target="_blank" rel="noopener noreferrer">Book a Design Consultation</a><a class="art-btn secondary" href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" target="_blank" rel="noopener noreferrer">Get Remote Help</a></div>
+      <p class="note">Starting prices are design labor estimates. Stock assets, paid fonts, licensed models, advanced 3D work, rush delivery, and commercial licensing may be additional.</p>
+    </section>
+
+    <section class="art-section">
+      <span class="eyebrow">What we create</span>
+      <h2>Choose the kind of visual you need</h2>
+      <p class="section-lead">Bring a product, a rough idea, a reference image, or a blank page. We can start from your materials or build a new direction.</p>
+      <div class="service-grid">
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4zM7 15l3-3 2 2 2-3 3 4M8 9h.01"/></svg></span><h3>Photoshop Editing</h3><p>Cleanup, color correction, background removal, resizing, compositing, object removal, and professional retouching.</p><div class="price-line">From $75 / image<small>Simple edits; final scope varies</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16v5M16.5 18.5h5"/></svg></span><h3>AI Image Creation</h3><p>Concept development, prompt direction, image selection, generation, cleanup, and human-guided finishing for usable results.</p><div class="price-line">From $150 / concept<small>Includes direction and selected final</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4zM8 16l2.5-3 2 2 2.5-4 3 5M8 9h.01"/></svg></span><h3>Product &amp; E-commerce</h3><p>Product cutouts, white backgrounds, shadow creation, color variants, listing images, and marketplace-ready exports.</p><div class="price-line">From $100 / image<small>Volume rates available</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19l5-5 3 3 4-5 4 4M4 5h16v14H4z"/></svg></span><h3>Composite &amp; Manipulation</h3><p>Combine multiple images into one believable scene for campaigns, editorial graphics, announcements, and presentations.</p><div class="price-line">From $250 / composition<small>Complexity and source quality matter</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h14v16H5zM8 8h8M8 12h5M8 16h8"/></svg></span><h3>Social &amp; Presentation Assets</h3><p>Social graphics, thumbnails, banners, slide visuals, event graphics, and reusable branded templates.</p><div class="price-line">From $350 / set<small>Three to six coordinated assets</small></div></article>
+        <article class="service-card"><span class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4zM8 9h8M8 13h5M8 17h8"/></svg></span><h3>Brand Visual Package</h3><p>Creative direction, campaign images, product or service visuals, and a consistent export package for your channels.</p><div class="price-line">From $1,200 / package<small>Custom scope and usage rights</small></div></article>
+      </div>
+    </section>
+
+    <section class="art-section">
+      <span class="eyebrow">Market-informed starting ranges</span>
+      <h2>Typical image design pricing</h2>
+      <p class="section-lead">These ranges reflect common freelance and small-studio design work. A consultation confirms the exact number of images, revision rounds, source quality, delivery formats, and usage rights.</p>
+      <div class="price-table-wrap"><table class="price-table"><thead><tr><th>Deliverable</th><th>Starting range</th><th>Typical timeframe</th><th>Best for</th></tr></thead><tbody>
+        <tr><td>Basic crop, resize, and export</td><td>$35-$75</td><td>1-2 business days</td><td>Web, social, and print-ready size changes</td></tr>
+        <tr><td>Photoshop retouching and cleanup</td><td>$75-$250</td><td>2-4 business days</td><td>Portraits, products, cleanup, and color correction</td></tr>
+        <tr><td>AI-assisted concept image</td><td>$150-$400</td><td>2-5 business days</td><td>Campaign concepts, mood boards, and creative exploration</td></tr>
+        <tr><td>Composite or advanced manipulation</td><td>$250-$900</td><td>3-10 business days</td><td>Multi-source scenes, ads, editorial, and hero graphics</td></tr>
+        <tr><td>Social or presentation asset set</td><td>$350-$1,000</td><td>3-7 business days</td><td>Coordinated visuals for a launch, event, or campaign</td></tr>
+        <tr><td>Commercial brand image package</td><td>$1,200-$3,500+</td><td>1-4 weeks</td><td>Multiple deliverables, art direction, and campaign usage</td></tr>
+      </tbody></table></div>
+      <p class="note">Rates are starting estimates for typical U.S. design work. Rush delivery, paid stock, model or property releases, exclusive ownership, large-format production, and extended commercial usage can change the quote.</p>
+    </section>
+
+    <section class="art-section">
+      <span class="eyebrow">What you receive</span>
+      <h2>Finished files that are ready to use</h2>
+      <ul class="deliverables"><li>Web, social, presentation, or print exports</li><li>Transparent PNG, JPG, PDF, or other agreed formats</li><li>Consistent sizing and naming for your workflow</li><li>Color and resolution checks before delivery</li><li>Source files available when included in the quote</li><li>Revision rounds defined before work begins</li><li>AI-assisted work reviewed and refined by a human</li><li>Usage and licensing notes for supplied assets</li></ul>
+    </section>
+
+    <section class="art-section">
+      <span class="eyebrow">Simple creative workflow</span>
+      <h2>From idea to final export</h2>
+      <ol class="process"><li><strong>Brief</strong>We confirm the goal, audience, references, dimensions, deadline, and usage.</li><li><strong>Direction</strong>You receive a visual direction or a small set of concepts to choose from.</li><li><strong>Production</strong>We create, edit, retouch, composite, and prepare the agreed deliverables.</li><li><strong>Review</strong>You receive a proof, revisions are completed, and final files are organized for use.</li></ol>
+    </section>
+
+    <section class="art-cta"><h2>Have an image idea that is hard to explain?</h2><p>Send the reference, product photo, sketch, or rough description. We can turn it into a clear scope and price before production begins.</p><div class="art-cta-actions"><a class="art-btn primary" href="https://calendly.com/techiteasy" target="_blank" rel="noopener noreferrer">Schedule Design Consultation</a><a class="art-btn secondary" href="https://www.helpwire.app/builds/?token=VE99BSJoEERO3yeIQOsBCnxNMGfKYFfRkDhw5BTu" target="_blank" rel="noopener noreferrer">Get Remote Help</a></div></section>
+  </main>
+
+  <footer><p>2026 TECH IT EASY IT SERVICES LLC</p><a href="index.html">Home</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="support.html">IT Support</a><a href="faq.html">FAQ</a></footer>
+</body>
+</html>
