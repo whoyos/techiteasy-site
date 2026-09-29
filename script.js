@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         notice.setAttribute("role", "alert");
 
         const message = document.createElement("p");
-        message.textContent = "Google Translate blocks form submissions. Open the original site to continue booking or contact us.";
+        message.textContent = "Google Translate blocks form submissions. Continue on the original site to use forms.";
 
         const originalLink = document.createElement("a");
         originalLink.href = originalPage.toString();
@@ -46,11 +46,67 @@ document.addEventListener("DOMContentLoaded", () => {
         originalLink.rel = "noopener noreferrer";
         originalLink.textContent = "Continue on the original site";
 
+        let serviceSelect = null;
+
+        function updateOriginalLink() {
+            if (serviceSelect?.value) {
+                originalPage.searchParams.set("service", serviceSelect.value);
+            } else {
+                originalPage.searchParams.delete("service");
+            }
+            originalLink.href = originalPage.toString();
+        }
+
+        function continueOnOriginalSite() {
+            if (serviceSelect && !serviceSelect.value) {
+                serviceSelect.focus();
+                return;
+            }
+            updateOriginalLink();
+            window.location.assign(originalLink.href);
+        }
+
+        document.querySelectorAll("form").forEach(form => {
+            const formServiceSelect = form.querySelector("#service");
+            if (formServiceSelect) {
+                serviceSelect = formServiceSelect;
+                form.noValidate = true;
+                form.querySelectorAll("input, textarea, label").forEach(field => {
+                    if (field.matches('label[for="service"]')) {
+                        return;
+                    }
+                    field.hidden = true;
+                    field.required = false;
+                });
+                serviceSelect.addEventListener("change", updateOriginalLink);
+                message.textContent = "Google Translate blocks form submissions. Choose a service, then continue on the original site to finish booking.";
+            } else {
+                form.classList.add("translation-form-readonly");
+                form.querySelectorAll("input, textarea, select").forEach(field => {
+                    field.disabled = true;
+                });
+            }
+
+            form.querySelectorAll('button[type="submit"], input[type="submit"]').forEach(submitControl => {
+                const continueButton = document.createElement("button");
+                continueButton.type = "button";
+                continueButton.className = submitControl.className;
+                continueButton.textContent = "Continue on the original site";
+                continueButton.addEventListener("click", continueOnOriginalSite);
+                submitControl.replaceWith(continueButton);
+            });
+
+            form.addEventListener("submit", event => {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                continueOnOriginalSite();
+            }, true);
+            updateOriginalLink();
+        });
+
+        originalLink.addEventListener("click", () => updateOriginalLink());
         notice.append(message, originalLink);
         document.body.prepend(notice);
-        document.querySelectorAll("form").forEach(form => {
-            form.hidden = true;
-        });
         return;
     }
 
