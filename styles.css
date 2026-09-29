@@ -448,6 +448,36 @@ footer a:hover {
     background: rgba(98, 178, 255, .12);
 }
 
+.translation-form-notice {
+    align-items: center;
+    background: #fff1c2;
+    border-bottom: 1px solid #e8bd56;
+    color: #17202b;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    justify-content: center;
+    padding: 12px 18px;
+    position: relative;
+    z-index: 1300;
+}
+
+.translation-form-notice p {
+    margin: 0;
+}
+
+.translation-form-notice a {
+    color: #123d61;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.translation-form-notice a:focus-visible {
+    outline: 3px solid #123d61;
+    outline-offset: 3px;
+}
+
 @media (max-width: 480px) {
     .language-switcher {
         bottom: max(12px, env(safe-area-inset-bottom));

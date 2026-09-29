@@ -25,6 +25,32 @@ document.addEventListener("DOMContentLoaded", () => {
 /* Browser-language suggestion and Google Translate handoff */
 document.addEventListener("DOMContentLoaded", () => {
     if (location.hostname.endsWith(".translate.goog")) {
+        const originalPage = new URL(location.pathname, "https://techiteasy.cc");
+        new URLSearchParams(location.search).forEach((value, name) => {
+            if (!name.startsWith("_x_tr_")) {
+                originalPage.searchParams.append(name, value);
+            }
+        });
+        originalPage.hash = location.hash;
+
+        const notice = document.createElement("aside");
+        notice.className = "translation-form-notice";
+        notice.setAttribute("role", "alert");
+
+        const message = document.createElement("p");
+        message.textContent = "Google Translate blocks form submissions. Open the original site to continue booking or contact us.";
+
+        const originalLink = document.createElement("a");
+        originalLink.href = originalPage.toString();
+        originalLink.target = "_blank";
+        originalLink.rel = "noopener noreferrer";
+        originalLink.textContent = "Continue on the original site";
+
+        notice.append(message, originalLink);
+        document.body.prepend(notice);
+        document.querySelectorAll("form").forEach(form => {
+            form.hidden = true;
+        });
         return;
     }
 
