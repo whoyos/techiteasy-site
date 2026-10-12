@@ -51,6 +51,17 @@
             background: #1d4ed8;
             transform: translateY(-2px);
         }
+        .zoho-form-embed iframe {
+            border: 0;
+            display: block;
+            height: 2200px;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            .zoho-form-embed iframe {
+                height: 2700px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -114,25 +125,12 @@
         </div>
     </section>
 
-    <section class="dark-section" style="max-width: 800px; margin: auto;">
+    <section style="max-width: 800px; margin: auto;">
         <h2><i class="fa-solid fa-paper-plane"></i> Submit an Inquiry</h2>
         <p style="color: #cbd5e1; margin-bottom: 20px;">Please provide your hardware specifications below. Our support panel will review the logs and return an itemized quote vector breakdown.</p>
-        
-        <form action="https://formspree.io/f/xzdnzpka" method="POST" class="inquiry-form">
-            <label for="full-name">Full Name:</label>
-            <input type="text" id="full-name" name="name" required>
-
-            <label for="email-address">Email Address:</label>
-            <input type="email" id="email-address" name="email" required>
-
-            <label for="device-type">Device Model / Variant:</label>
-            <input type="text" id="device-type" name="device" placeholder="Example: iPhone 14 Pro, HP Spectre x360, M2 Mac Mini" required>
-
-            <label for="service-needed">Describe Needed Components or Fix:</label>
-            <textarea id="service-needed" name="service" placeholder="Detail the fault signatures or setup configurations requested. If you are sourcing bare parts, identify part numbers here." required></textarea>
-
-            <button type="submit" class="btn primary">Submit Inquiry</button>
-        </form>
+        <div class="zoho-form-embed">
+            <iframe title="Device Parts Inquiry form" loading="lazy" src="https://forms.zohopublic.com/williamhoyostechi1/form/DevicePartsInquiry/formperma/t7V8uFvaF8Ox5gQDq-I7ur-qi0InkUfHPRn5b8JCsWk"></iframe>
+        </div>
     </section>
 
     <footer>

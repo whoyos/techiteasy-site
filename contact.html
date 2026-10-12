@@ -73,6 +73,24 @@
             background: #1d4ed8;
             transform: translateY(-2px);
         }
+        .zoho-form-panel {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+        .zoho-form-panel .subtext {
+            margin-bottom: 20px;
+        }
+        .zoho-form-embed iframe {
+            border: 0;
+            display: block;
+            height: 1500px;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            .zoho-form-embed iframe {
+                height: 1800px;
+            }
+        }
         .contact-info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -136,32 +154,13 @@
             </div>
         </div>
 
-        <!-- Formspree General Contact Form Fixed to route directly to your form ID -->
-        <form action="https://formspree.io/f/xzdnzpka" method="POST" class="form-card">
-            <input type="hidden" name="_subject" value="TECH IT EASY general contact inquiry">
+        <section class="zoho-form-panel">
             <h2><i class="fa-solid fa-paper-plane"></i> Send a Message</h2>
             <p class="subtext">Fill out this form for general inquiries, partner opportunities, or custom scale quotes.</p>
-            
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-            
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-            
-            <label for="subject">Inquiry Type</label>
-            <select id="subject" name="subject" required>
-                <option value="">-- Select Options --</option>
-                <option value="General Question">General Inquiry / Question</option>
-                <option value="Custom Project">Custom Enterprise Project Blueprint</option>
-                <option value="Billing">Invoice / Payment Question</option>
-                <option value="Partnership">Business Partnership Proposal</option>
-            </select>
-            
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" placeholder="Provide details on how we can assist you..." required></textarea>
-            
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+            <div class="zoho-form-embed">
+                <iframe title="Contact Us form" loading="lazy" src="https://forms.zohopublic.com/williamhoyostechi1/form/ContactUs/formperma/aBw6Zo8X4MyDcBSyzu8IGCFrQEntFWGYdiZifCi8M98"></iframe>
+            </div>
+        </section>
     </div>
 
     <footer>
