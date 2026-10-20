@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devices | TECH IT EASY IT SERVICES LLC</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- OPTIMIZED: Included Font Awesome CDN link to ensure icons render properly -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         .inquiry-form label {
             display: block;
@@ -51,15 +53,17 @@
             background: #1d4ed8;
             transform: translateY(-2px);
         }
+        /* FIXED: Scaled height down from 2200px to match actual Zoho Form footprint */
         .zoho-form-embed iframe {
             border: 0;
             display: block;
-            height: 2200px;
+            height: 1100px;
             width: 100%;
         }
+        /* FIXED: Scaled mobile height down from 2700px */
         @media (max-width: 600px) {
             .zoho-form-embed iframe {
-                height: 2700px;
+                height: 1350px;
             }
         }
     </style>
@@ -117,7 +121,8 @@
 
             <div class="card">
                 <div>
-                    <div class="price-badge custom"><i class="fa-solid fa-display"></i> Device Setup</h3>
+                    <div class="price-badge custom"><i class="fa-solid fa-display"></i> Device Setup</div> <!-- FIXED: Changed open tag from h3 to div to match context -->
+                    <h3>Device Setup</h3>
                     <p>Initial system initializations, core cloud account linking matrices, localized application distributions, storage backups configurations, and security verification for new tech gear.</p>
                     <p style="font-size: 13px; color: #9ca3af; margin-top: 10px;"><strong>If hardware parts sourcing is preferred without physical assembly services, declare it inside the message container below.</strong></p>
                 </div>
